@@ -1,0 +1,4 @@
+.slick-track {
+  max-width: 100%;
+  overflow-x: hidden; /* 必要に応じて */
+}
