@@ -10,7 +10,7 @@ type Props = {
 export const Title: FC<Props> = ({ title, subTitle }) => {
   return (
     <MainLayout>
-      <Box position="relative" minH="160px">
+      <Box position="relative" minH="160px" mb="56px">
         <Box
           position="absolute"
           top="50%"
