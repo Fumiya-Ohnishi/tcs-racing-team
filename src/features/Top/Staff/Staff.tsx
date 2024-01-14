@@ -1,6 +1,14 @@
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 
-const images = [
+interface staffImages {
+  id: number;
+  src: string;
+  alt: string;
+  japaneseName: string;
+  englishName: string;
+}
+
+const staffImages = [
   {
     id: 1,
     src: '/images/staff1.png',
@@ -36,7 +44,7 @@ export const Staff = () => {
     <>
       <Box my="0" mx="auto" w="76%" color="white">
         <Grid templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={6}>
-          {images.map(image => (
+          {staffImages.map(image => (
             <GridItem key={image.id}>
               <Box position="relative">
                 <Image src={image.src} />
