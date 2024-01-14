@@ -41,7 +41,7 @@ const images: images[] = [
 
 export const Carousel = () => {
   return (
-    <Box w="100vw" h="100vh" maxWidth="100%">
+    <Box w="100vw" h="100vh" maxWidth="100%" overflowX="hidden">
       <Slider {...settings}>
         {images.map(image => (
           <Box key={image.id} w="100%" h="100%" objectFit="contain">
