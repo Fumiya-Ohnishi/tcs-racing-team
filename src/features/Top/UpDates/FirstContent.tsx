@@ -1,6 +1,6 @@
 import { ImageFilter } from '@/components/Elements/ImageFilter';
-import { Box, HStack, Text, Image } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { LinkUnderBarButton } from '@/components/Elements/LinkUnderBarButton';
+import { Box, HStack, Text } from '@chakra-ui/react';
 
 export const FirstContent = () => {
   return (
@@ -16,14 +16,7 @@ export const FirstContent = () => {
           <Text color="#fff" mb="18px">
             content
           </Text>
-          <Link to="#" style={{ color: '#fff', display: 'inline-block' }}>
-            <HStack borderBottom="solid 1px #FF9080">
-              <Text color="#fff" fontSize="12px">
-                もっと見る
-              </Text>
-              <Image w="5px" h="10px" src="/images/ico-arrow-white-brock.svg" />
-            </HStack>
-          </Link>
+          <LinkUnderBarButton url="#" text="もっと見る" />
         </Box>
       </Box>
     </>
