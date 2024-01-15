@@ -1,4 +1,3 @@
-import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 

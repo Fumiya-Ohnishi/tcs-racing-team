@@ -1,5 +1,5 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import { Box, Image } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 
 type Props = {
