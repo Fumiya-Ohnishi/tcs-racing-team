@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import { DirectorContent } from './DirectorContent';
 import { Member } from './Member';
 
