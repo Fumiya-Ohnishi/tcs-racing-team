@@ -1,68 +1,76 @@
+import { LinkButton } from '@/components/Elements/LinkButton';
+import { LinkUnderBarButton } from '@/components/Elements/LinkUnderBarButton';
+import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 
-interface staffImages {
+interface StaffImages {
   id: number;
   src: string;
   alt: string;
-  japaneseName: string;
-  englishName: string;
+  name: string;
+  jobType: string;
+  isReadMore?: boolean;
 }
 
-const staffImages = [
+const staffImages: StaffImages[] = [
   {
     id: 1,
     src: '/images/staff1.png',
-    alt: 'スタッフ',
-    japaneseName: '山本幸平',
-    englishName: 'YAMAMOTOKOHEI',
+    alt: 'スタッフ画像',
+    name: '福光 悠介',
+    jobType: 'GM',
+    isReadMore: true,
   },
   {
     id: 2,
     src: '/images/staff1.png',
-    alt: 'スタッフ',
-    japaneseName: '山本幸平',
-    englishName: 'YAMAMOTOKOHEI',
+    alt: 'スタッフ画像',
+    name: '佐藤 寿美',
+    jobType: 'マネージャー',
   },
   {
     id: 3,
     src: '/images/staff1.png',
-    alt: 'スタッフ',
-    japaneseName: '山本幸平',
-    englishName: 'YAMAMOTOKOHEI',
+    alt: 'スタッフ画像',
+    name: '汐澤 芳治',
+    jobType: '広報',
   },
   {
     id: 4,
     src: '/images/staff1.png',
-    alt: 'スタッフ',
-    japaneseName: '山本幸平',
-    englishName: 'YAMAMOTOKOHEI',
+    alt: 'スタッフ画像',
+    name: 'Ms. X -Coming Soon',
+    jobType: 'アンバサダー',
   },
 ];
 
 export const Staff = () => {
   return (
     <>
-      <Box my="0" mx="auto" w="76%" color="white">
-        <Grid templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={6}>
+      <MainLayout>
+        <Grid templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={12}>
           {staffImages.map(image => (
             <GridItem key={image.id}>
-              <Box position="relative">
-                <Image src={image.src} />
-                <Text
+              <Box position="relative" bg="#4D4D4D" mb="16px" py="30px">
+                <Image src={image.src} margin="auto" />
+                <Box
                   position="absolute"
-                  left="50%"
-                  top="100%"
-                  transform="translateX(-50%) translateY(-100%)"
-                  zIndex="overlay"
+                  top="96%"
+                  left="15%"
+                  transform="translateY(-100%)"
                 >
-                  {image.englishName}
-                </Text>
+                  <Text fontSize="xs">{image.jobType}</Text>
+                  <Text>{image.name}</Text>
+                </Box>
               </Box>
-              <Text fontSize="xs">{image.japaneseName}</Text>
+              {image.isReadMore && (
+                <LinkUnderBarButton url="#" text="もっと見る" isCenter={true} />
+              )}
             </GridItem>
           ))}
         </Grid>
-      </Box>
+        <LinkButton link="/staff" text="Overview" />
+      </MainLayout>
       <Divider orientation="horizontal" mt="64px" mx="auto" w="90%" />
     </>
   );
