@@ -3,7 +3,6 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { css, keyframes } from '@emotion/react';
 
-// 下線が展開されるアニメーションを定義
 const expandUnderline = keyframes`
   from {
     width: 0;
@@ -12,6 +11,17 @@ const expandUnderline = keyframes`
   to {
     width: 100%;
     background-position: 100% 50%;
+  }
+`;
+
+const contractUnderline = keyframes`
+  from {
+    width: 100%;
+    background-position: 100% 50%;
+  }
+  to {
+    width: 0;
+    background-position: 0% 50%;
   }
 `;
 
@@ -27,28 +37,38 @@ export const LinkButton: FC<Props> = ({ link, text }) => {
       <Link to={link}>
         <HStack
           position="relative"
+          onMouseEnter={e => {
+            e.currentTarget.classList.add('hovered');
+            e.currentTarget.classList.remove('remove');
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.classList.add('remove');
+            e.currentTarget.classList.remove('hovered');
+          }}
           css={css`
-            &::after {
+            &.hovered::after {
               content: '';
               position: absolute;
               bottom: -3px;
               left: 0;
               height: 3px;
-              background-image: linear-gradient(
-                to right,
-                violet,
-                indigo,
-                blue,
-                green,
-                yellow,
-                orange,
-                red
-              );
-              transition: width 0.5s ease-in-out;
-            }
-            &:hover::after {
+              background-image: url(images/img-text-bg.webp);
+              background-size: cover;
+              background-repeat: no-repeat;
               width: 100%;
               animation: ${expandUnderline} 0.5s ease-in-out forwards;
+            }
+            &.remove::after {
+              content: '';
+              position: absolute;
+              bottom: -3px;
+              left: 0;
+              height: 3px;
+              background-image: url(images/img-text-bg.webp);
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 0;
+              animation: ${contractUnderline} 0.5s ease-in-out forwards;
             }
           `}
         >

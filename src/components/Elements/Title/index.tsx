@@ -1,5 +1,5 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import { Box } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
 import { FC } from 'react';
 
 type Props = {
@@ -33,6 +33,16 @@ export const Title: FC<Props> = ({ title, subTitle }) => {
         >
           {title}
         </Box>
+        <Box
+          position="absolute"
+          bottom="0"
+          left="0"
+          w="10%"
+          height="2px"
+          bg={'url(images/img-text-bg.webp)'}
+          bgSize="cover"
+          bgRepeat="no-repeat"
+        ></Box>
       </Box>
     </MainLayout>
   );
