@@ -5,6 +5,7 @@ import { TheTeam } from './TheTeam';
 import { Staff } from './Staff/Staff';
 import { PageLayout } from '@/components/Layouts/PageLayout';
 import { OurPartners } from './OurPartners';
+import { OfficialMedia } from './OfficialMedia';
 
 export const TopContent = () => {
   return (
@@ -19,6 +20,7 @@ export const TopContent = () => {
         <Staff />
         <Title title="Our Partners" subTitle="Our Partners" />
         <OurPartners />
+        <OfficialMedia />
       </PageLayout>
     </>
   );

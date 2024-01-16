@@ -4,7 +4,7 @@ import { Box, HStack, Image } from '@chakra-ui/react';
 export const OurPartners = () => {
   return (
     <MainLayout>
-      <Box w="100%" bg="white" pt="85px" pb="68px">
+      <Box w="100%" bg="white" pt="85px" pb="68px" mb="95px">
         <Box maxW="294px" mx="auto" mb="84px">
           <Image src="images/img-sponsor-01.webp" alt="OurPartners" />
         </Box>
