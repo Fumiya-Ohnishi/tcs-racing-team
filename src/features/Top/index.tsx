@@ -4,6 +4,7 @@ import { UpdatesContent } from './UpDates/UpDateContents';
 import { TheTeam } from './TheTeam';
 import { Staff } from './Staff/Staff';
 import { PageLayout } from '@/components/Layouts/PageLayout';
+import { OurPartners } from './OurPartners';
 
 export const TopContent = () => {
   return (
@@ -16,6 +17,8 @@ export const TopContent = () => {
         <TheTeam />
         <Title title="TheStaff" subTitle="TheStaff" />
         <Staff />
+        <Title title="Our Partners" subTitle="Our Partners" />
+        <OurPartners />
       </PageLayout>
     </>
   );
