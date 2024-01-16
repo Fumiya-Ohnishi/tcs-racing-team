@@ -4,6 +4,7 @@ import { UpdatesContent } from './UpDates/UpDateContents';
 import { TheTeam } from './TheTeam';
 import { Staff } from './Staff/Staff';
 import { PageLayout } from '@/components/Layouts/PageLayout';
+import { Schedule } from './Schedule/Schedule';
 import { OurPartners } from './OurPartners';
 import { OfficialMedia } from './OfficialMedia';
 
@@ -18,6 +19,8 @@ export const TopContent = () => {
         <TheTeam />
         <Title title="TheStaff" subTitle="TheStaff" />
         <Staff />
+        <Title title="Schedule" subTitle="Schedule" />
+        <Schedule />
         <Title title="Our Partners" subTitle="Our Partners" />
         <OurPartners />
         <OfficialMedia />
