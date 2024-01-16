@@ -38,7 +38,8 @@ export const Title: FC<Props> = ({ title, subTitle }) => {
           bottom="0"
           left="0"
           w="10%"
-          height="2px"
+          maxW="87px"
+          height="3px"
           bg={'url(images/img-text-bg.webp)'}
           bgSize="cover"
           bgRepeat="no-repeat"
