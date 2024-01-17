@@ -25,11 +25,11 @@ export const Header = () => {
             top="50%"
             left="40px"
             zIndex="999"
-            w={{ base: '80px', lg: 'auto' }}
-            h={{ base: '80px', lg: 'auto' }}
+            w={{ base: '128px', lg: '222px' }}
+            h={{ base: 'auto', lg: 'auto' }}
             objectFit={{ base: 'contain', lg: 'none' }}
           >
-            <Image src="/images/ico-header-logo.png" alt="logo" />
+            <Image src="/images/ico-team-logo-name.webp" alt="logo" />
           </Box>
           <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
             <DrawerOverlay />
