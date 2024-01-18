@@ -2,7 +2,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { Box, Image } from '@chakra-ui/react';
-// import './Carousel.css';
+import './Carousel.css';
 
 interface images {
   id: number;
@@ -41,19 +41,19 @@ const images: images[] = [
 
 export const Carousel = () => {
   return (
-    <Box w="100vw" h="100vh" maxWidth="100%" overflowX="hidden">
+    <Box w="100vw" h="100vh" overflowX="hidden" boxSize="fit-content">
       <Slider {...settings}>
         {images.map(image => (
-          <Box key={image.id} w="100%" h="100%" objectFit="contain">
-            <Image
-              display="block"
-              w="100%"
-              h="100%"
-              src={image.src}
-              alt={image.alt}
-              objectFit="cover"
-            />
-          </Box>
+          <Box
+            key={image.id}
+            w="100vw"
+            h="100vh"
+            background={`url(${image.src})`}
+            backgroundPosition="center"
+            backgroundRepeat="no-repeat"
+            backgroundSize="contain"
+            overflow="hidden"
+          ></Box>
         ))}
       </Slider>
     </Box>
