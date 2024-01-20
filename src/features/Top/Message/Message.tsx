@@ -10,20 +10,9 @@ export const Message: FC = () => {
           w="214px"
           h="214px"
           m="0 auto"
-          position="relative"
-          borderRadius="full"
-          overflow="hidden"
+          opacity="0.5"
         >
           <Image src="/images/ico-team-logo.webp" objectFit="cover" />
-          <Box
-            position="absolute"
-            top="0"
-            right="0"
-            bottom="0"
-            left="0"
-            bg="blackAlpha.500"
-            zIndex="1"
-          />
         </Box>
         <Box
           w="100%"
