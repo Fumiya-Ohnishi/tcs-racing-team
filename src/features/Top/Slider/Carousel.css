@@ -76,5 +76,6 @@
 
   .slick-dots {
     display: block !important;
+    bottom: 70px !important;
   }
 }
