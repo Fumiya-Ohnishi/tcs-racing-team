@@ -75,6 +75,7 @@ export const Carousel = () => {
       overflowX="hidden"
       boxSize="fit-content"
       color="white"
+      position="relative"
     >
       <Slider {...settings}>
         {images.map(image => (
@@ -106,30 +107,30 @@ export const Carousel = () => {
                 <Box as="span">{image.text.sub}</Box>
               </Text>
             </Box>
-            <Box position="relative" display={{ base: 'none', lg: 'block' }}>
-              <Text
-                position="absolute"
-                bottom="12%"
-                left="50%"
-                css={{
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    left: '50%',
-                    bottom: '-50px',
-                    transform: 'translateX(-50%)',
-                    height: '50px', // 線の高さ
-                    width: '2px', // 線の幅
-                    backgroundColor: 'white', // 線の色
-                  },
-                }}
-              >
-                SCROLL
-              </Text>
-            </Box>
           </Box>
         ))}
       </Slider>
+      <Text
+        position="absolute"
+        display={{ base: 'none', lg: 'block' }}
+        bottom="12%"
+        left="50%"
+        transform="translateX(-50%)"
+        css={{
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            left: '50%',
+            bottom: '-50px',
+            transform: 'translateX(-50%)',
+            height: '50px', // 線の高さ
+            width: '2px', // 線の幅
+            backgroundColor: 'white', // 線の色
+          },
+        }}
+      >
+        SCROLL
+      </Text>
     </Box>
   );
 };
