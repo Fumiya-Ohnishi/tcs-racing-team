@@ -34,13 +34,13 @@ export const TeamMemberTitle: FC<Props> = ({
           left="50%"
           transform="translateX(-50%)"
           color="#fff"
-          fontSize="56px"
+          fontSize="40px"
           fontWeight="bold"
           zIndex="1"
           textAlign="center"
         >
           {title}
-          <Box fontSize="48px" position="relative">
+          <Box fontSize="32px" position="relative">
             {middleTitle}
             <Box
               position="absolute"
