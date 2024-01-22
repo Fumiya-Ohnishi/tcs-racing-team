@@ -1,18 +1,19 @@
-import { PageLayout } from "@/components/Layouts/PageLayout";
-import { Message } from "../Top/Message/Message";
-import { OfficialMedia } from "../Top/OfficialMedia";
-import { OurPartners } from "../Top/OurPartners";
-import { TeamMemberTitle } from "./components/TeamMemberTitle";
+import { PageLayout } from '@/components/Layouts/PageLayout';
+import { Message } from '../Top/Message/Message';
+import { OfficialMedia } from '../Top/OfficialMedia';
+import { OurPartners } from '../Top/OurPartners';
+import { TeamMemberCoreValue } from './components/TeamMemberCoreValue';
+import { Box } from '@chakra-ui/react';
 
 export const TeamMemberContent = () => {
   return (
-    <>
+    <Box color="#FFF">
       <PageLayout>
         <Message />
-        <TeamMemberTitle title="&quot;存在意義・使命&quot;" middleTitle="Mission" subTitle="Mission" />
+        <TeamMemberCoreValue />
         <OurPartners />
         <OfficialMedia />
       </PageLayout>
-    </>
+    </Box>
   );
-}
+};
