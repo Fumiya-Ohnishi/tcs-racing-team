@@ -1,7 +1,7 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Image, Text, useMediaQuery } from '@chakra-ui/react';
 import './Carousel.css';
 
 interface images {
@@ -25,7 +25,7 @@ const settings = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3000,
-  adaptiveHeight: true,
+  // adaptiveHeight: true,
 };
 
 const images: images[] = [
@@ -68,31 +68,22 @@ const images: images[] = [
 ];
 
 export const Carousel = () => {
+  const [isSmallerThan768] = useMediaQuery('(max-width: 768px)');
   return (
-    <Box
-      w="100vw"
-      h="100vh"
-      overflowX="hidden"
-      boxSize="fit-content"
-      color="white"
-      position="relative"
-    >
+    <>
       <Slider {...settings}>
         {images.map(image => (
-          <Box
-            key={image.id}
-            w="100vw"
-            h="100vh"
-            backgroundImage={{
-              base: `url(${image.src.sp})`,
-              lg: `url(${image.src.pc})`,
-            }}
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize="contain"
-            overflow="hidden"
-            position="relative"
-          >
+          <Box key={image.id} w="100%" h="100%" position="relative">
+            <Box w="100%" objectFit="cover" position="relative">
+              <Image
+                display="block"
+                w="100%"
+                h="100%"
+                objectFit="cover"
+                src={isSmallerThan768 ? image.src.sp : image.src.pc}
+                alt={image.alt}
+              />
+            </Box>
             <Box
               position="absolute"
               top="50%"
@@ -102,10 +93,33 @@ export const Carousel = () => {
               alignItems="center"
               justifyContent="center"
             >
-              <Text fontSize="4xl">
+              <Text
+                fontSize={{ base: '5xl', lg: 'xl' }}
+                color="white"
+                fontWeight="bold"
+              >
                 {image.text.main}
-                <Box as="span">{image.text.sub}</Box>
+                <Box as="span" fontSize="xl" ml="16px">
+                  {image.text.sub}
+                </Box>
               </Text>
+            </Box>
+            <Box
+              display="flex"
+              flexDirection={{ base: 'column', lg: 'row' }}
+              justifyContent={{ base: 'none', lg: 'center' }}
+              position="absolute"
+              top={{ base: '60%', lg: '85%' }}
+              left="50%"
+              transform="translateX(-50%)"
+              w="100%"
+              color="white"
+              fontWeight="bold"
+              fontSize={{ base: 'md', lg: '2xl' }}
+              textAlign="center"
+            >
+              <Text textAlign="center">日本からアジアへ</Text>
+              <Text textAlign="center">そして世界へ</Text>
             </Box>
           </Box>
         ))}
@@ -113,9 +127,10 @@ export const Carousel = () => {
       <Text
         position="absolute"
         display={{ base: 'none', lg: 'block' }}
-        bottom="12%"
+        bottom="3%"
         left="50%"
         transform="translateX(-50%)"
+        color="white"
         css={{
           '&::after': {
             content: '""',
@@ -123,14 +138,14 @@ export const Carousel = () => {
             left: '50%',
             bottom: '-50px',
             transform: 'translateX(-50%)',
-            height: '50px', // 線の高さ
-            width: '2px', // 線の幅
-            backgroundColor: 'white', // 線の色
+            height: '50px',
+            width: '2px',
+            backgroundColor: 'white',
           },
         }}
       >
         SCROLL
       </Text>
-    </Box>
+    </>
   );
 };

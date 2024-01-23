@@ -8,12 +8,15 @@ import { Schedule } from './Schedule/Schedule';
 import { OurPartners } from './OurPartners';
 import { OfficialMedia } from './OfficialMedia';
 import { Message } from './Message/Message';
+import { Box } from '@chakra-ui/react';
 
 export const TopContent = () => {
   return (
     <>
       <PageLayout>
-        <Carousel />
+        <Box position="relative">
+          <Carousel />
+        </Box>
         <Message />
         <Title title="Updates" subTitle="Updates" />
         <UpdatesContent />
