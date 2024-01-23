@@ -40,6 +40,7 @@ export const TheTeam = () => {
         comment={
           'テキストテキストテキストテキストテキストテキストテキストテキスト'
         }
+        link="#"
       />
       <Member
         leftName={'リアッド ハキム'}

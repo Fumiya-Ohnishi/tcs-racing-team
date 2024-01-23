@@ -25,7 +25,6 @@ const settings = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3000,
-  // adaptiveHeight: true,
 };
 
 const images: images[] = [
@@ -132,6 +131,7 @@ export const Carousel = () => {
         transform="translateX(-50%)"
         color="white"
         css={{
+          animation: 'scrollAnimation 1s ease-in-out infinite',
           '&::after': {
             content: '""',
             position: 'absolute',
