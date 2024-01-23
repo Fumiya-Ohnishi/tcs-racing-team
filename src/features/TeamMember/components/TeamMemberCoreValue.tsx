@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 export const TeamMemberCoreValue: FC = () => {
   return (
-    <>
+    <Box mb="192px">
       <Divider orientation="horizontal" mt="64px" mx="auto" w="76%" />
       <TeamMemberTitle
         title='"存在意義・使命"'
@@ -75,6 +75,6 @@ export const TeamMemberCoreValue: FC = () => {
           </Text>
         </Box>
       </VStack>
-    </>
+    </Box>
   );
 };
