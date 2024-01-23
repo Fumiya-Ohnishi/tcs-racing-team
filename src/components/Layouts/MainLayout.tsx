@@ -7,7 +7,7 @@ type Props = {
 
 export const MainLayout: FC<Props> = ({ children }) => {
   return (
-    <Box w="76%" m="0 auto" color="white">
+    <Box w="76%" maxW="1000px" m="0 auto" color="white">
       {children}
     </Box>
   );
