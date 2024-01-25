@@ -1,6 +1,7 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box, Grid, Image, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
+import { TeamMemberSmallTitle } from '../components/TeamMemberSmallTitle';
 
 interface TeamMemberStaff {
   id: number;
@@ -38,30 +39,19 @@ const subStaffs: TeamMemberStaff[] = [
   },
 ];
 
-interface SmallTitleProps {
-  title: string;
-}
-
-export const TeamMemberStaff = () => {
-  const SmallTitle: FC<SmallTitleProps> = ({ title }) => {
-    return (
-      <Box mb="92px" textAlign="center">
-        <Box color="#fff" fontSize="32px" fontWeight="bold">
-          {title}
-        </Box>
-      </Box>
-    );
-  };
-
+export const TeamMemberStaff: FC = () => {
   return (
     <MainLayout>
       <Box mb="280px">
-        <SmallTitle title="The Staff" />
+        <TeamMemberSmallTitle title="The Staff" />
         <VStack spacing={24}>
-          <Grid templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }} gap={8}>
+          <Grid
+            templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
+            gap={8}
+          >
             {mainStaffs.map(staff => (
               <Box key={staff.id} position="relative">
-                <Box w={{base: '100%', lg: '72%'}} m="0 auto">
+                <Box w={{ base: '100%', lg: '72%' }} m="0 auto">
                   <Image src={staff.image} />
                 </Box>
                 <Box
@@ -89,7 +79,10 @@ export const TeamMemberStaff = () => {
             ))}
           </Grid>
 
-          <Grid templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={{ base: 8, lg: 16 }}>
+          <Grid
+            templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
+            gap={{ base: 8, lg: 16 }}
+          >
             {subStaffs.map(staff => (
               <Box key={staff.id} position="relative">
                 <Box w="100%" m="0 auto">

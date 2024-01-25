@@ -1,6 +1,6 @@
 import { Box, Divider, Text, VStack } from '@chakra-ui/react';
-import { TeamMemberTitle } from './TeamMemberTitle';
 import { FC } from 'react';
+import { TeamMemberTitle } from '../components/TeamMemberTitle';
 
 export const TeamMemberCoreValue: FC = () => {
   return (
