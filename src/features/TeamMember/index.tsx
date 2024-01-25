@@ -6,7 +6,6 @@ import { TeamMemberCoreValue } from './components/TeamMemberCoreValue';
 import { Box, Image } from '@chakra-ui/react';
 import { TeamMemberRiders } from './components/TeamMemberRiders';
 import { Title } from '@/components/Elements/Title';
-import { MainLayout } from '@/components/Layouts/MainLayout';
 
 export const TeamMemberContent = () => {
   return (
@@ -15,14 +14,12 @@ export const TeamMemberContent = () => {
         <Box>
           <Image src="/images/rider/img-top-pc.webp" />
         </Box>
-        <MainLayout>
-          <Message />
-          <TeamMemberCoreValue />
-          <Title title="The Riders" subTitle="The Riders" />
-          <TeamMemberRiders />
-          <OurPartners />
-          <OfficialMedia />
-        </MainLayout>
+        <Message />
+        <TeamMemberCoreValue />
+        <Title title="The Riders" subTitle="The Riders" />
+        <TeamMemberRiders />
+        <OurPartners />
+        <OfficialMedia />
       </PageLayout>
     </Box>
   );
