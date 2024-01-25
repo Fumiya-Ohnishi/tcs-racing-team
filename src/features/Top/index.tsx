@@ -22,7 +22,7 @@ export const TopContent = () => {
         <UpdatesContent />
         <Title title="The Team" subTitle="The Team" />
         <TheTeam />
-        <Title title="TheStaff" subTitle="TheStaff" />
+        <Title title="TheStaff" subTitle="TheStaff" isCenter isHiddenUnderLine />
         <Staff />
         <Title title="Schedule" subTitle="Schedule" />
         <Schedule />
