@@ -33,64 +33,71 @@ export const DirectorContent: FC<Props> = ({ post, name, comment, link }) => {
 
   return (
     <Box
-      position="relative"
-      w="90%"
-      m="0 auto"
-      borderBottom="solid 1px"
-      borderColor="#fff"
+      w="100%"
+      bg="red"
+      background={`linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.8),rgba(0, 0, 0, 0.3)), url(/images/img-lattice-background.webp)`}
+      backgroundSize="80%"
     >
-      <Link
-        to={link}
-        className="custom-link"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      ></Link>
-      <Box w="86%" m="0 auto">
-        <Box minH="457px" p="99px 0" position="relative">
-          <Box
-            position="absolute"
-            top="50%"
-            left="0"
-            transform="translateY(-50%)"
-            zIndex="2"
-          >
-            <Text color="#fff" mb="14px">
-              {post}
-            </Text>
-            <Text color="#fff" mb="71px" fontWeight="bold" fontSize="52px">
-              {name}
-            </Text>
-            <Text color="#fff">{comment}</Text>
-          </Box>
-          <Box
-            position="absolute"
-            bottom="0"
-            right="0"
-            w="50%"
-            overflow="hidden"
-          >
-            <Image
-              ref={imageRef}
-              src="/images/img-theTeam-01.webp"
-              alt="director"
-              transition="transform 0.3s ease"
-            />
-          </Box>
-          <Box
-            ref={boxRef}
-            position="absolute"
-            bottom="50px"
-            right="0"
-            w="10px"
-            h="36px"
-            objectFit="cover"
-            transition="right 0.3s ease"
-          >
-            <Image
-              display="block"
-              w="100%"
-              src="/images/ico-arrow-white-brock.svg"
-            />
+      <Box
+        position="relative"
+        w="90%"
+        m="0 auto"
+        borderBottom="solid 1px"
+        borderColor="#fff"
+      >
+        <Link
+          to={link}
+          className="custom-link"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        ></Link>
+        <Box w="86%" m="0 auto">
+          <Box minH="457px" p="99px 0" position="relative">
+            <Box
+              position="absolute"
+              top="50%"
+              left="0"
+              transform="translateY(-50%)"
+              zIndex="2"
+            >
+              <Text color="#fff" mb="14px">
+                {post}
+              </Text>
+              <Text color="#fff" mb="71px" fontWeight="bold" fontSize="52px">
+                {name}
+              </Text>
+              <Text color="#fff">{comment}</Text>
+            </Box>
+            <Box
+              position="absolute"
+              bottom="0"
+              right="0"
+              w="50%"
+              overflow="hidden"
+            >
+              <Image
+                ref={imageRef}
+                src="/images/img-theTeam-01.webp"
+                alt="director"
+                transition="transform 0.3s ease"
+              />
+            </Box>
+            <Box
+              ref={boxRef}
+              position="absolute"
+              bottom="50px"
+              right="0"
+              w="10px"
+              h="36px"
+              objectFit="cover"
+              transition="right 0.3s ease"
+            >
+              <Image
+                display="block"
+                w="100%"
+                src="/images/ico-arrow-white-brock.svg"
+              />
+            </Box>
           </Box>
         </Box>
       </Box>

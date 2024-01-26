@@ -33,33 +33,40 @@ export const Member: FC<Props> = ({
   rightLink,
 }) => {
   return (
-    <Box w="90%" m="0 auto" borderBottom="solid 1px" borderColor="#fff">
-      <Box w="86%" m="0 auto">
-        <Box display="flex" justifyContent="space-between">
-          <MemberContent
-            backgroundUrl={leftBg}
-            name={leftName}
-            comment={leftComment}
-            imageUrl={leftImage}
-            width={leftWidth}
-            link={leftLink}
-          />
-          <Box
-            width="1px"
-            bgColor="#fff"
-            alignSelf="stretch"
-            mx="4px"
-            mt="76px"
-            mb="16px"
-          />
-          <MemberContent
-            backgroundUrl={rightBg}
-            name={rightName}
-            comment={rightComment}
-            imageUrl={rightImage}
-            width={rightWidth}
-            link={rightLink}
-          />
+    <Box
+      w="100%"
+      bg="red"
+      background={`linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.8),rgba(0, 0, 0, 0.3)), url(/images/img-lattice-background.webp)`}
+      backgroundSize="80%"
+    >
+      <Box w="90%" m="0 auto" borderBottom="solid 1px" borderColor="#fff">
+        <Box w="86%" m="0 auto">
+          <Box display="flex" justifyContent="space-between">
+            <MemberContent
+              backgroundUrl={leftBg}
+              name={leftName}
+              comment={leftComment}
+              imageUrl={leftImage}
+              width={leftWidth}
+              link={leftLink}
+            />
+            <Box
+              width="1px"
+              bgColor="#fff"
+              alignSelf="stretch"
+              mx="4px"
+              mt="76px"
+              mb="16px"
+            />
+            <MemberContent
+              backgroundUrl={rightBg}
+              name={rightName}
+              comment={rightComment}
+              imageUrl={rightImage}
+              width={rightWidth}
+              link={rightLink}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>
