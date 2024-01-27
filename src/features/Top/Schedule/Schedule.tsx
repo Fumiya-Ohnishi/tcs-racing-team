@@ -5,17 +5,17 @@ import { LinkButton } from '@/components/Elements/LinkButton';
 import { useSchedule } from './hooks/useSchedule';
 import { ScheduleTitle } from './components/ScheduleTitle';
 
-interface ScheduleItem {
+export interface ScheduleItem {
   id: number;
-  url: string;
-  raceName: string;
-  date: string;
-  month: string;
-  country: string;
+  title: string;
+  startDate?: string;
+  endDate?: string;
+  location?: string;
 }
 
 export const Schedule = () => {
   const { raceScheduleList, eventScheduleList } = useSchedule();
+  if (!raceScheduleList || !eventScheduleList) return <Box>データがありません。</Box>;
 
   return (
     <>
@@ -27,11 +27,11 @@ export const Schedule = () => {
               {raceScheduleList.map(item => (
                 <ScheduleItem
                   key={item.id}
-                  url='#'
-                  raceName={item.title}
-                  date="15-17"
-                  month="12月"
-                  country="オーストラリア"
+                  url="#"
+                  title={item.title}
+                  startDate={item.startDate}
+                  endDate={item.endDate}
+                  location={item.location}
                 />
               ))}
             </VStack>
@@ -42,11 +42,11 @@ export const Schedule = () => {
               {eventScheduleList.map(item => (
                 <ScheduleItem
                   key={item.id}
-                  url='#'
-                  raceName={item.title}
-                  date="15-17"
-                  month="12月"
-                  country="オーストラリア"
+                  url="#"
+                  title={item.title}
+                  startDate={item.startDate}
+                  endDate={item.endDate}
+                  location={item.location}
                 />
               ))}
             </VStack>

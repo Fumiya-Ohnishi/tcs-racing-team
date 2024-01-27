@@ -1,21 +1,22 @@
+import { formatDateNoYear } from '@/shared/utils/dateFormat/dateFormat';
 import { Box, Flex, Text, Image } from '@chakra-ui/react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 interface Props {
   url: string;
-  raceName: string;
-  date: string;
-  month: string;
-  country: string;
+  title: string;
+  startDate?: string;
+  endDate?: string;
+  location?: string;
 }
 
 export const ScheduleItem = ({
   url,
-  raceName,
-  date,
-  month,
-  country,
+  title,
+  startDate,
+  endDate,
+  location,
 }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -55,16 +56,20 @@ export const ScheduleItem = ({
             </Box>
             <Flex pl="50px" alignItems="center">
               <Box w="50px" textAlign="center" mr="18px">
-                <Text fontSize="12px">{date}</Text>
-                <Text fontSize="12px">{month}</Text>
+                <Text fontSize="12px">
+                  {startDate ? formatDateNoYear(startDate) : ''}
+                </Text>
+                <Text fontSize="12px">
+                  {endDate ? formatDateNoYear(endDate) : ''}
+                </Text>
               </Box>
               <Box>
-                <Text>{raceName}</Text>
+                <Text>{title}</Text>
                 <Flex alignItems="center">
                   <Box mr="6px">
                     <Image src="/images/ico-point-green.svg" />
                   </Box>
-                  <Text fontSize="12px">{country}</Text>
+                  <Text fontSize="12px">{location || ''}</Text>
                 </Flex>
               </Box>
             </Flex>
@@ -85,7 +90,11 @@ export const ScheduleItem = ({
             w="100%"
             h="100%"
             bg="#707070"
-            transform={isHovered ? 'translateX(6px) translateY(-6px)' : 'translateX(0px) translateY(0px)'}
+            transform={
+              isHovered
+                ? 'translateX(6px) translateY(-6px)'
+                : 'translateX(0px) translateY(0px)'
+            }
             transition="transform 0.3s ease-in-out"
           />
         </Link>
