@@ -1,11 +1,9 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import { Box, HStack, Text, VStack } from '@chakra-ui/react';
+import { Box, VStack } from '@chakra-ui/react';
 import { ScheduleItem } from './ScheduleItem';
 import { LinkButton } from '@/components/Elements/LinkButton';
-
-interface ScheduleProps {
-  text: string;
-}
+import { useSchedule } from './hooks/useSchedule';
+import { ScheduleTitle } from './components/ScheduleTitle';
 
 interface ScheduleItem {
   id: number;
@@ -16,67 +14,8 @@ interface ScheduleItem {
   country: string;
 }
 
-const scheduleItem: ScheduleItem[] = [
-  {
-    id: 1,
-    url: '#',
-    raceName: 'レース名が入りますレース名が入りますレース名が入ります',
-    date: '15-17',
-    month: '12月',
-    country: 'オーストラリア',
-  },
-  {
-    id: 2,
-    url: '#',
-    raceName: 'レース名が入りますレース名が入りますレース名が入ります',
-    date: '15-17',
-    month: '12月',
-    country: 'オーストラリア',
-  },
-  {
-    id: 3,
-    url: '#',
-    raceName: 'レース名が入りますレース名が入りますレース名が入ります',
-    date: '15-17',
-    month: '12月',
-    country: 'オーストラリア',
-  },
-  {
-    id: 4,
-    url: '#',
-    raceName: 'レース名が入りますレース名が入りますレース名が入ります',
-    date: '15-17',
-    month: '12月',
-    country: 'オーストラリア',
-  },
-  {
-    id: 5,
-    url: '#',
-    raceName: 'レース名が入りますレース名が入りますレース名が入ります',
-    date: '15-17',
-    month: '12月',
-    country: 'オーストラリア',
-  },
-  {
-    id: 6,
-    url: '#',
-    raceName: 'レース名が入りますレース名が入りますレース名が入ります',
-    date: '15-17',
-    month: '12月',
-    country: 'オーストラリア',
-  },
-];
-
 export const Schedule = () => {
-  const ScheduleTitle = ({ text }: ScheduleProps) => {
-    return (
-      <HStack borderBottom="solid 1px #83B833" display="inline-block" mb="16px">
-        <Text color="#fff" fontSize="22px">
-          {text}
-        </Text>
-      </HStack>
-    );
-  };
+  const { raceScheduleList, eventScheduleList } = useSchedule();
 
   return (
     <>
@@ -85,14 +24,14 @@ export const Schedule = () => {
           <Box flex="1">
             <ScheduleTitle text="Race" />
             <VStack gap="24px" display="grid">
-              {scheduleItem.map(item => (
+              {raceScheduleList.map(item => (
                 <ScheduleItem
                   key={item.id}
-                  url={item.url}
-                  raceName={item.raceName}
-                  date={item.date}
-                  month={item.month}
-                  country={item.country}
+                  url='#'
+                  raceName={item.title}
+                  date="15-17"
+                  month="12月"
+                  country="オーストラリア"
                 />
               ))}
             </VStack>
@@ -100,14 +39,14 @@ export const Schedule = () => {
           <Box flex="1">
             <ScheduleTitle text="Events" />
             <VStack gap="24px" display="grid">
-              {scheduleItem.map(item => (
+              {eventScheduleList.map(item => (
                 <ScheduleItem
                   key={item.id}
-                  url={item.url}
-                  raceName={item.raceName}
-                  date={item.date}
-                  month={item.month}
-                  country={item.country}
+                  url='#'
+                  raceName={item.title}
+                  date="15-17"
+                  month="12月"
+                  country="オーストラリア"
                 />
               ))}
             </VStack>
