@@ -1,7 +1,8 @@
-body{
+body {
   background: #000;
+  font-family: 'm-plus-1c', sans-serif !important;
 }
 
 #root {
-  background: #1A1A1A;
+  background: #1a1a1a;
 }
