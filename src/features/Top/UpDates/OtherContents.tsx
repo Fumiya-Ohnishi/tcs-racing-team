@@ -1,7 +1,7 @@
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { NewsItem } from './UpDateContents';
 import { FC } from 'react';
-import { format } from 'date-fns';
+import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
 
 interface Props {
   updateArray: NewsItem[];
@@ -22,7 +22,7 @@ export const OtherContents: FC<Props> = ({ updateArray }) => {
           <HStack mb="16px">
             <Text color="#FF9080">News |</Text>
             <Text color="#fff">
-              {format(new Date(item.publishedAt), 'yyyy.MM.dd')}
+              {formatDate(item.publishedAt)}
             </Text>
           </HStack>
           <Text color="#fff" mb="16px">
