@@ -18,15 +18,21 @@ export const TopContent = () => {
           <Carousel />
         </Box>
         <Message />
-        <Title title="Updates" subTitle="Updates" />
+        <Title title="Updates" subTitle="Updates" id="Updates" />
         <UpdatesContent />
-        <Title title="The Team" subTitle="The Team" />
+        <Title title="The Team" subTitle="The Team" id="TheTeam" />
         <TheTeam />
-        <Title title="TheStaff" subTitle="TheStaff" isCenter isHiddenUnderLine />
+        <Title
+          title="TheStaff"
+          subTitle="TheStaff"
+          id="TheStaff"
+          isCenter
+          isHiddenUnderLine
+        />
         <Staff />
-        <Title title="Schedule" subTitle="Schedule" />
+        <Title title="Schedule" subTitle="Schedule" id="Schedule" />
         <Schedule />
-        <Title title="Our Partners" subTitle="Our Partners" />
+        <Title title="Our Partners" subTitle="Our Partners" id="Partners" />
         <OurPartners />
         <OfficialMedia />
       </PageLayout>

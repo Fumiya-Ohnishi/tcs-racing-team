@@ -8,7 +8,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const FooterLinkButton: FC<Props> = ({ to, children }) => {
+export const NavLink: FC<Props> = ({ to, children }) => {
   const location = useLocation();
   const isTopPage = location.pathname === '/';
 

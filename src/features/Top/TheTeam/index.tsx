@@ -40,19 +40,19 @@ export const TheTeam = () => {
         comment={
           'テキストテキストテキストテキストテキストテキストテキストテキスト'
         }
-        link="#"
+        link="/member-page"
       />
       <Member
         leftName={'リアッド ハキム'}
         leftComment={leftContent}
         leftImage={'/images/img-theTeam-02.webp'}
         leftBg={'/images/img-theTeam-bg-01.webp'}
-        leftLink="#"
+        leftLink="/member-page"
         rightName={'サユ ベラ'}
         rightComment={rightContent}
         rightImage={'/images/img-theTeam-03.webp'}
         rightBg={'/images/img-theTeam-bg-02.webp'}
-        rightLink="#"
+        rightLink="/member-page"
       />
       <Member
         leftName={'松本 佑太'}
@@ -60,12 +60,12 @@ export const TheTeam = () => {
         leftImage={'/images/img-theTeam-04.webp'}
         leftBg={'/images/img-theTeam-bg-03.webp'}
         leftWidth={'55%'}
-        leftLink="#"
+        leftLink="/member-page"
         rightName={'エセビア ニコル'}
         rightComment={rightContentDown}
         rightImage={'/images/img-theTeam-05.webp'}
         rightBg={'/images/img-theTeam-bg-04.webp'}
-        rightLink="#"
+        rightLink="/member-page"
       />
     </>
   );
