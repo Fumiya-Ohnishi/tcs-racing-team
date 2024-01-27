@@ -2,6 +2,7 @@ import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box, Grid, Image, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { TeamMemberSmallTitle } from '../components/TeamMemberSmallTitle';
+import { Link } from 'react-router-dom';
 
 interface TeamMemberStaff {
   id: number;
@@ -51,30 +52,32 @@ export const TeamMemberStaff: FC = () => {
           >
             {mainStaffs.map(staff => (
               <Box key={staff.id} position="relative">
-                <Box w={{ base: '100%', lg: '72%' }} m="0 auto">
-                  <Image src={staff.image} />
-                </Box>
-                <Box
-                  position="absolute"
-                  bottom="0"
-                  left="50%"
-                  transform="translate(-50%, -50%)"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  w="100%"
-                >
-                  <Text fontSize="24px" mr="48px">
-                    {staff.name}
-                  </Text>
-                  <Box>
-                    <Image
-                      w="11px"
-                      h="25px"
-                      src="/images/ico-arrow-white-brock.svg"
-                    />
+                <Link to="/member-page">
+                  <Box w={{ base: '100%', lg: '72%' }} m="0 auto">
+                    <Image src={staff.image} />
                   </Box>
-                </Box>
+                  <Box
+                    position="absolute"
+                    bottom="0"
+                    left="50%"
+                    transform="translate(-50%, -50%)"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    w="100%"
+                  >
+                    <Text fontSize="24px" mr="48px">
+                      {staff.name}
+                    </Text>
+                    <Box>
+                      <Image
+                        w="11px"
+                        h="25px"
+                        src="/images/ico-arrow-white-brock.svg"
+                      />
+                    </Box>
+                  </Box>
+                </Link>
               </Box>
             ))}
           </Grid>

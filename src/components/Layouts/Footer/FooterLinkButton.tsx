@@ -32,7 +32,13 @@ export const FooterLinkButton: FC<Props> = ({ to, children }) => {
   }, [location.pathname, location.hash]);
 
   return isTopPage ? (
-    <ScrollLink to={to} smooth={true} duration={500} offset={-60}>
+    <ScrollLink
+      to={to}
+      smooth={true}
+      duration={500}
+      offset={-60}
+      style={{ cursor: 'pointer' }}
+    >
       {children}
     </ScrollLink>
   ) : (
