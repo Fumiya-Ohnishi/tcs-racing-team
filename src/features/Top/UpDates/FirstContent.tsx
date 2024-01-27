@@ -28,7 +28,10 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
         _hover={{ boxShadow: '15px -15px #626063' }}
       >
         <ImageFilter
-          src={updateArray[0].eyecatch?.url || 'https://placehold.jp/30/A1A1A1/ffffff/300x150.png?text=Noi mage'}
+          src={
+            updateArray[0].eyecatch?.url ||
+            'https://placehold.jp/30/A1A1A1/ffffff/300x150.png?text=Noi mage'
+          }
           isHoverEffectEnabled={true}
         />
         <Box position="absolute" bottom="0" left="20px" zIndex="2">
@@ -36,15 +39,24 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
             <Text color="#FF9080">News |</Text>
             <Text color="#fff">{formattedPublishedAt}</Text>
           </HStack>
-          <Text color="#fff">{updateArray[0].title}</Text>
+          <Text color="#fff">{updateArray[0]?.title}</Text>
           <Box maxH="200px" maxW="450px" overflow="hidden">
-            <Text color="#fff" isTruncated>
-              <Box
-                as="span"
-                dangerouslySetInnerHTML={{
-                  __html: updateArray[0].content,
-                }}
-              />
+            <Text color="#fff">
+              {updateArray.map((item, index) => (
+                <Box
+                  key={index}
+                  as="span"
+                  dangerouslySetInnerHTML={{ __html: item.content }}
+                  style={{
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 1, // 表示行数
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    maxHeight: '3em', // 最大の高さ
+                  }}
+                />
+              ))}
             </Text>
           </Box>
           <LinkUnderBarButton url="#" text="もっと見る" />
