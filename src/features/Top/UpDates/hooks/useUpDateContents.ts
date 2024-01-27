@@ -15,7 +15,7 @@ export const useUpDateContents = () => {
     const fetchNews = async () => {
       const apiUrl = 'https://9xm8l8ptud.microcms.io/api/v1/blogs';
       const categoryFilter = encodeURIComponent(`category[equals]cf2q-t46yvuv`);
-      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}`;
+      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}&limit=8&orders=-publishedAt`;
 
       try {
         const response = await axios.get(urlWithFilter, {
@@ -24,10 +24,6 @@ export const useUpDateContents = () => {
           },
         });
         setNews(response.data.contents);
-        console.log(
-          'フィルタリングされたニュースの取得に成功しました',
-          response.data.contents,
-        );
       } catch (error) {
         console.error('ニュースの取得に失敗しました', error);
       }
