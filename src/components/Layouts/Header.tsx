@@ -12,12 +12,14 @@ import {
   Spacer,
   useDisclosure,
 } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
+import { NavLink } from '../Elements/NavLink';
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box as="header">
+    <Box as="header" position="fixed" zIndex="99999" w="100%">
       <Box bg="#1A1A1A" p={{ base: '33px 40px', lg: '13px 80px' }}>
         <Box position="relative" display="flex" alignItems="center">
           <Box
@@ -29,7 +31,9 @@ export const Header = () => {
             h={{ base: 'auto', lg: 'auto' }}
             objectFit={{ base: 'contain', lg: 'none' }}
           >
-            <Image src="/images/ico-team-logo-name.webp" alt="logo" />
+            <RouterLink to="/">
+              <Image src="/images/ico-team-logo-name.webp" alt="logo" />
+            </RouterLink>
           </Box>
           <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
             <DrawerOverlay />
@@ -62,11 +66,11 @@ export const Header = () => {
             mr="16px"
             display={{ base: 'none', lg: 'flex' }}
           >
-            <Box>Updates</Box>
-            <Box>Our Team</Box>
-            <Box>Schedule</Box>
-            <Box>Partners</Box>
-            <Box>Contact</Box>
+            <NavLink to="Updates">Updates</NavLink>
+            <NavLink to="TheTeam">The Team</NavLink>
+            <RouterLink to="/team-member">Our Team</RouterLink>
+            <NavLink to="Schedule">Schedule</NavLink>
+            <NavLink to="Partners">Partners</NavLink>
           </HStack>
 
           <Spacer display={{ base: 'block', lg: 'none' }} />

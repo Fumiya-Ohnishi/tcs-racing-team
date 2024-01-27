@@ -8,16 +8,16 @@ export const Footer = () => {
     <Box pt="117px">
       <MainLayout>
         <HStack alignItems="start" mb="37px">
-          <HStack w="50%" justifyContent="space-between">
+          <HStack w="50%" justifyContent="space-between" alignItems="start">
             <Box>
               <Text fontWeight="bold" fontSize="24px" mb="23px">
                 USEFUL LINKS
               </Text>
               <VStack align="start">
-                <FooterLinkButton text="News" url="#" />
-                <FooterLinkButton text="Team" url="#" />
-                <FooterLinkButton text="Schedule" url="#" />
-                <FooterLinkButton text="Partner" url="#" />
+                <FooterLinkButton to="Updates">News</FooterLinkButton>
+                <FooterLinkButton to="TheTeam">Team</FooterLinkButton>
+                <FooterLinkButton to="Schedule">Schedule</FooterLinkButton>
+                <FooterLinkButton to="Partner">Partner</FooterLinkButton>
               </VStack>
             </Box>
             <Box>
@@ -25,10 +25,9 @@ export const Footer = () => {
                 READ MORE ABOUT
               </Text>
               <VStack align="start">
-                <FooterLinkButton text="Press" url="#" />
-                <FooterLinkButton text="Privacy & Coolies" url="#" />
-                <FooterLinkButton text="FAQ" url="#" />
-                <FooterLinkButton text="Contact" url="#" />
+                <FooterLinkButton to="">Press</FooterLinkButton>
+                <FooterLinkButton to="">Privacy & Coolies</FooterLinkButton>
+                <FooterLinkButton to="">FAQ</FooterLinkButton>
               </VStack>
             </Box>
           </HStack>

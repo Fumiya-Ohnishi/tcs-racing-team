@@ -7,6 +7,7 @@ type Props = {
   subTitle: string;
   isCenter?: boolean;
   isHiddenUnderLine?: boolean;
+  id?: string;
 };
 
 export const Title: FC<Props> = ({
@@ -14,10 +15,11 @@ export const Title: FC<Props> = ({
   subTitle,
   isCenter = false,
   isHiddenUnderLine = false,
+  id,
 }) => {
   return (
     <MainLayout>
-      <Box position="relative" minH="160px" mb="56px">
+      <Box position="relative" minH="160px" mb="56px" id={id}>
         <Box
           position="absolute"
           top="50%"
@@ -25,7 +27,7 @@ export const Title: FC<Props> = ({
           transform={isCenter ? 'translate(-50%, -50%)' : 'translateY(-50%)'}
           color="#1A1A1A"
           fontSize="108px"
-          textShadow="1px 1px 0 #C0C0C0, -1px -1px 0 #C0C0C0, -1px 1px 0 #C0C0C0, 1px -1px 0 #C0C0C0, 0px 1px 0 #C0C0C0, 0 -1px 0 #C0C0C0, -1px 0 0 #C0C0C0, 1px 0 0 #C0C0C0"
+          textShadow="1px 1px 0 #707070, -1px -1px 0 #707070, -1px 1px 0 #707070, 1px -1px 0 #C0C0C0, 0px 1px 0 #C0C0C0, 0 -1px 0 #C0C0C0, -1px 0 0 #C0C0C0, 1px 0 0 #C0C0C0"
           zIndex="0"
         >
           {subTitle}
