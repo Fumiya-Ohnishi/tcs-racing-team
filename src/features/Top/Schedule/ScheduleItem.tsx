@@ -59,6 +59,13 @@ export const ScheduleItem = ({
                 <Text fontSize="12px">
                   {startDate ? formatDateNoYear(startDate) : ''}
                 </Text>
+                <Box
+                  display="inline-block"
+                  transform="rotate(90deg)"
+                  fontSize="12px"
+                >
+                  〜
+                </Box>
                 <Text fontSize="12px">
                   {endDate ? formatDateNoYear(endDate) : ''}
                 </Text>
