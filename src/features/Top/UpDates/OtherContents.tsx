@@ -22,18 +22,26 @@ export const OtherContents: FC<Props> = ({ updateArray }) => {
           <HStack mb="16px">
             <Text color="#FF9080">News |</Text>
             <Text color="#fff">
-              {format((new Date(item.publishedAt)), 'yyyy-MM-dd')}
+              {format(new Date(item.publishedAt), 'yyyy-MM-dd')}
             </Text>
           </HStack>
           <Text color="#fff" mb="16px">
             {item.title}
           </Text>
-          <Box maxH="200px" maxW="450px" overflow="hidden">
-            <Text color="#fff" isTruncated>
+          <Box maxH="200px" overflow="hidden">
+            <Text color="#fff">
               <Box
                 as="span"
                 dangerouslySetInnerHTML={{
                   __html: item.content,
+                }}
+                style={{
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  WebkitLineClamp: 1,
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  maxHeight: '3em',
                 }}
               />
             </Text>
