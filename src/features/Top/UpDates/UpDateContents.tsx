@@ -4,18 +4,36 @@ import { FirstContent } from './FirstContent';
 import { SecondContent } from './SecondContent';
 import { LinkButton } from '@/components/Elements/LinkButton';
 import { OtherContents } from './OtherContents';
+import { useUpDateContents } from './hooks/useUpDateContents';
+
+// MicroCMSから返されるニュースアイテムの型を定義
+export interface NewsItem {
+  createdAt: string;
+  id: string;
+  publishedAt: string;
+  revisedAt: string;
+  title: string;
+  content: string;
+  updatedAt: string;
+  eyecatch: {
+    url: string;
+  };
+}
 
 export const UpdatesContent = () => {
+  const { updateFirstArray, updateSecondArray, updateThirdArray } =
+    useUpDateContents();
+
   return (
     <MainLayout>
       <Box pb="96px">
         <Box display="flex" justifyContent="space-between" mb="79px">
           <Box w="calc(50% - 16px)">
-            <FirstContent />
-            <SecondContent />
+            <FirstContent updateArray={updateFirstArray} />
+            <SecondContent updateArray={updateSecondArray} />
           </Box>
           <Box w="calc(50% - 16px)">
-            <OtherContents />
+            <OtherContents updateArray={updateThirdArray} />
           </Box>
         </Box>
 
