@@ -27,7 +27,7 @@ export const SecondContent: FC<Props> = ({ updateArray }) => {
           _hover={{ boxShadow: '10px -10px #626063' }}
         >
           <ImageFilter
-            src={item.eyecatch?.url || 'https://placehold.jp/150x150.png'}
+            src={item.eyecatch?.url || 'https://placehold.jp/30/A1A1A1/ffffff/300x150.png?text=Noi mage'}
             isHoverEffectEnabled={true}
           />
           <Box
@@ -40,7 +40,7 @@ export const SecondContent: FC<Props> = ({ updateArray }) => {
             <HStack>
               <Text color="#FF9080">News |</Text>
               <Text color="#fff">
-                {format(new Date(item.publishedAt), 'yyyy-MM-dd')}
+                {format(new Date(item.publishedAt), 'yyyy.MM.dd')}
               </Text>
             </HStack>
             <Text color="#fff">{item.title}</Text>
