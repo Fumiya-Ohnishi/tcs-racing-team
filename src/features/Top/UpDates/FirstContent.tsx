@@ -29,7 +29,8 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
       >
         <ImageFilter
           src={
-            updateArray[0]?.eyecatch?.url || 'https://placehold.jp/150x150.png'
+            updateArray[0].eyecatch?.url ||
+            'https://placehold.jp/30/A1A1A1/ffffff/300x150.png?text=Noi mage'
           }
           isHoverEffectEnabled={true}
         />
