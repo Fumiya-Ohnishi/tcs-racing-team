@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { NewsItem } from '../../UpDates/UpDateContents';
+import { ScheduleItem } from '../Schedule';
 
 export const useSchedule = () => {
-  const [raceSchedule, setRaceSchedule] = useState<NewsItem[]>([]);
-  const [eventSchedule, setEventSchedule] = useState<NewsItem[]>([]);
+  const [raceSchedule, setRaceSchedule] = useState<ScheduleItem[]>([]);
+  const [eventSchedule, setEventSchedule] = useState<ScheduleItem[]>([]);
 
   useEffect(() => {
     const fetchNews = async () => {
