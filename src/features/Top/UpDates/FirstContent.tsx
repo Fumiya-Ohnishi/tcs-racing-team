@@ -28,7 +28,7 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
         _hover={{ boxShadow: '15px -15px #626063' }}
       >
         <ImageFilter
-          src={updateArray[0].eyecatch.url}
+          src={updateArray[0].eyecatch?.url || 'https://placehold.jp/30/A1A1A1/ffffff/300x150.png?text=Noi mage'}
           isHoverEffectEnabled={true}
         />
         <Box position="absolute" bottom="0" left="20px" zIndex="2">
