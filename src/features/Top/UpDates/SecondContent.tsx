@@ -45,11 +45,19 @@ export const SecondContent: FC<Props> = ({ updateArray }) => {
             </HStack>
             <Text color="#fff">{item.title}</Text>
             <Box maxH="200px" overflow="hidden">
-              <Text color="#fff" isTruncated>
+              <Text color="#fff">
                 <Box
                   as="span"
                   dangerouslySetInnerHTML={{
                     __html: item.content,
+                  }}
+                  style={{
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 1,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    maxHeight: '3em',
                   }}
                 />
               </Text>
