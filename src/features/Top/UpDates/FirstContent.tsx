@@ -1,8 +1,21 @@
 import { ImageFilter } from '@/components/Elements/ImageFilter';
 import { LinkUnderBarButton } from '@/components/Elements/LinkUnderBarButton';
 import { Box, HStack, Text } from '@chakra-ui/react';
+import { FC } from 'react';
+import { NewsItem } from './UpDateContents';
+import { format } from 'date-fns';
 
-export const FirstContent = () => {
+interface Props {
+  updateArray: NewsItem[];
+}
+
+export const FirstContent: FC<Props> = ({ updateArray }) => {
+  if (!updateArray[0] || !updateArray[0].publishedAt)
+    return <Box>データがありません。</Box>;
+
+  const publishedAtDate = new Date(updateArray[0].publishedAt);
+  const formattedPublishedAt = format(publishedAtDate, 'yyyy.MM.dd');
+
   return (
     <>
       <Box
@@ -14,20 +27,24 @@ export const FirstContent = () => {
         transition="box-shadow 0.3s ease"
         _hover={{ boxShadow: '15px -15px #626063' }}
       >
-        {/* <ImageFilter src="https://placehold.jp/150x150.png" /> */}
         <ImageFilter
-          src="/images/img-theTeam-01.webp"
+          src={updateArray[0].eyecatch.url}
           isHoverEffectEnabled={true}
         />
         <Box position="absolute" bottom="0" left="20px" zIndex="2">
           <HStack>
             <Text color="#FF9080">News |</Text>
-            <Text color="#fff">2023.12.11</Text>
+            <Text color="#fff">{formattedPublishedAt}</Text>
           </HStack>
-          <Text color="#fff">title</Text>
+          <Text color="#fff">{updateArray[0].title}</Text>
           <Box maxH="200px" maxW="450px" overflow="hidden">
             <Text color="#fff" isTruncated>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              <Box
+                as="span"
+                dangerouslySetInnerHTML={{
+                  __html: updateArray[0].content,
+                }}
+              />
             </Text>
           </Box>
           <LinkUnderBarButton url="#" text="もっと見る" />
