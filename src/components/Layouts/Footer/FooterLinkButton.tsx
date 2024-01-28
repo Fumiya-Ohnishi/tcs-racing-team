@@ -2,6 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { useLocation } from 'react-router-dom';
 import { FC, useEffect } from 'react';
+import { useMediaQuery } from '@chakra-ui/react';
 
 interface Props {
   to: string;
@@ -11,6 +12,9 @@ interface Props {
 export const FooterLinkButton: FC<Props> = ({ to, children }) => {
   const location = useLocation();
   const isTopPage = location.pathname === '/';
+  const [isTablet] = useMediaQuery('(max-width: 768px)');
+
+  const fontSize = isTablet ? '10px' : '16px';
 
   useEffect(() => {
     if (location.pathname === '/' && location.hash) {
@@ -37,11 +41,13 @@ export const FooterLinkButton: FC<Props> = ({ to, children }) => {
       smooth={true}
       duration={500}
       offset={-60}
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: 'pointer', fontSize }}
     >
       {children}
     </ScrollLink>
   ) : (
-    <RouterLink to={'/#' + to}>{children}</RouterLink>
+    <RouterLink to={'/#' + to} style={{ fontSize }}>
+      {children}
+    </RouterLink>
   );
 };

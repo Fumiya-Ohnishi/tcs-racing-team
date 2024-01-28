@@ -2,6 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { useLocation } from 'react-router-dom';
 import { FC, useEffect } from 'react';
+import { useMediaQuery } from '@chakra-ui/react';
 
 interface Props {
   to: string;
@@ -9,8 +10,11 @@ interface Props {
 }
 
 export const NavLink: FC<Props> = ({ to, children }) => {
+  const [isTablet] = useMediaQuery('(max-width: 768px)');
   const location = useLocation();
   const isTopPage = location.pathname === '/';
+
+  const mb = isTablet ? '16px' : '0';
 
   useEffect(() => {
     if (location.pathname === '/' && location.hash) {
@@ -37,11 +41,13 @@ export const NavLink: FC<Props> = ({ to, children }) => {
       smooth={true}
       duration={500}
       offset={-60}
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: 'pointer', marginBottom: mb }}
     >
       {children}
     </ScrollLink>
   ) : (
-    <RouterLink to={'/#' + to}>{children}</RouterLink>
+    <RouterLink to={'/#' + to} style={{ marginBottom: mb }}>
+      {children}
+    </RouterLink>
   );
 };

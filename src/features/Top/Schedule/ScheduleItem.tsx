@@ -53,18 +53,20 @@ export const ScheduleItem = ({
                 src="/images/ico-hexagon-black.svg"
               />
             </Box>
-            <Flex pl="50px" alignItems="center">
-              <Box w="50px" textAlign="center" mr="18px">
+            <Flex pl="50px" alignItems="center" overflow="hidden">
+              <Box w="50px" textAlign="center" mr="18px" flex="0" minW="36px">
                 <Text fontSize="12px">{date}</Text>
                 <Text fontSize="12px">{month}</Text>
               </Box>
-              <Box>
-                <Text>{raceName}</Text>
+              <Box overflow="hidden" flexShrink="1">
+                <Text isTruncated fontSize={{ base: '12px', lg: '16px' }}>
+                  {raceName}
+                </Text>
                 <Flex alignItems="center">
                   <Box mr="6px">
                     <Image src="/images/ico-point-green.svg" />
                   </Box>
-                  <Text fontSize="12px">{country}</Text>
+                  <Text fontSize={{ base: '10px', lg: '12px' }}>{country}</Text>
                 </Flex>
               </Box>
             </Flex>
@@ -85,7 +87,11 @@ export const ScheduleItem = ({
             w="100%"
             h="100%"
             bg="#707070"
-            transform={isHovered ? 'translateX(6px) translateY(-6px)' : 'translateX(0px) translateY(0px)'}
+            transform={
+              isHovered
+                ? 'translateX(6px) translateY(-6px)'
+                : 'translateX(0px) translateY(0px)'
+            }
             transition="transform 0.3s ease-in-out"
           />
         </Link>

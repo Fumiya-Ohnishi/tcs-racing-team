@@ -1,3 +1,4 @@
+import { NavLink } from '@/components/Elements/NavLink';
 import {
   Box,
   Drawer,
@@ -11,15 +12,18 @@ import {
   Select,
   Spacer,
   useDisclosure,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import { NavLink } from '../Elements/NavLink';
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const [isTablet] = useMediaQuery('(max-width: 768px)');
+  const mb = isTablet ? '16px' : '0';
+
   return (
-    <Box as="header" position="fixed" zIndex="99999" w="100%">
+    <Box as="header" position="fixed" top="0" left="0" zIndex="99999" w="100%">
       <Box bg="#1A1A1A" p={{ base: '33px 40px', lg: '13px 80px' }}>
         <Box position="relative" display="flex" alignItems="center">
           <Box
@@ -37,25 +41,22 @@ export const Header = () => {
           </Box>
           <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
             <DrawerOverlay />
-            <DrawerContent>
+            <DrawerContent mt="110px">
               <DrawerCloseButton />
               <DrawerHeader>Menu</DrawerHeader>
-              <DrawerBody>
-                <Box color="#000" mb="10px">
-                  Updates
-                </Box>
-                <Box color="#000" mb="10px">
+              <DrawerBody
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                flexDirection="column"
+              >
+                <NavLink to="Updates">Updates</NavLink>
+                <NavLink to="TheTeam">The Team</NavLink>
+                <RouterLink to="/team-member" style={{ marginBottom: mb }}>
                   Our Team
-                </Box>
-                <Box color="#000" mb="10px">
-                  Schedule
-                </Box>
-                <Box color="#000" mb="10px">
-                  Partners
-                </Box>
-                <Box color="#000" mb="10px">
-                  Contact
-                </Box>
+                </RouterLink>
+                <NavLink to="Schedule">Schedule</NavLink>
+                <NavLink to="Partners">Partners</NavLink>
               </DrawerBody>
             </DrawerContent>
           </Drawer>

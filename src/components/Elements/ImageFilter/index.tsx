@@ -31,6 +31,8 @@ export const ImageFilter: FC<Props> = ({
       <Image
         display="block"
         w="100%"
+        minH="285px"
+        maxH="378px"
         src={src}
         alt=""
         transition={isHoverEffectEnabled ? 'transform 0.3s ease' : ''}

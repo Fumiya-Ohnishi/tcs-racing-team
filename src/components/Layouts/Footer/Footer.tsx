@@ -1,16 +1,28 @@
-import { Box, HStack, Text, VStack } from '@chakra-ui/react';
+import { Box, HStack, Text, VStack, useMediaQuery } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { MainLayout } from '../MainLayout';
 import { FooterLinkButton } from './FooterLinkButton';
 
 export const Footer = () => {
+  const [isTablet] = useMediaQuery('(max-width: 768px)');
+
+  const fontSize = isTablet ? '10px' : '24px';
   return (
     <Box pt="117px">
       <MainLayout>
         <HStack alignItems="start" mb="37px">
-          <HStack w="50%" justifyContent="space-between" alignItems="start">
-            <Box>
-              <Text fontWeight="bold" fontSize="24px" mb="23px">
+          <Box
+            display={{ base: 'block', lg: 'flex' }}
+            w="50%"
+            justifyContent="space-between"
+            alignItems="start"
+          >
+            <Box mb={{ base: '71px', lg: '0px' }}>
+              <Text
+                fontWeight="bold"
+                fontSize={{ base: '12px', lg: '24px' }}
+                mb="23px"
+              >
                 USEFUL LINKS
               </Text>
               <VStack align="start">
@@ -21,7 +33,11 @@ export const Footer = () => {
               </VStack>
             </Box>
             <Box>
-              <Text fontWeight="bold" fontSize="24px" mb="23px">
+              <Text
+                fontWeight="bold"
+                fontSize={{ base: '12px', lg: '24px' }}
+                mb="23px"
+              >
                 READ MORE ABOUT
               </Text>
               <VStack align="start">
@@ -30,19 +46,20 @@ export const Footer = () => {
                 <FooterLinkButton to="">FAQ</FooterLinkButton>
               </VStack>
             </Box>
-          </HStack>
+          </Box>
           <Box w="50%" display="flex" justifyContent="center">
             <Link
               to="#"
               style={{
                 color: '#fff',
-                fontSize: '24px',
                 fontWeight: 'bold',
                 textAlign: 'left',
+                fontSize,
               }}
             >
-              FOLLOW US AND CHECK THE <br />
-              TEAM ACTIVITY AND DAILY LIFE
+              FOLLOW US AND {isTablet && <br />}CHECK THE{!isTablet && <br />}
+              TEAM {isTablet && <br />}ACTIVITY AND {isTablet && <br />}DAILY
+              LIFE
             </Link>
           </Box>
         </HStack>
@@ -53,7 +70,7 @@ export const Footer = () => {
         pb="5px"
         bg="#fff"
         color="#000"
-        fontSize="14px"
+        fontSize={{ base: '10px', lg: '14px' }}
         fontWeight="bold"
         textAlign="center"
       >

@@ -79,10 +79,10 @@ export const Schedule = () => {
   };
 
   return (
-    <>
+    <Box mb="117px">
       <MainLayout>
         <Box display={{ base: 'block', lg: 'flex' }} gap="64px" mb="70px">
-          <Box flex="1">
+          <Box flex="1" mb={{ base: '81px', lg: '0px' }}>
             <ScheduleTitle text="Race" />
             <VStack gap="24px" display="grid">
               {scheduleItem.map(item => (
@@ -115,6 +115,6 @@ export const Schedule = () => {
         </Box>
         <LinkButton link="/staff" text="Overview" />
       </MainLayout>
-    </>
+    </Box>
   );
 };

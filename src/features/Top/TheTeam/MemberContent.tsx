@@ -42,7 +42,7 @@ export const MemberContent: FC<Props> = ({
   };
   return (
     <Box
-      w="calc(50% - 34px)"
+      w={{ base: '100%', lg: 'calc(50% - 34px)' }}
       minH="276px"
       p="99px 0"
       position="relative"
@@ -50,6 +50,8 @@ export const MemberContent: FC<Props> = ({
       backgroundSize="contain"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
+      borderBottom={{ base: 'solid 1px', lg: 'none' }}
+      borderColor="#fff"
     >
       <Link
         to={link}
@@ -70,7 +72,12 @@ export const MemberContent: FC<Props> = ({
         pt="99px"
         pb="35px"
       >
-        <Text color="#fff" mb="16px" fontWeight="bold" fontSize="24px">
+        <Text
+          color="#fff"
+          mb="16px"
+          fontWeight="bold"
+          fontSize={{ base: '14px', lg: '24px' }}
+        >
           {name}
         </Text>
         <Box color="#fff" fontSize="12px">

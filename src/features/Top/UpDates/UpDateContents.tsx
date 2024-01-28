@@ -27,12 +27,16 @@ export const UpdatesContent = () => {
   return (
     <MainLayout>
       <Box pb="96px">
-        <Box display="flex" justifyContent="space-between" mb="79px">
-          <Box w="calc(50% - 16px)">
+        <Box
+          display={{ base: 'block', lg: 'flex' }}
+          justifyContent="space-between"
+          mb="79px"
+        >
+          <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
             <FirstContent updateArray={updateFirstArray} />
             <SecondContent updateArray={updateSecondArray} />
           </Box>
-          <Box w="calc(50% - 16px)">
+          <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
             <OtherContents updateArray={updateThirdArray} />
           </Box>
         </Box>

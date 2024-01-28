@@ -14,7 +14,7 @@ export const TopContent = () => {
   return (
     <>
       <PageLayout>
-        <Box position="relative">
+        <Box position="relative" mt={{ base: '110px', lg: '50px' }}>
           <Carousel />
         </Box>
         <Message />

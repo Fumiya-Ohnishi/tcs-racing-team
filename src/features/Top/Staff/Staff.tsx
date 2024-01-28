@@ -46,9 +46,12 @@ const staffImages: StaffImages[] = [
 
 export const Staff = () => {
   return (
-    <>
+    <Box mb="116px">
       <MainLayout>
-        <Grid templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={12}>
+        <Grid
+          templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
+          gap={{ base: '16px', lg: 12 }}
+        >
           {staffImages.map(image => (
             <GridItem key={image.id}>
               <Box position="relative" bg="#4D4D4D" mb="16px" py="30px">
@@ -72,6 +75,6 @@ export const Staff = () => {
         <LinkButton link="/staff" text="Overview" />
       </MainLayout>
       <Divider orientation="horizontal" mt="64px" mx="auto" w="90%" />
-    </>
+    </Box>
   );
 };

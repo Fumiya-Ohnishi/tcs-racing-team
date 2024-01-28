@@ -40,7 +40,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment, link }) => {
     >
       <Box
         position="relative"
-        w="90%"
+        w={{ base: '71%', lg: '90%' }}
         m="0 auto"
         borderBottom="solid 1px"
         borderColor="#fff"
@@ -52,7 +52,11 @@ export const DirectorContent: FC<Props> = ({ post, name, comment, link }) => {
           onMouseLeave={handleMouseLeave}
         ></Link>
         <Box w="86%" m="0 auto">
-          <Box minH="457px" p="99px 0" position="relative">
+          <Box
+            minH={{ base: '150px', lg: '457px' }}
+            p="99px 0"
+            position="relative"
+          >
             <Box
               position="absolute"
               top="50%"
@@ -60,19 +64,34 @@ export const DirectorContent: FC<Props> = ({ post, name, comment, link }) => {
               transform="translateY(-50%)"
               zIndex="2"
             >
-              <Text color="#fff" mb="14px">
+              <Text
+                color="#fff"
+                mb={{ base: '8px', lg: '14px' }}
+                fontSize={{ base: '10px', lg: '16px' }}
+              >
                 {post}
               </Text>
-              <Text color="#fff" mb="71px" fontWeight="bold" fontSize="52px">
+              <Text
+                color="#fff"
+                mb="71px"
+                fontWeight="bold"
+                fontSize={{ base: '24px', lg: '52px' }}
+              >
                 {name}
               </Text>
-              <Text color="#fff">{comment}</Text>
+              <Text
+                color="#fff"
+                fontSize={{ base: '12px', lg: '16px' }}
+                w={{ base: '50%', lg: '100%' }}
+              >
+                {comment}
+              </Text>
             </Box>
             <Box
               position="absolute"
               bottom="0"
-              right="0"
-              w="50%"
+              right={{ base: '-60px', lg: '0' }}
+              w={{ base: '100%', lg: '50%' }}
               overflow="hidden"
             >
               <Image
