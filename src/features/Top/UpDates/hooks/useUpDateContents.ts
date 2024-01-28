@@ -15,8 +15,7 @@ export const useUpDateContents = () => {
     const fetchNews = async () => {
       const apiUrl = 'https://9xm8l8ptud.microcms.io/api/v1/blogs';
       const categoryFilter = encodeURIComponent(`category[equals]cf2q-t46yvuv`);
-      const limit = 10;
-      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}&limit=${limit}`;
+      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}&limit=8&orders=-publishedAt`;
 
       try {
         const response = await axios.get(urlWithFilter, {

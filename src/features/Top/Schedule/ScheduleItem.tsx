@@ -1,21 +1,22 @@
+import { formatDateNoYear } from '@/shared/utils/dateFormat/dateFormat';
 import { Box, Flex, Text, Image } from '@chakra-ui/react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 interface Props {
   url: string;
-  raceName: string;
-  date: string;
-  month: string;
-  country: string;
+  title: string;
+  startDate?: string;
+  endDate?: string;
+  location?: string;
 }
 
 export const ScheduleItem = ({
   url,
-  raceName,
-  date,
-  month,
-  country,
+  title,
+  startDate,
+  endDate,
+  location,
 }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -53,20 +54,33 @@ export const ScheduleItem = ({
                 src="/images/ico-hexagon-black.svg"
               />
             </Box>
-            <Flex pl="50px" alignItems="center" overflow="hidden">
-              <Box w="50px" textAlign="center" mr="18px" flex="0" minW="36px">
-                <Text fontSize="12px">{date}</Text>
-                <Text fontSize="12px">{month}</Text>
+            <Flex pl="50px" alignItems="center">
+              <Box w="50px" textAlign="center" mr="18px">
+                <Text fontSize="12px">
+                  {startDate ? formatDateNoYear(startDate) : ''}
+                </Text>
+                <Box
+                  display="inline-block"
+                  transform="rotate(90deg)"
+                  fontSize="12px"
+                >
+                  〜
+                </Box>
+                <Text fontSize="12px">
+                  {endDate ? formatDateNoYear(endDate) : ''}
+                </Text>
               </Box>
-              <Box overflow="hidden" flexShrink="1">
+              <Box>
                 <Text isTruncated fontSize={{ base: '12px', lg: '16px' }}>
-                  {raceName}
+                  {title}
                 </Text>
                 <Flex alignItems="center">
                   <Box mr="6px">
                     <Image src="/images/ico-point-green.svg" />
                   </Box>
-                  <Text fontSize={{ base: '10px', lg: '12px' }}>{country}</Text>
+                  <Text fontSize={{ base: '10px', lg: '12px' }}>
+                    {location || ''}
+                  </Text>
                 </Flex>
               </Box>
             </Flex>

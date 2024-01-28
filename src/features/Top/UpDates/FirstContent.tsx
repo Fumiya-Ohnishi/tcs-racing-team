@@ -3,7 +3,7 @@ import { LinkUnderBarButton } from '@/components/Elements/LinkUnderBarButton';
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NewsItem } from './UpDateContents';
-import { format } from 'date-fns';
+import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
 
 interface Props {
   updateArray: NewsItem[];
@@ -12,9 +12,6 @@ interface Props {
 export const FirstContent: FC<Props> = ({ updateArray }) => {
   if (!updateArray[0] || !updateArray[0].publishedAt)
     return <Box>データがありません。</Box>;
-
-  const publishedAtDate = new Date(updateArray[0].publishedAt);
-  const formattedPublishedAt = format(publishedAtDate, 'yyyy.MM.dd');
 
   return (
     <>
@@ -40,7 +37,7 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
               News |
             </Text>
             <Text color="#fff" fontSize={{ base: '12px', lg: '16px' }}>
-              {formattedPublishedAt}
+              {formatDate(updateArray[0]?.publishedAt)}
             </Text>
           </HStack>
           <Text color="#fff">{updateArray[0]?.title}</Text>
