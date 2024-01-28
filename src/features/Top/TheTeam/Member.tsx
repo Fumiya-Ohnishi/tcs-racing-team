@@ -35,13 +35,20 @@ export const Member: FC<Props> = ({
   return (
     <Box
       w="100%"
-      bg="red"
       background={`linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.8),rgba(0, 0, 0, 0.3)), url(/images/img-lattice-background.webp)`}
       backgroundSize="80%"
     >
-      <Box w="90%" m="0 auto" borderBottom="solid 1px" borderColor="#fff">
+      <Box
+        w={{ base: '71%', lg: '90%' }}
+        m="0 auto"
+        borderBottom={{ base: 'none', lg: 'solid 1px' }}
+        borderColor="#fff"
+      >
         <Box w="86%" m="0 auto">
-          <Box display="flex" justifyContent="space-between">
+          <Box
+            display={{ base: 'block', lg: 'flex' }}
+            justifyContent="space-between"
+          >
             <MemberContent
               backgroundUrl={leftBg}
               name={leftName}
@@ -57,6 +64,7 @@ export const Member: FC<Props> = ({
               mx="4px"
               mt="76px"
               mb="16px"
+              display={{ base: 'none', lg: 'block' }}
             />
             <MemberContent
               backgroundUrl={rightBg}

@@ -12,7 +12,7 @@ export const LinkUnderBarButton = ({ text, url, isCenter }: Props) => {
     <HStack justifyContent={isCenter ? 'center' : 'left'}>
       <Link to={url} style={{ color: '#fff', display: 'inline-block' }}>
         <HStack borderBottom="solid 1px #FF9080">
-          <Text color="#fff" fontSize="12px">
+          <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
             {text}
           </Text>
           <Image w="5px" h="10px" src="/images/ico-arrow-white-brock.svg" />

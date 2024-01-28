@@ -1,17 +1,13 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Image, Text, useMediaQuery } from '@chakra-ui/react';
 import { FC } from 'react';
 
 export const Message: FC = () => {
+  const [isMobile] = useMediaQuery('(max-width: 768px)');
   return (
     <MainLayout>
       <Box position="relative" my="92px">
-        <Box
-          w="214px"
-          h="214px"
-          m="0 auto"
-          opacity="0.5"
-        >
+        <Box w="214px" h="214px" m="0 auto" opacity="0.5">
           <Image src="/images/ico-team-logo.webp" objectFit="cover" />
         </Box>
         <Box
@@ -23,12 +19,21 @@ export const Message: FC = () => {
           textAlign="center"
           zIndex="2"
         >
-          <Text fontSize="64px" color="white">
+          <Text
+            fontSize={{ base: '18px', lg: '64px' }}
+            fontWeight="bold"
+            mb="16px"
+            color="white"
+          >
             Asia&nbsp;Union&nbsp;TCS&nbsp;Racing&nbsp;Team
           </Text>
-          <Text fontSize="18px" color="white">
+          <Text
+            fontSize={{ base: '10px', lg: '18px' }}
+            fontWeight="bold"
+            color="white"
+          >
             マウンテンバイクを通じて、アジアから世界への架け橋となるチームを
-            <br />
+            {isMobile ? null : <br />}
             目指し、アジア各国のチャンピオンライダーを集めたドリームチーム。
           </Text>
         </Box>

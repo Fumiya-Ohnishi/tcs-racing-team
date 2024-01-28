@@ -18,7 +18,7 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
       <Box
         w="100%"
         position="relative"
-        mb="22.6px"
+        mb={{ base: '46px', lg: '22.6px' }}
         cursor="pointer"
         boxShadow="10px -10px #626063"
         transition="box-shadow 0.3s ease"
@@ -33,28 +33,37 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
         />
         <Box position="absolute" bottom="0" left="20px" zIndex="2">
           <HStack>
-            <Text color="#FF9080">News |</Text>
-            <Text color="#fff">{formatDate(updateArray[0].publishedAt)}</Text>
+            <Text color="#FF9080" fontSize={{ base: '12px', lg: '16px' }}>
+              News |
+            </Text>
+            <Text color="#fff" fontSize={{ base: '12px', lg: '16px' }}>
+              {formatDate(updateArray[0]?.publishedAt)}
+            </Text>
           </HStack>
           <Text color="#fff">{updateArray[0]?.title}</Text>
-          <Box maxH="200px" maxW="450px" overflow="hidden">
-            <Text color="#fff">
-              {updateArray.map((item, index) => (
-                <Box
-                  key={index}
-                  as="span"
-                  dangerouslySetInnerHTML={{ __html: item.content }}
-                  style={{
-                    display: '-webkit-box',
-                    WebkitBoxOrient: 'vertical',
-                    WebkitLineClamp: 1, // 表示行数
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    maxHeight: '3em', // 最大の高さ
-                  }}
-                />
-              ))}
-            </Text>
+          <Box
+            maxH="200px"
+            maxW="450px"
+            overflow="hidden"
+            color="#fff"
+            fontSize={{ base: '10px', lg: '16px' }}
+            mb="20px"
+          >
+            {updateArray.map((item, index) => (
+              <Box
+                key={index}
+                as="span"
+                dangerouslySetInnerHTML={{ __html: item.content }}
+                style={{
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  WebkitLineClamp: 1,
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  maxHeight: '3em',
+                }}
+              />
+            ))}
           </Box>
           <LinkUnderBarButton url="#" text="もっと見る" />
         </Box>

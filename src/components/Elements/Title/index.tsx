@@ -19,14 +19,19 @@ export const Title: FC<Props> = ({
 }) => {
   return (
     <MainLayout>
-      <Box position="relative" minH="160px" mb="56px" id={id}>
+      <Box
+        position="relative"
+        minH={{ base: '56px', lg: '160px' }}
+        mb={{ base: '48px', lg: '56px' }}
+        id={id}
+      >
         <Box
           position="absolute"
           top="50%"
           left={isCenter ? '50%' : '0'}
           transform={isCenter ? 'translate(-50%, -50%)' : 'translateY(-50%)'}
           color="#1A1A1A"
-          fontSize="108px"
+          fontSize={{ base: '36px', lg: '108px' }}
           textShadow="1px 1px 0 #707070, -1px -1px 0 #707070, -1px 1px 0 #707070, 1px -1px 0 #C0C0C0, 0px 1px 0 #C0C0C0, 0 -1px 0 #C0C0C0, -1px 0 0 #C0C0C0, 1px 0 0 #C0C0C0"
           zIndex="0"
         >
@@ -38,7 +43,7 @@ export const Title: FC<Props> = ({
           left={isCenter ? '50%' : '0'}
           transform={isCenter ? 'translateX(-50%)' : ''}
           color="#fff"
-          fontSize="56px"
+          fontSize={{ base: '24px', lg: '56px' }}
           fontWeight="bold"
           zIndex="1"
         >

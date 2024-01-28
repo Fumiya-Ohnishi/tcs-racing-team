@@ -71,12 +71,16 @@ export const ScheduleItem = ({
                 </Text>
               </Box>
               <Box>
-                <Text>{title}</Text>
+                <Text isTruncated fontSize={{ base: '12px', lg: '16px' }}>
+                  {title}
+                </Text>
                 <Flex alignItems="center">
                   <Box mr="6px">
                     <Image src="/images/ico-point-green.svg" />
                   </Box>
-                  <Text fontSize="12px">{location || ''}</Text>
+                  <Text fontSize={{ base: '10px', lg: '12px' }}>
+                    {location || ''}
+                  </Text>
                 </Flex>
               </Box>
             </Flex>

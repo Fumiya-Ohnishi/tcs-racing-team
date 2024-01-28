@@ -18,16 +18,19 @@ export const SecondContent: FC<Props> = ({ updateArray }) => {
         <Box
           key={item.id}
           position="relative"
-          w="calc(50% - 6px)"
+          w={{ base: '100%', lg: 'calc(50% - 6px)' }}
           pb="50px"
-          mb="12px"
+          mb={{ base: '46px', lg: '12px' }}
           cursor="pointer"
           boxShadow="5px -5px #626063"
           transition="box-shadow 0.3s ease"
           _hover={{ boxShadow: '10px -10px #626063' }}
         >
           <ImageFilter
-            src={item.eyecatch?.url || 'https://placehold.jp/30/A1A1A1/ffffff/300x150.png?text=Noi mage'}
+            src={
+              item.eyecatch?.url ||
+              'https://placehold.jp/30/A1A1A1/ffffff/300x150.png?text=Noi mage'
+            }
             isHoverEffectEnabled={true}
           />
           <Box
@@ -38,33 +41,38 @@ export const SecondContent: FC<Props> = ({ updateArray }) => {
             zIndex="2"
           >
             <HStack>
-              <Text color="#FF9080">News |</Text>
-              <Text color="#fff">
+              <Text color="#FF9080" fontSize={{ base: '12px', lg: '16px' }}>
+                News |
+              </Text>
+              <Text color="#fff" fontSize={{ base: '12px', lg: '16px' }}>
                 {formatDate(item.publishedAt)}
               </Text>
             </HStack>
             <Text color="#fff">{item.title}</Text>
-            <Box maxH="200px" overflow="hidden">
-              <Text color="#fff">
-                <Box
-                  as="span"
-                  dangerouslySetInnerHTML={{
-                    __html: item.content,
-                  }}
-                  style={{
-                    display: '-webkit-box',
-                    WebkitBoxOrient: 'vertical',
-                    WebkitLineClamp: 1,
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    maxHeight: '3em',
-                  }}
-                />
-              </Text>
+            <Box
+              maxH="200px"
+              overflow="hidden"
+              fontSize={{ base: '10px', lg: '16px' }}
+              mb="20px"
+            >
+              <Box
+                as="span"
+                dangerouslySetInnerHTML={{
+                  __html: item.content,
+                }}
+                style={{
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  WebkitLineClamp: 1,
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  maxHeight: '3em',
+                }}
+              />
             </Box>
             <Link to="#" style={{ color: '#fff', display: 'inline-block' }}>
               <HStack borderBottom="solid 1px #FF9080">
-                <Text color="#fff" fontSize="12px">
+                <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
                   もっと見る
                 </Text>
                 <Image
