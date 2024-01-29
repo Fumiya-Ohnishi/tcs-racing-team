@@ -10,8 +10,7 @@ import { TeamMemberRiders } from './TeamMemberRiders';
 
 const message = {
   title: '日本からアジアへ、そして世界へ',
-  text:
-    'マウンテンバイクを通じて、アジアから世界への架け橋となるチームを目指し、アジア各国のチャンピオンライダーを集めたドリームチーム。',
+  text: 'マウンテンバイクを通じて、アジアから世界への架け橋となるチームを目指し、アジア各国のチャンピオンライダーを集めたドリームチーム。',
 };
 
 export const TeamMemberContent = () => {
@@ -19,7 +18,7 @@ export const TeamMemberContent = () => {
     <Box>
       <PageLayout>
         <Box display={{ base: 'block', lg: 'none' }}>
-          <Image src="/images/team/img-top-sp.webp" />
+          <Image src="/images/team/img-top-sp.webp" mt="108px" />
         </Box>
         <Box display={{ base: 'none', lg: 'block' }}>
           <Image src="/images/team/img-top-pc.webp" />
