@@ -26,7 +26,7 @@ export const Message: FC<Props> = ({ message }) => {
           zIndex="2"
         >
           <Text
-            fontSize={{ base: '18px', lg: '64px' }}
+            fontSize={{ base: '18px', lg: '50px' }}
             fontWeight="bold"
             mb="16px"
             color="white"
