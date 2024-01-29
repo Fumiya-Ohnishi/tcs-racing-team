@@ -40,8 +40,16 @@ export const ProfileContent = () => {
     }
   `;
   return (
-    <Box w="100%" display="flex" justifyContent="space-between" mb="96px">
-      <Box w="calc(50% - 22px)">
+    <Box
+      w="100%"
+      display={{ base: 'block', lg: 'flex' }}
+      justifyContent="space-between"
+      mb="96px"
+    >
+      <Box
+        w={{ base: '100%', lg: 'calc(50% - 22px)' }}
+        mb={{ base: '16px', lg: '0px' }}
+      >
         <Text fontSize="24px" mb="16px">
           Profile
         </Text>
@@ -84,7 +92,7 @@ export const ProfileContent = () => {
           </HStack>
         </Box>
       </Box>
-      <Box w="calc(50% - 22px)">
+      <Box w={{ base: '100%', lg: 'calc(50% - 22px)' }}>
         <Text fontSize="24px" mb="16px">
           Result
         </Text>
