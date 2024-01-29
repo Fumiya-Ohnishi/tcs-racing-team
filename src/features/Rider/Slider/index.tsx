@@ -1,4 +1,4 @@
-import { Box, Text, Image } from '@chakra-ui/react';
+import { Box, Text, Image, useMediaQuery, SimpleGrid } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -62,30 +62,56 @@ interface images {
 }
 
 export const MemberSlider = () => {
+  const [isMobile] = useMediaQuery('(max-width: 768px)');
+
+  const slider = isMobile ? (
+    <SimpleGrid columns={2} spacing={10}>
+      {images.map(image => (
+        <Box key={image.id} w="100%" h="100%">
+          <Box w="100%" objectFit="cover">
+            <Image
+              display="block"
+              w="100%"
+              h="100%"
+              objectFit="cover"
+              src={image.imgPath}
+              alt={image.alt}
+            />
+          </Box>
+          <Text fontSize="16px" color="white" textAlign="center">
+            {image.text}
+          </Text>
+        </Box>
+      ))}
+    </SimpleGrid>
+  ) : (
+    <Slider {...settings}>
+      {images.map(image => (
+        <Box key={image.id} w="23%" h="100%">
+          <Box w="100%" objectFit="cover">
+            <Image
+              display="block"
+              w="100%"
+              h="100%"
+              objectFit="cover"
+              src={image.imgPath}
+              alt={image.alt}
+            />
+          </Box>
+          <Text fontSize="16px" color="white" textAlign="center">
+            {image.text}
+          </Text>
+        </Box>
+      ))}
+    </Slider>
+  );
+
   return (
     <Box mb="139px">
       <Text fontSize="34px" fontWeight="bold" textAlign="center" mb="88px">
         Other Members
       </Text>
-      <Slider {...settings}>
-        {images.map(image => (
-          <Box key={image.id} w="23%" h="100%">
-            <Box w="100%" objectFit="cover">
-              <Image
-                display="block"
-                w="100%"
-                h="100%"
-                objectFit="cover"
-                src={image.imgPath}
-                alt={image.alt}
-              />
-            </Box>
-            <Text fontSize="16px" color="white" textAlign="center">
-              {image.text}
-            </Text>
-          </Box>
-        ))}
-      </Slider>
+      {slider}
     </Box>
   );
 };
