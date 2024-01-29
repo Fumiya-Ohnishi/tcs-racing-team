@@ -43,7 +43,7 @@ const subStaffs: TeamMemberStaff[] = [
 export const TeamMemberStaff: FC = () => {
   return (
     <MainLayout>
-      <Box mb="280px">
+      <Box mb={{ base: '200px', lg: '280px' }}>
         <TeamMemberSmallTitle title="The Staff" />
         <VStack spacing={24}>
           <Grid

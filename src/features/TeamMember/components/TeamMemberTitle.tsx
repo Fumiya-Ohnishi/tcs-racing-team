@@ -22,7 +22,7 @@ export const TeamMemberTitle: FC<Props> = ({
           left="50%"
           transform="translate(-50%, -50%)"
           color="#1A1A1A"
-          fontSize="108px"
+          fontSize={{ base: '68px', lg: '108px' }}
           textShadow="1px 1px 0 #C0C0C0, -1px -1px 0 #C0C0C0, -1px 1px 0 #C0C0C0, 1px -1px 0 #C0C0C0, 0px 1px 0 #C0C0C0, 0 -1px 0 #C0C0C0, -1px 0 0 #C0C0C0, 1px 0 0 #C0C0C0"
           zIndex="0"
         >
@@ -34,13 +34,14 @@ export const TeamMemberTitle: FC<Props> = ({
           left="50%"
           transform="translateX(-50%)"
           color="#fff"
-          fontSize="40px"
+          fontSize={{ base: '28px', lg: '40px' }}
           fontWeight="bold"
           zIndex="1"
           textAlign="center"
+          w="100%"
         >
           {title}
-          <Box fontSize="32px" position="relative">
+          <Box fontSize={{ base: '28px', lg: '40px' }} position="relative">
             {middleTitle}
             <Box
               position="absolute"
