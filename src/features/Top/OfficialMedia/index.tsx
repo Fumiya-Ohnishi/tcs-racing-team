@@ -28,7 +28,7 @@ export const OfficialMedia = () => {
           left="50%"
           top="5px"
           transform="translateX(-50%)"
-          w="20%"
+          w={{ base: '50%', lg: '20%' }}
           mx="auto"
         >
           <SnsIcon href="#" icon="images/ico-facebook.webp" label="Facebook" />
