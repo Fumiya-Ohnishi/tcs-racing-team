@@ -7,8 +7,14 @@ import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Schedule } from './Schedule/Schedule';
 import { OurPartners } from './OurPartners';
 import { OfficialMedia } from './OfficialMedia';
-import { Message } from './Message/Message';
 import { Box } from '@chakra-ui/react';
+import { Message } from '@/components/Elements/Message';
+
+const message = {
+  title: 'Asia Union TCS Racing Team',
+  text:
+    'マウンテンバイクを通じて、アジアから世界への架け橋となるチームを目指し、アジア各国のチャンピオンライダーを集めたドリームチーム。',
+}
 
 export const TopContent = () => {
   return (
@@ -17,7 +23,7 @@ export const TopContent = () => {
         <Box position="relative" mt={{ base: '110px', lg: '50px' }}>
           <Carousel />
         </Box>
-        <Message />
+        <Message message={message} />
         <Title title="Updates" subTitle="Updates" id="Updates" />
         <UpdatesContent />
         <Title title="The Team" subTitle="The Team" id="TheTeam" />

@@ -9,7 +9,7 @@ export const TeamMemberSmallTitle: FC<SmallTitleProps> = ({
   title,
 }) => {
   return (
-    <Box mb="92px" textAlign="center">
+    <Box mb={{ base: '46px', lg: '68px' }} textAlign="center">
       <Box color="#fff" fontSize="32px" fontWeight="bold">
         {title}
       </Box>
