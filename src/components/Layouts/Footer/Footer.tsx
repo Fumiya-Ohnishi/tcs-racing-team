@@ -44,6 +44,7 @@ export const Footer = () => {
                 <FooterLinkButton to="">Press</FooterLinkButton>
                 <FooterLinkButton to="">Privacy & Coolies</FooterLinkButton>
                 <FooterLinkButton to="">FAQ</FooterLinkButton>
+                <Link to="/Contact">Contact</Link>
               </VStack>
             </Box>
           </Box>
