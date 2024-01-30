@@ -55,8 +55,15 @@ export const Header = () => {
                 <RouterLink to="/team-member" style={{ marginBottom: mb }}>
                   Our Team
                 </RouterLink>
-                <NavLink to="Schedule">Schedule</NavLink>
-                <NavLink to="Partners">Partners</NavLink>
+                <RouterLink to="/schedule-page" style={{ marginBottom: mb }}>
+                  Schedule
+                </RouterLink>
+                <RouterLink to="/our-partners" style={{ marginBottom: mb }}>
+                  Partners
+                </RouterLink>
+                <RouterLink to="/contact" style={{ marginBottom: mb }}>
+                  Contact
+                </RouterLink>
               </DrawerBody>
             </DrawerContent>
           </Drawer>
@@ -70,8 +77,9 @@ export const Header = () => {
             <NavLink to="Updates">Updates</NavLink>
             <NavLink to="TheTeam">The Team</NavLink>
             <RouterLink to="/team-member">Our Team</RouterLink>
-            <NavLink to="Schedule">Schedule</NavLink>
-            <NavLink to="Partners">Partners</NavLink>
+            <RouterLink to="/schedule-page">Schedule</RouterLink>
+            <RouterLink to="/our-partners">Partners</RouterLink>
+            <RouterLink to="/Contact">Contact</RouterLink>
           </HStack>
 
           <Spacer display={{ base: 'block', lg: 'none' }} />
