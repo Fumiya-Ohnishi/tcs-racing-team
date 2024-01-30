@@ -4,6 +4,7 @@ import { OurPartnersPage } from '@/pages/OurPartners';
 import { RiderPage } from '@/pages/Rider';
 import { SchedulePage } from '@/pages/Schedule';
 import { TeamMemberPage } from '@/pages/TeamMember';
+import { UpdateContentPage } from '@/pages/UpdateContent';
 
 export const publicRoutes = [
   {
@@ -35,5 +36,10 @@ export const publicRoutes = [
     path: '/our-partners',
     element: <OurPartnersPage />,
     children: [{ path: '', element: <OurPartnersPage /> }],
+  },
+  {
+    path: '/update-content',
+    element: <UpdateContentPage />,
+    children: [{ path: '', element: <UpdateContentPage /> }],
   },
 ];

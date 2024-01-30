@@ -2,12 +2,15 @@ import { Box, HStack, Text } from '@chakra-ui/react';
 import { NewsItem } from './UpDateContents';
 import { FC } from 'react';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   updateArray: NewsItem[];
 }
 
 export const OtherContents: FC<Props> = ({ updateArray }) => {
+  const navigate = useNavigate();
+
   if (!updateArray) return <Box>データがありません。</Box>;
   return (
     <>
@@ -18,12 +21,15 @@ export const OtherContents: FC<Props> = ({ updateArray }) => {
           borderColor="#fff"
           mb="16px"
           cursor="pointer"
+          onClick={() =>
+            navigate('/update-content', {
+              state: { item },
+            })
+          }
         >
           <HStack mb={{ base: '8px', lg: '8px' }}>
             <Text color="#FF9080">News |</Text>
-            <Text color="#fff">
-              {formatDate(item.publishedAt)}
-            </Text>
+            <Text color="#fff">{formatDate(item.publishedAt)}</Text>
           </HStack>
           <Text
             color="#fff"
