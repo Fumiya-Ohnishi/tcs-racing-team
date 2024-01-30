@@ -1,6 +1,6 @@
 import { ImageFilter } from '@/components/Elements/ImageFilter';
 import { Box, HStack, Text, Image } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { NewsItem } from './UpDateContents';
 import { FC } from 'react';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
@@ -10,6 +10,8 @@ interface Props {
 }
 
 export const SecondContent: FC<Props> = ({ updateArray }) => {
+  const navigate = useNavigate();
+
   if (!updateArray) return <Box>データがありません。</Box>;
 
   return (
@@ -25,6 +27,11 @@ export const SecondContent: FC<Props> = ({ updateArray }) => {
           boxShadow="5px -5px #626063"
           transition="box-shadow 0.3s ease"
           _hover={{ boxShadow: '10px -10px #626063' }}
+          onClick={() =>
+            navigate('/update-content', {
+              state: { item },
+            })
+          }
         >
           <ImageFilter
             src={

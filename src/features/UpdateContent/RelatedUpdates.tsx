@@ -1,23 +1,26 @@
 import { ImageFilter } from '@/components/Elements/ImageFilter';
 import { LinkUnderBarButton } from '@/components/Elements/LinkUnderBarButton';
-import { Box, HStack, Text } from '@chakra-ui/react';
-import { FC } from 'react';
-import { NewsItem } from './UpDateContents';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
+import { HStack, Box, Text, Grid } from '@chakra-ui/react';
+import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUpDateContents } from './hooks/useContact';
 
 interface Props {
-  updateArray: NewsItem[];
+  id: string;
 }
 
-export const FirstContent: FC<Props> = ({ updateArray }) => {
-  if (!updateArray) return <Box>データがありません。</Box>;
-
+export const RelatedUpdates: FC<Props> = ({ id }) => {
   const navigate = useNavigate();
 
+  const updateArray = useUpDateContents(id);
+
   return (
-    <>
-      {updateArray.map((item, index) => (
+    <Grid
+      templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
+      gap={6}
+    >
+      {updateArray.news.map((item, index) => (
         <Box
           key={index}
           w="100%"
@@ -75,6 +78,6 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
           </Box>
         </Box>
       ))}
-    </>
+    </Grid>
   );
 };
