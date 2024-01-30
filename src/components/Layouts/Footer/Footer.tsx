@@ -27,9 +27,9 @@ export const Footer = () => {
               </Text>
               <VStack align="start">
                 <FooterLinkButton to="Updates">News</FooterLinkButton>
-                <FooterLinkButton to="TheTeam">Team</FooterLinkButton>
-                <FooterLinkButton to="Schedule">Schedule</FooterLinkButton>
-                <FooterLinkButton to="Partner">Partner</FooterLinkButton>
+                <Link to="/team-member">Team</Link>
+                <Link to="/schedule-page">Schedule</Link>
+                <Link to="/our-partners">Partner</Link>
               </VStack>
             </Box>
             <Box>
