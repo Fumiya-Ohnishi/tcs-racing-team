@@ -1,5 +1,6 @@
 import { TopPage } from '@/pages/Home';
 import { RiderPage } from '@/pages/Rider';
+import { SchedulePage } from '@/pages/Schedule';
 import { TeamMemberPage } from '@/pages/TeamMember';
 
 export const publicRoutes = [
@@ -17,5 +18,10 @@ export const publicRoutes = [
     path: '/member-page',
     element: <RiderPage />,
     children: [{ path: '', element: <RiderPage /> }],
+  },
+  {
+    path: '/schedule-page',
+    element: <SchedulePage />,
+    children: [{ path: '', element: <SchedulePage /> }],
   },
 ];
