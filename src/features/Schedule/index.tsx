@@ -1,7 +1,6 @@
 import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Title } from '@/components/Elements/Title';
 import { Box, Grid, Image } from '@chakra-ui/react';
-import { useSchedule } from './hooks/useSchedule';
 import { Schedule } from './Schedule';
 import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
@@ -31,10 +30,6 @@ const winCounterData = [
 ];
 
 export const ScheduleComponent = () => {
-  const { raceScheduleList, eventScheduleList } = useSchedule();
-  if (!raceScheduleList || !eventScheduleList)
-    return <Box>データがありません。</Box>;
-
   return (
     <PageLayout>
       <Box display={{ base: 'block', lg: 'none' }}>

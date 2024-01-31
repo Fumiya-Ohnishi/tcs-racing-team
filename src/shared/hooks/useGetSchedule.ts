@@ -2,21 +2,25 @@ import { ScheduleItem } from '@/features/Top/Schedule/Schedule';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export const useSchedule = () => {
+interface Props {
+  limit: number;
+}
+
+export const useGetSchedule = ({ limit }: Props) => {
   const [raceSchedule, setRaceSchedule] = useState<ScheduleItem[]>([]);
   const [eventSchedule, setEventSchedule] = useState<ScheduleItem[]>([]);
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiUrl = 'https://9xm8l8ptud.microcms.io/api/v1/blogs';
+      const apiUrl = 'https://9xm8l8ptud.microcms.io/api/v1/schedule';
       const raceCategoryFilter = encodeURIComponent(
         `category[equals]wirz3e8ue_y`,
       );
       const eventCategoryFilter = encodeURIComponent(
         `category[equals]kf-0ocxoj15g`,
       );
-      const urlWithRaceFilter = `${apiUrl}?filters=${raceCategoryFilter}&limit=12&orders=-publishedAt`;
-      const urlWithEventFilter = `${apiUrl}?filters=${eventCategoryFilter}&limit=12&orders=-publishedAt`;
+      const urlWithRaceFilter = `${apiUrl}?filters=${raceCategoryFilter}&limit=${limit}&orders=-publishedAt`;
+      const urlWithEventFilter = `${apiUrl}?filters=${eventCategoryFilter}&limit=${limit}&orders=-publishedAt`;
 
       try {
         const responseRaceFilter = await axios.get(urlWithRaceFilter, {
@@ -39,7 +43,7 @@ export const useSchedule = () => {
 
     fetchNews();
   }, []);
-
+  
   return {
     raceScheduleList: raceSchedule,
     eventScheduleList: eventSchedule,

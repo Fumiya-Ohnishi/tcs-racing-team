@@ -21,10 +21,25 @@ export const OurPartnerList: FC<Props> = ({ title, imagePath }) => {
         bg="#fff"
         minH="153px"
         rounded="10px"
+        _hover={{
+          '.arrow': {
+            transform: 'translateX(5px)',
+            transition: 'transform 0.3s ease-in-out',
+          },
+          '.image': {
+            transform: 'scale(1.05)',
+            transition: 'transform 0.3s ease-in-out',
+          },
+        }}
       >
         <Box w={image.width} maxW="131px" objectFit="contain">
           {image.imagePath !== '' && (
-            <Image src={image.imagePath} alt="black" />
+            <Image
+              className="image"
+              src={image.imagePath}
+              alt="black"
+              transition="transform 0.3s ease-in-out"
+            />
           )}
         </Box>
         <Box
@@ -37,7 +52,13 @@ export const OurPartnerList: FC<Props> = ({ title, imagePath }) => {
           <Text color="#000" fontSize="16px" fontWeight="bold">
             Read more
           </Text>
-          <Box display="flex" alignItems="center" ml="8px">
+          <Box
+            className="arrow"
+            display="flex"
+            alignItems="center"
+            ml="8px"
+            transition="transform 0.3s ease-in-out"
+          >
             <Image src="images/ico-arrow-brock.svg" alt="arrow" />
           </Box>
         </Box>

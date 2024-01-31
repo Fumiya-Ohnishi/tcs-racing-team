@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 interface Props {
   url: string;
   title: string;
-  startDate?: string;
-  endDate?: string;
-  location?: string;
+  startDate: string;
+  endDate: string;
+  location: string;
 }
 
 export const ScheduleItem = ({

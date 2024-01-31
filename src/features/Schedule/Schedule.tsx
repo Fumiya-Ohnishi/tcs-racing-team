@@ -1,20 +1,24 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box, VStack } from '@chakra-ui/react';
 import { ScheduleItem } from './ScheduleItem';
-import { useSchedule } from './hooks/useSchedule';
 import { ScheduleTitle } from './components/ScheduleTitle';
+import { useGetSchedule } from '@/shared/hooks/useGetSchedule';
 
 export interface ScheduleItem {
   id: number;
   title: string;
-  startDate?: string;
-  endDate?: string;
-  location?: string;
+  startDate: string;
+  endDate: string;
+  location: string;
+  url: string;
 }
 
+const limit = 12;
+
 export const Schedule = () => {
-  const { raceScheduleList, eventScheduleList } = useSchedule();
-  if (!raceScheduleList || !eventScheduleList) return <Box>データがありません。</Box>;
+  const { raceScheduleList, eventScheduleList } = useGetSchedule({ limit });
+  if (!raceScheduleList || !eventScheduleList)
+    return <Box>データがありません。</Box>;
 
   return (
     <Box mb="117px">
@@ -26,7 +30,7 @@ export const Schedule = () => {
               {raceScheduleList.map(item => (
                 <ScheduleItem
                   key={item.id}
-                  url="#"
+                  url={item.url}
                   title={item.title}
                   startDate={item.startDate}
                   endDate={item.endDate}
@@ -41,7 +45,7 @@ export const Schedule = () => {
               {eventScheduleList.map(item => (
                 <ScheduleItem
                   key={item.id}
-                  url="#"
+                  url={item.url}
                   title={item.title}
                   startDate={item.startDate}
                   endDate={item.endDate}
