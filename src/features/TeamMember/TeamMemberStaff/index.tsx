@@ -14,29 +14,29 @@ const mainStaffs: TeamMemberStaff[] = [
   {
     id: 1,
     name: 'KOHEI YAMAMOTO',
-    image: '/images/rider/img-top-rider-01.webp',
+    image: '/images/team/img-team-staff01.jpg',
   },
   {
     id: 2,
     name: 'KOHEI YAMAMOTO',
-    image: '/images/rider/img-top-rider-01.webp',
+    image: '/images/team/img-team-staff02.jpg',
   },
 ];
 const subStaffs: TeamMemberStaff[] = [
   {
     id: 1,
     name: 'KOHEI YAMAMOTO',
-    image: '/images/rider/img-top-rider-01.webp',
+    image: '/images/team/img-team-staff03.jpg',
   },
   {
     id: 2,
     name: 'KOHEI YAMAMOTO',
-    image: '/images/rider/img-top-rider-01.webp',
+    image: '/images/team/img-team-staff04.jpg',
   },
   {
     id: 3,
     name: 'KOHEI YAMAMOTO',
-    image: '/images/rider/img-top-rider-01.webp',
+    image: '/images/team/img-team-staff02.jpg',
   },
 ];
 
