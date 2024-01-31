@@ -32,7 +32,7 @@ const images: images[] = [
     id: 1,
     src: {
       sp: '/images/img-slide1-sp.jpg',
-      pc: '/images/img-slide1-pc.jpg',
+      pc: '/images/top/img-slider01.jpg',
     },
     alt: 'スライド1',
     text: {
@@ -44,7 +44,7 @@ const images: images[] = [
     id: 2,
     src: {
       sp: '/images/img-slide1-sp.jpg',
-      pc: '/images/img-slide1-pc.jpg',
+      pc: '/images/top/img-slider02.jpg',
     },
     alt: 'スライド2',
     text: {
@@ -56,7 +56,7 @@ const images: images[] = [
     id: 3,
     src: {
       sp: '/images/img-slide1-sp.jpg',
-      pc: '/images/img-slide1-pc.jpg',
+      pc: '/images/top/img-slider03.jpg',
     },
     alt: 'スライド3',
     text: {
@@ -74,6 +74,7 @@ export const Carousel = () => {
         {images.map(image => (
           <Box key={image.id} w="100%" h="100%" position="relative">
             <Box w="100%" objectFit="cover" position="relative">
+              <Image src="/images/top/img-top-slider-filter.png" display="block" w="100%" h="100%" objectFit="cover" position="absolute" top="0" left="0" /> 
               <Image
                 display="block"
                 w="100%"
