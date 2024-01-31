@@ -86,9 +86,24 @@ export const OurPartners = () => {
                 py="90px"
                 px={{ base: '16px', lg: '88px' }}
                 rounded="10px"
+                _hover={{
+                  '.arrow': {
+                    transform: 'translateX(5px)',
+                    transition: 'transform 0.3s ease-in-out',
+                  },
+                  '.image': {
+                    transform: 'scale(1.05)',
+                    transition: 'transform 0.3s ease-in-out',
+                  },
+                }}
               >
                 <Box w="100%" objectFit="cover">
-                  <Image src="images/img-sponsor-01.webp" alt="black" />
+                  <Image
+                    className="image"
+                    src="images/img-sponsor-01.webp"
+                    alt="black"
+                    transition="transform 0.3s ease-in-out"
+                  />
                 </Box>
                 <Box
                   position="absolute"
@@ -100,7 +115,13 @@ export const OurPartners = () => {
                   <Text color="#000" fontSize="16px" fontWeight="bold">
                     Read more
                   </Text>
-                  <Box display="flex" alignItems="center" ml="8px">
+                  <Box
+                    className="arrow"
+                    display="flex"
+                    alignItems="center"
+                    ml="8px"
+                    transition="transform 0.3s ease-in-out"
+                  >
                     <Image src="images/ico-arrow-brock.svg" alt="arrow" />
                   </Box>
                 </Box>
