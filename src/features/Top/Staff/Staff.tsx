@@ -72,7 +72,7 @@ export const Staff = () => {
             </GridItem>
           ))}
         </Grid>
-        <LinkButton link="/staff" text="Overview" />
+        <LinkButton link="#" text="Overview" />
       </MainLayout>
       <Divider orientation="horizontal" mt="64px" mx="auto" w="90%" />
     </Box>
