@@ -9,61 +9,61 @@ import { OfficialMedia } from '../Top/OfficialMedia';
 export const OurPartners = () => {
   const imageArray01 = [
     {
-      imagePath: 'images/img-sponsor-02.webp',
+      imagePath: '/images/top/ourPartners/img-sponsor-02.webp',
       width: '81px',
     },
     {
-      imagePath: 'images/img-sponsor-03.webp',
+      imagePath: '/images/top/ourPartners/img-sponsor-03.webp',
       width: '85px',
     },
     {
-      imagePath: 'images/img-sponsor-04.webp',
+      imagePath: '/images/top/ourPartners/img-sponsor-04.webp',
       width: '115px',
     },
     {
-      imagePath: 'images/img-sponsor-05.webp',
+      imagePath: '/images/top/ourPartners/img-sponsor-05.webp',
       width: '72px',
     },
   ];
   const imageArray02 = [
     {
-      imagePath: 'images/img-sponsor-06.webp',
+      imagePath: '/images/top/ourPartners/img-sponsor-06.webp',
       width: '132px',
     },
     {
-      imagePath: 'images/img-sponsor-07.webp',
+      imagePath: '/images/top/ourPartners/img-sponsor-07.webp',
       width: '104px',
     },
   ];
 
   const imageArray03 = [
     {
-      imagePath: 'images/img-sponsor-08.webp',
+      imagePath: '/images/top/ourPartners/img-sponsor-08.webp',
       width: '136px',
     },
     {
-      imagePath: 'images/img-sponsor-09.webp',
+      imagePath: '/images/top/ourPartners/img-sponsor-09.webp',
       width: '95px',
     },
     {
-      imagePath: 'images/img-sponsor-10.webp',
+      imagePath: '/images/top/ourPartners/img-sponsor-10.webp',
       width: '117px',
     },
   ];
   const imageArray04 = [
     {
-      imagePath: '',
-      width: '136px',
+      imagePath: '/images/top/ourPartners/img-sponsor-12.webp',
+      width: '150px',
     },
     {
-      imagePath: '',
-      width: '95px',
+      imagePath: '/images/top/ourPartners/img-sponsor-13.webp',
+      width: '150px',
     },
   ];
 
   const imageArray05 = [
     {
-      imagePath: 'images/img-sponsor-11.jpg',
+      imagePath: '/images/top/ourPartners/img-sponsor-11.jpg',
       width: '136px',
     },
   ];
@@ -100,7 +100,7 @@ export const OurPartners = () => {
                 <Box w="100%" objectFit="cover">
                   <Image
                     className="image"
-                    src="images/img-sponsor-01.webp"
+                    src="images/top/ourPartners/img-sponsor-01.webp"
                     alt="black"
                     transition="transform 0.3s ease-in-out"
                   />
