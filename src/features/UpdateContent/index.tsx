@@ -17,12 +17,27 @@ export const UpdateContent = () => {
 
   return (
     <PageLayout>
-      <Box mt={{ base: '110px', lg: '50px' }} w="100vw" objectFit="contain">
+      <Box
+        mt={{ base: '110px', lg: '50px' }}
+        w="100vw"
+        objectFit="contain"
+        position="relative"
+      >
         <Image
           w="100%"
           display="block"
-          src="/images/UpdateContent/img-UpdateContent-01.jpg"
+          src="/images/UpdateContent/img-UpdateContent-01.jpeg"
           alt="UpdateContent"
+        />
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bottom="0"
+          bg="#000"
+          opacity={0.5}
+          zIndex="1"
         />
       </Box>
 
@@ -34,6 +49,7 @@ export const UpdateContent = () => {
         mx="auto"
         p="33px"
         bg="#fff"
+        zIndex="2"
       >
         <HStack mb="38px">
           <Text
