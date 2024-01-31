@@ -15,9 +15,20 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
+import { ChangeEvent, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { i18n } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+
+  const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const newLanguage = event.target.value;
+    i18n.changeLanguage(newLanguage);
+    setSelectedLanguage(newLanguage);
+  };
 
   const [isTablet] = useMediaQuery('(max-width: 768px)');
   const mb = isTablet ? '16px' : '0';
@@ -84,8 +95,15 @@ export const Header = () => {
 
           <Spacer display={{ base: 'block', lg: 'none' }} />
 
-          <Select w="80px" h="26px" bg="#fff" mr={{ base: '16px', lg: '0px' }}>
-            <option value="jp">JP</option>
+          <Select
+            w="80px"
+            h="26px"
+            bg="#fff"
+            mr={{ base: '16px', lg: '0px' }}
+            value={selectedLanguage}
+            onChange={handleLanguageChange}
+          >
+            <option value="ja">JP</option>
             <option value="en">EN</option>
           </Select>
 

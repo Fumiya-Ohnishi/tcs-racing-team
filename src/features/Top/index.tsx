@@ -17,6 +17,7 @@ export const TopContent = () => {
     title: 'Asia Union TCS Racing Team',
     text: t('teamDescription'),
   };
+
   return (
     <>
       <PageLayout>
