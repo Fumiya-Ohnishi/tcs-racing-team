@@ -14,8 +14,9 @@ export const CenterSpinner = () => {
         thickness="4px"
         speed="0.65s"
         emptyColor="gray.200"
-        color="white"
-        size="xl"
+        color="#000"
+        w="250px"
+        h="250px"
       />
     </Box>
   );
