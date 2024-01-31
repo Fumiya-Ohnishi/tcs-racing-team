@@ -21,7 +21,7 @@ export const TeamMemberContent = () => {
           <Image src="/images/team/img-top-sp.webp" mt="108px" />
         </Box>
         <Box display={{ base: 'none', lg: 'block' }}>
-          <Image src="/images/team/img-top-pc.webp" />
+          <Image src="/images/team/img-team-top.jpg" w="100%" />
         </Box>
         <Message message={message} />
         <TeamMemberCoreValue />
