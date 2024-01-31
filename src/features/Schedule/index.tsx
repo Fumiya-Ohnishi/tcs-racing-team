@@ -32,11 +32,11 @@ const winCounterData = [
 export const ScheduleComponent = () => {
   return (
     <PageLayout>
-      <Box display={{ base: 'block', lg: 'none' }}>
+      <Box display={{ base: 'block', lg: 'none' }} mb="64px">
         <Image src="/images/rider/img-top-sp.webp" mt="108px" />
       </Box>
-      <Box display={{ base: 'none', lg: 'block' }}>
-        <Image src="/images/rider/img-top-pc.webp" />
+      <Box display={{ base: 'none', lg: 'block' }} mb="128px">
+        <Image src="/images/schedule/img-schedule-top.jpg" w="100%" />
       </Box>
       <Title title="Schedule" subTitle="Schedule" />
       <Schedule />
