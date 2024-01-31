@@ -9,14 +9,14 @@ import { OurPartners } from './OurPartners';
 import { OfficialMedia } from './OfficialMedia';
 import { Box } from '@chakra-ui/react';
 import { Message } from '@/components/Elements/Message';
-
-const message = {
-  title: 'Asia Union TCS Racing Team',
-  text:
-    'マウンテンバイクを通じて、アジアから世界への架け橋となるチームを目指し、アジア各国のチャンピオンライダーを集めたドリームチーム。',
-}
+import { useTranslation } from 'react-i18next';
 
 export const TopContent = () => {
+  const { t } = useTranslation('topMessage');
+  const message = {
+    title: 'Asia Union TCS Racing Team',
+    text: t('teamDescription'),
+  };
   return (
     <>
       <PageLayout>

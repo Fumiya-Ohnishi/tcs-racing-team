@@ -7,15 +7,18 @@ import { MemberSlider } from './Slider';
 import { FirstView } from './FirstView';
 import { ProfileContent } from './ProfileContent';
 import { About } from './About';
+import { useLocation } from 'react-router-dom';
 
 export const RiderComponent = () => {
+  const location = useLocation();
+  const id = location.state.id;
   return (
     <PageLayout>
-      <FirstView />
+      <FirstView id={id} />
       <MainLayout>
-        <ProfileContent />
+        <ProfileContent id={id} />
       </MainLayout>
-      <About />
+      <About id={id} />
       <MainLayout>
         <MemberSlider />
       </MainLayout>

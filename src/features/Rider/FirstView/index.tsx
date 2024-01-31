@@ -1,13 +1,30 @@
 import { SnsIcon } from '@/components/Elements/SnsIcon';
+import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
 import { HStack, Box, Image, Text, useMediaQuery } from '@chakra-ui/react';
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-export const FirstView = () => {
+interface Props {
+  id: number;
+}
+
+export const FirstView: FC<Props> = ({ id }) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const { t } = useTranslation('teamMember');
 
   // PC用とスマートフォン用の画像パス
   const imagePath = isMobile
-    ? '/images/rider/img-top-sp.webp' // スマートフォン用の画像パス
-    : '/images/rider/img-top-pc.webp'; // PC用の画像パス
+    ? '/images/rider/img-top-sp.webp'
+    : '/images/rider/img-top-pc.webp';
+
+  const humanImage = [
+    '/images/img-theTeam-01.webp',
+    '/images/rider/img-top-rider-01.webp',
+    '/images/img-theTeam-02.webp',
+    '/images/img-theTeam-03.webp',
+    '/images/img-theTeam-04.webp',
+    '/images/img-theTeam-05.webp',
+  ];
   return (
     <Box
       position="relative"
@@ -36,7 +53,7 @@ export const FirstView = () => {
           w="100%"
           h="100%"
           objectFit="cover"
-          src="/images/rider/img-top-rider-01.webp"
+          src={humanImage[id]}
           alt="Rider"
         />
       </Box>
@@ -49,9 +66,8 @@ export const FirstView = () => {
         textAlign="center"
       >
         <Text fontSize={{ base: '16px', lg: '32px' }} fontWeight="bold">
-          熱狂的に/Go Crazy
+          {convertNewlineToBreak(t(`title.${id}`))}
         </Text>
-        <Text fontSize={{ base: '10px', lg: '24px' }}>-前進・革新・熱心-</Text>
       </Box>
       <Box
         position="absolute"
@@ -65,8 +81,7 @@ export const FirstView = () => {
           fontSize={{ base: '36px', lg: '100px' }}
           fontWeight="bold"
         >
-          <Text>YAMAMOTO</Text>
-          <Text>KOHEI</Text>
+          {convertNewlineToBreak(t(`name.${id}`))}
         </Box>
         <HStack alignItems="center" justifyContent="space-between" w="20%">
           <SnsIcon href="#" icon="images/ico-facebook.webp" label="Facebook" />

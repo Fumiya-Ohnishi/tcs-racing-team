@@ -1,7 +1,16 @@
 import { LinkButton } from '@/components/Elements/LinkButton';
 import { LinkUnderBarButton } from '@/components/Elements/LinkUnderBarButton';
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Divider,
+  Grid,
+  GridItem,
+  HStack,
+  Image,
+  Text,
+} from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 interface StaffImages {
   id: number;
@@ -45,6 +54,7 @@ const staffImages: StaffImages[] = [
 ];
 
 export const Staff = () => {
+  const navigate = useNavigate();
   return (
     <Box mb="116px">
       <MainLayout>
@@ -67,7 +77,26 @@ export const Staff = () => {
                 </Box>
               </Box>
               {image.isReadMore && (
-                <LinkUnderBarButton url="#" text="もっと見る" isCenter={true} />
+                <Box display="inline-block">
+                  <HStack
+                    borderBottom="solid 1px #FF9080"
+                    cursor="pointer"
+                    onClick={() => {
+                      navigate('/member-page', {
+                        state: { id: 1 },
+                      });
+                    }}
+                  >
+                    <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
+                      もっと見る
+                    </Text>
+                    <Image
+                      w="5px"
+                      h="10px"
+                      src="/images/ico-arrow-white-brock.svg"
+                    />
+                  </HStack>
+                </Box>
               )}
             </GridItem>
           ))}

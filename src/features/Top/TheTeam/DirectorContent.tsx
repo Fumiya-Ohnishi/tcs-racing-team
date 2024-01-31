@@ -1,17 +1,19 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 type Props = {
   post: string;
   name: string;
-  comment: string;
+  comment: JSX.Element[];
   link: string;
 };
 
 export const DirectorContent: FC<Props> = ({ post, name, comment, link }) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const boxRef = useRef<HTMLImageElement>(null);
+
+  const navigate = useNavigate();
 
   const handleMouseEnter = () => {
     if (imageRef.current) {
@@ -37,6 +39,14 @@ export const DirectorContent: FC<Props> = ({ post, name, comment, link }) => {
       bg="red"
       background={`linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.8),rgba(0, 0, 0, 0.3)), url(/images/img-lattice-background.webp)`}
       backgroundSize="80%"
+      cursor="pointer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={() => {
+        navigate('/member-page', {
+          state: { id: 0 },
+        });
+      }}
     >
       <Box
         position="relative"
@@ -45,12 +55,6 @@ export const DirectorContent: FC<Props> = ({ post, name, comment, link }) => {
         borderBottom="solid 1px"
         borderColor="#fff"
       >
-        <Link
-          to={link}
-          className="custom-link"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        ></Link>
         <Box w="86%" m="0 auto">
           <Box
             minH={{ base: '150px', lg: '457px' }}
@@ -82,7 +86,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment, link }) => {
               <Text
                 color="#fff"
                 fontSize={{ base: '12px', lg: '16px' }}
-                w={{ base: '50%', lg: '100%' }}
+                w={{ base: '50%', lg: '50%' }}
               >
                 {comment}
               </Text>

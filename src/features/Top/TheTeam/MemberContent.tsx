@@ -1,6 +1,6 @@
 import { Box, Text, Image } from '@chakra-ui/react';
 import { FC, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './LinkStyles.css';
 
 interface Props {
@@ -10,6 +10,7 @@ interface Props {
   imageUrl: string;
   width?: string;
   link: string;
+  id: number;
 }
 
 export const MemberContent: FC<Props> = ({
@@ -19,9 +20,12 @@ export const MemberContent: FC<Props> = ({
   imageUrl,
   width,
   link,
+  id,
 }) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const boxRef = useRef<HTMLImageElement>(null);
+
+  const navigate = useNavigate();
 
   const handleMouseEnter = () => {
     if (imageRef.current) {
@@ -52,13 +56,15 @@ export const MemberContent: FC<Props> = ({
       backgroundRepeat="no-repeat"
       borderBottom={{ base: 'solid 1px', lg: 'none' }}
       borderColor="#fff"
+      cursor="pointer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={() => {
+        navigate(link, {
+          state: { id: id },
+        });
+      }}
     >
-      <Link
-        to={link}
-        className="custom-link"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      ></Link>
       <Box
         position="absolute"
         top="50%"

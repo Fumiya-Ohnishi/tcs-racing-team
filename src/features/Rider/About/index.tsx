@@ -1,6 +1,14 @@
+import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
 import { Box, Image, Text } from '@chakra-ui/react';
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-export const About = () => {
+interface Props {
+  id: number;
+}
+
+export const About: FC<Props> = ({ id }) => {
+  const { t } = useTranslation('teamMember');
   return (
     <Box
       w={{ base: '100%', lg: '88%' }}
@@ -68,9 +76,7 @@ export const About = () => {
         >
           About Eusebia Nicole
         </Text>
-        <Text lineHeight="2">
-          テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-        </Text>
+        <Text lineHeight="2">{convertNewlineToBreak(t(`about.${id}`))}</Text>
       </Box>
     </Box>
   );

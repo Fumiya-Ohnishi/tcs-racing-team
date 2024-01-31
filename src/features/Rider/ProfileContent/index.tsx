@@ -1,7 +1,15 @@
+import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
 import { Box, Text, HStack } from '@chakra-ui/react';
 import { css } from '@emotion/react';
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-export const ProfileContent = () => {
+interface Props {
+  id: number;
+}
+
+export const ProfileContent: FC<Props> = ({ id }) => {
+  const { t } = useTranslation('teamMember');
   const beforeImage = css`
     position: relative;
     width: 100%;
@@ -58,37 +66,43 @@ export const ProfileContent = () => {
             <Text minW="106px" css={afterDot}>
               国 籍
             </Text>
-            <Text fontSize="18px">テキスト</Text>
+            <Text fontSize="18px">
+              {convertNewlineToBreak(t(`nationality.${id}`))}
+            </Text>
           </HStack>
           <HStack mb="16px">
             <Text minW="106px" css={afterDot}>
               出身地
             </Text>
-            <Text fontSize="18px">テキスト</Text>
+            <Text fontSize="18px">
+              {convertNewlineToBreak(t(`birthplace.${id}`))}
+            </Text>
           </HStack>
           <HStack mb="16px">
             <Text minW="106px" css={afterDot}>
               生年月日
             </Text>
-            <Text fontSize="18px">テキスト</Text>
+            <Text fontSize="18px">{t(`berthDay.${id}`)}</Text>
           </HStack>
           <HStack mb="16px">
             <Text minW="106px" css={afterDot}>
               身 長
             </Text>
-            <Text fontSize="18px">テキスト</Text>
+            <Text fontSize="18px">{t(`stature.${id}`)}</Text>
           </HStack>
           <HStack mb="16px">
             <Text minW="106px" css={afterDot}>
               体 重
             </Text>
-            <Text fontSize="18px">テキスト</Text>
+            <Text fontSize="18px">{t(`bodyWeight.${id}`)}</Text>
           </HStack>
           <HStack>
             <Text minW="106px" css={afterDot}>
               趣 味
             </Text>
-            <Text fontSize="18px">テキスト</Text>
+            <Text fontSize="18px">
+              {convertNewlineToBreak(t(`tastes.${id}`))}
+            </Text>
           </HStack>
         </Box>
       </Box>
@@ -97,22 +111,7 @@ export const ProfileContent = () => {
           Result
         </Text>
         <Box css={beforeImage} boxShadow="10px -10px #333333">
-          <Box mb="16px">
-            <Text fontSize="16px">2023.12.12</Text>
-            <Text fontSize="18px">フィリピン 選手権 XCE 3位</Text>
-          </Box>
-          <Box mb="16px">
-            <Text fontSize="16px">2023.12.12</Text>
-            <Text fontSize="18px">フィリピン 選手権 XCE 3位</Text>
-          </Box>
-          <Box mb="16px">
-            <Text fontSize="16px">2023.12.12</Text>
-            <Text fontSize="18px">フィリピン 選手権 XCE 3位</Text>
-          </Box>
-          <Box>
-            <Text fontSize="16px">2023.12.12</Text>
-            <Text fontSize="18px">フィリピン 選手権 XCE 3位</Text>
-          </Box>
+          {convertNewlineToBreak(t(`result.${id}`))}
         </Box>
       </Box>
     </Box>
