@@ -9,6 +9,15 @@ interface Props {
 
 export const About: FC<Props> = ({ id }) => {
   const { t } = useTranslation('teamMember');
+
+  const backGroundImage = [
+    '/images/menber/img-menberbg01.png',
+    '/images/menber/img-menberbg01.png',
+    '/images/menber/img-menberbg03.png',
+    '/images/menber/img-menberbg04.jpeg',
+    '/images/menber/img-menberbg05.jpeg',
+    '/images/menber/img-menberbg06.jpeg',
+  ];
   return (
     <Box
       w={{ base: '100%', lg: '88%' }}
@@ -33,7 +42,7 @@ export const About: FC<Props> = ({ id }) => {
               left: '0%',
               width: '15%',
               height: '3px',
-              backgroundImage: 'url(images/img-text-bg.webp)',
+              backgroundImage: `url(${backGroundImage[id]})`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
             },
@@ -49,7 +58,7 @@ export const About: FC<Props> = ({ id }) => {
         mb={{ base: '16px', lg: '0' }}
         objectFit="cover"
       >
-        <Image w="100%" src="/images/rider/img-top-rider-02.webp" alt="Rider" />
+        <Image w="100%" src={backGroundImage[id]} alt="Rider" />
       </Box>
       <Box
         position="absolute"
@@ -76,7 +85,9 @@ export const About: FC<Props> = ({ id }) => {
         >
           About Eusebia Nicole
         </Text>
-        <Text lineHeight="2">{convertNewlineToBreak(t(`about.${id}`))}</Text>
+        <Text lineHeight="2" fontSize="14px">
+          {convertNewlineToBreak(t(`about.${id}`))}
+        </Text>
       </Box>
     </Box>
   );

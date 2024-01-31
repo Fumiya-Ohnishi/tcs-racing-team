@@ -18,12 +18,12 @@ export const FirstView: FC<Props> = ({ id }) => {
     : '/images/rider/img-top-pc.webp';
 
   const humanImage = [
-    '/images/img-theTeam-01.webp',
-    '/images/rider/img-top-rider-01.webp',
-    '/images/img-theTeam-02.webp',
-    '/images/img-theTeam-03.webp',
-    '/images/img-theTeam-04.webp',
-    '/images/img-theTeam-05.webp',
+    '/images/menber/img-menber01.png',
+    '/images/menber/img-menber02.png',
+    '/images/menber/img-menber03.png',
+    '/images/menber/img-menber04.png',
+    '/images/menber/img-menber05.png',
+    '/images/menber/img-menber06.png',
   ];
   return (
     <Box
