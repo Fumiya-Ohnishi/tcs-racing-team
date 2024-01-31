@@ -35,8 +35,23 @@ export const FirstView: FC<Props> = ({ id }) => {
       mt={{ base: '110px', lg: '50px' }}
       overflowX={{ base: 'hidden', lg: 'visible' }}
     >
-      <Box w="100vw" h={{ base: 'auto', lg: '89vh' }} objectFit="cover">
+      <Box
+        w="100vw"
+        h={{ base: 'auto', lg: '89vh' }}
+        objectFit="cover"
+        position="relative"
+      >
         <Image src={imagePath} alt="Rider" w="100%" h="100%" />
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bottom="0"
+          bg="#000"
+          opacity={0.5}
+          zIndex="1"
+        />
       </Box>
       <Box
         position="absolute"
@@ -48,6 +63,7 @@ export const FirstView: FC<Props> = ({ id }) => {
         width={{ base: '80%', lg: 'auto' }}
         h={{ base: 'auto', lg: '100%' }}
         objectFit="contain"
+        zIndex="2"
       >
         <Image
           w="100%"
@@ -64,6 +80,7 @@ export const FirstView: FC<Props> = ({ id }) => {
         top={{ base: '40%', lg: '50%' }}
         transform={{ base: 'translateY(-60%)', lg: 'translateY(-50%)' }}
         textAlign="center"
+        zIndex="2"
       >
         <Text fontSize={{ base: '16px', lg: '32px' }} fontWeight="bold">
           {convertNewlineToBreak(t(`title.${id}`))}
@@ -75,6 +92,7 @@ export const FirstView: FC<Props> = ({ id }) => {
         left="50%"
         w="76%"
         transform="translateX(-50%)"
+        zIndex="2"
       >
         <Box
           mb="45px"
