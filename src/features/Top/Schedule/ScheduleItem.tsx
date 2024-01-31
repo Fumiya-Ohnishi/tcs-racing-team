@@ -54,8 +54,8 @@ export const ScheduleItem = ({
                 src="/images/ico-hexagon-black.svg"
               />
             </Box>
-            <Flex pl="50px" alignItems="center">
-              <Box w="50px" textAlign="center" mr="18px">
+            <Flex pl="50px" alignItems="center" w="calc( 100% - 62px)">
+              <Box w="50px" textAlign="center" mr="18px" flex="0 0 50px">
                 <Text fontSize="12px">
                   {startDate ? formatDateNoYear(startDate) : ''}
                 </Text>
@@ -70,7 +70,7 @@ export const ScheduleItem = ({
                   {endDate ? formatDateNoYear(endDate) : ''}
                 </Text>
               </Box>
-              <Box>
+              <Box w="calc(100% - 80px)" overflow="hidden">
                 <Text isTruncated fontSize={{ base: '12px', lg: '16px' }}>
                   {title}
                 </Text>
@@ -89,6 +89,10 @@ export const ScheduleItem = ({
               ml="8px"
               transform={isHovered ? 'translateX(6px)' : 'translateX(0px)'}
               transition="transform 0.3s ease-in-out"
+              flex="0 0 50px"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
             >
               <Image
                 w="11px"
