@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import { MemberContent } from './MemberContent';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   leftName: string;
@@ -9,12 +10,14 @@ type Props = {
   leftBg: string;
   leftWidth?: string;
   leftLink: string;
+  leftId: number;
   rightName: string;
   rightComment: React.ReactNode;
   rightImage: string;
   rightBg: string;
   rightWidth?: string;
   rightLink: string;
+  rightId: number;
 };
 
 export const Member: FC<Props> = ({
@@ -24,13 +27,14 @@ export const Member: FC<Props> = ({
   leftBg,
   leftWidth,
   leftLink,
+  leftId,
   rightName,
   rightComment,
   rightImage,
   rightWidth,
   rightBg,
-
   rightLink,
+  rightId,
 }) => {
   return (
     <Box
@@ -56,6 +60,7 @@ export const Member: FC<Props> = ({
               imageUrl={leftImage}
               width={leftWidth}
               link={leftLink}
+              id={leftId}
             />
             <Box
               width="1px"
@@ -73,6 +78,7 @@ export const Member: FC<Props> = ({
               imageUrl={rightImage}
               width={rightWidth}
               link={rightLink}
+              id={rightId}
             />
           </Box>
         </Box>
