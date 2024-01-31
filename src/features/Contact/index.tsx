@@ -53,7 +53,7 @@ export const Contact = () => {
           <Image
             w="100%"
             display="block"
-            src="/images/contact/img-contact-01.png"
+            src="/images/contact/img-contact-01.jpeg"
             alt="contact"
           />
         </Box>
