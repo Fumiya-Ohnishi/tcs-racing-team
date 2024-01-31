@@ -49,8 +49,13 @@ export const Contact = () => {
   return (
     <PageLayout>
       <Box>
-        <Box mt={{ base: '110px', lg: '50px' }}>
-          <Image src="/images/contact/img-contact-01.png" alt="contact" />
+        <Box mt={{ base: '110px', lg: '50px' }} w="100vw" objectFit="contain">
+          <Image
+            w="100%"
+            display="block"
+            src="/images/contact/img-contact-01.png"
+            alt="contact"
+          />
         </Box>
         <Box
           position="relative"

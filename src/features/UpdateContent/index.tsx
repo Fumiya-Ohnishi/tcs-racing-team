@@ -17,8 +17,10 @@ export const UpdateContent = () => {
 
   return (
     <PageLayout>
-      <Box mt={{ base: '110px', lg: '50px' }}>
+      <Box mt={{ base: '110px', lg: '50px' }} w="100vw" objectFit="contain">
         <Image
+          w="100%"
+          display="block"
           src="/images/UpdateContent/img-UpdateContent-01.jpg"
           alt="UpdateContent"
         />
