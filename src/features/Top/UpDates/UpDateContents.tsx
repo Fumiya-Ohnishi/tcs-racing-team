@@ -23,7 +23,7 @@ export interface NewsItem {
 export const UpdatesContent = () => {
   const { updateFirstArray, updateSecondArray, updateThirdArray } =
     useUpDateContents();
-
+    
   return (
     <MainLayout>
       <Box pb="96px">
@@ -32,13 +32,28 @@ export const UpdatesContent = () => {
           justifyContent="space-between"
           mb="79px"
         >
-          <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
-            <FirstContent updateArray={updateFirstArray} />
-            <SecondContent updateArray={updateSecondArray} />
-          </Box>
-          <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
-            <OtherContents updateArray={updateThirdArray} />
-          </Box>
+          {updateFirstArray.length !== 0 &&
+            (updateSecondArray.length !== 0 && (
+              <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
+                {updateFirstArray.length !== 0 && (
+                  <FirstContent updateArray={updateFirstArray} />
+                )}
+                {updateSecondArray.length !== 0 && (
+                  <SecondContent updateArray={updateSecondArray} />
+                )}
+              </Box>
+            ))}
+          {updateThirdArray.length !== 0 && (
+            <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
+              <OtherContents updateArray={updateThirdArray} />
+            </Box>
+          )}
+
+          {updateFirstArray.length === 0 &&
+            updateSecondArray.length === 0 &&
+            updateThirdArray.length === 0 && (
+              <Box color="#FFF">Coming soon..</Box>
+            )}
         </Box>
 
         <LinkButton link="#" text="More Updates" />
