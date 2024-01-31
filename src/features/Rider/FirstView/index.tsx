@@ -15,7 +15,7 @@ export const FirstView: FC<Props> = ({ id }) => {
   // PC用とスマートフォン用の画像パス
   const imagePath = isMobile
     ? '/images/rider/img-top-sp.webp'
-    : '/images/rider/img-top-pc.webp';
+    : '/images/menber/img-menber-top.jpeg';
 
   const humanImage = [
     '/images/menber/img-menber01.png',
@@ -35,8 +35,8 @@ export const FirstView: FC<Props> = ({ id }) => {
       mt={{ base: '110px', lg: '50px' }}
       overflowX={{ base: 'hidden', lg: 'visible' }}
     >
-      <Box w="100vw" h={{ base: 'auto', lg: '90vh' }}>
-        <Image src={imagePath} alt="Rider" />
+      <Box w="100vw" h={{ base: 'auto', lg: '89vh' }} objectFit="cover">
+        <Image src={imagePath} alt="Rider" w="100%" h="100%" />
       </Box>
       <Box
         position="absolute"
