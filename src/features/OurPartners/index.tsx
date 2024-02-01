@@ -11,28 +11,34 @@ export const OurPartners = () => {
     {
       imagePath: '/images/top/ourPartners/img-sponsor-02.webp',
       width: '81px',
+      link: 'https://www.3plmnt.co.jp/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-03.webp',
       width: '85px',
+      link: 'https://house-ws.com/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-04.webp',
       width: '115px',
+      link: 'https://www.blisstage.jp/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-05.webp',
       width: '72px',
+      link: 'https://www.hokuei-gr.com/',
     },
   ];
   const imageArray02 = [
     {
       imagePath: '/images/top/ourPartners/img-sponsor-06.webp',
       width: '132px',
+      link: 'https://wave-one.jp/corporation/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-07.webp',
       width: '104px',
+      link: 'https://repetir.official.ec/?fbclid=IwAR3Fr4c0JcKGq6LNAaLSObOsWdLO-zIKLB7T7QCWYUhc_48O6zTuf8UC1fI',
     },
   ];
 
@@ -40,24 +46,29 @@ export const OurPartners = () => {
     {
       imagePath: '/images/top/ourPartners/img-sponsor-08.webp',
       width: '136px',
+      link: 'https://www.carmate.co.jp/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-09.webp',
       width: '95px',
+      link: 'https://yowapeda.com/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-10.webp',
       width: '117px',
+      link: 'https://www.ogkkabuto.co.jp/',
     },
   ];
   const imageArray04 = [
     {
       imagePath: '/images/top/ourPartners/img-sponsor-12.webp',
       width: '150px',
+      link: 'http://www.shibaken-inc.co.jp/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-13.webp',
       width: '150px',
+      link: 'https://www.hiroosangyo.jp/',
     },
   ];
 
@@ -65,6 +76,7 @@ export const OurPartners = () => {
     {
       imagePath: '/images/top/ourPartners/img-sponsor-11.jpg',
       width: '136px',
+      link: 'https://www.maxxis.co.jp/',
     },
   ];
 
@@ -77,7 +89,7 @@ export const OurPartners = () => {
             <Text color="#fff" fontSize="36px" fontWeight="bold" mb="21px">
               Black
             </Text>
-            <Link to="#">
+            <Link to="https://www.alpenblick-resort.com/">
               <Box
                 position="relative"
                 w={{ base: '100%', lg: '50%' }}
@@ -115,6 +127,7 @@ export const OurPartners = () => {
                   <Text color="#000" fontSize="16px" fontWeight="bold">
                     Read more
                   </Text>
+
                   <Box
                     className="arrow"
                     display="flex"
