@@ -102,9 +102,13 @@ export const FirstView: FC<Props> = ({ id }) => {
           {convertNewlineToBreak(t(`name.${id}`))}
         </Box>
         <HStack alignItems="center" justifyContent="space-between" w="20%">
-          <SnsIcon href="#" icon="images/ico-facebook.webp" label="Facebook" />
           <SnsIcon
-            href="#"
+            href="ico-facebook.webp"
+            icon="images/ico-facebook.webp"
+            label="Facebook"
+          />
+          <SnsIcon
+            href="https://www.instagram.com/asia.union.tcs/"
             icon="images/ico-Instagram.webp"
             label="Instagram"
           />

@@ -41,9 +41,9 @@ export const Footer = () => {
                 READ MORE ABOUT
               </Text>
               <VStack align="start">
-                <FooterLinkButton to="">Press</FooterLinkButton>
+                {/* <FooterLinkButton to="">Press</FooterLinkButton>
                 <FooterLinkButton to="">Privacy & Coolies</FooterLinkButton>
-                <FooterLinkButton to="">FAQ</FooterLinkButton>
+                <FooterLinkButton to="">FAQ</FooterLinkButton> */}
                 <Link to="/Contact">Contact</Link>
               </VStack>
             </Box>

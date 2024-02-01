@@ -31,9 +31,13 @@ export const OfficialMedia = () => {
           w={{ base: '50%', lg: '20%' }}
           mx="auto"
         >
-          <SnsIcon href="#" icon="images/ico-facebook.webp" label="Facebook" />
           <SnsIcon
-            href="#"
+            href="https://www.facebook.com/asiauniontcs"
+            icon="images/ico-facebook.webp"
+            label="Facebook"
+          />
+          <SnsIcon
+            href="https://www.instagram.com/asia.union.tcs/"
             icon="images/ico-Instagram.webp"
             label="Instagram"
           />
