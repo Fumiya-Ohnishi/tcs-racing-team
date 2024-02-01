@@ -1,6 +1,6 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   post: string;
@@ -9,7 +9,7 @@ type Props = {
   link: string;
 };
 
-export const DirectorContent: FC<Props> = ({ post, name, comment, link }) => {
+export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const boxRef = useRef<HTMLImageElement>(null);
 

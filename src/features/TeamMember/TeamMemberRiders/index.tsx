@@ -1,7 +1,7 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box, Grid, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface TeamMemberRider {
   id: number;
@@ -11,28 +11,30 @@ interface TeamMemberRider {
 
 const riders: TeamMemberRider[] = [
   {
-    id: 1,
-    name: 'KOHEI YAMAMOTO',
-    image: '/images/rider/img-teamMember-01.png',
-  },
-  {
     id: 2,
-    name: 'KOHEI YAMAMOTO',
-    image: '/images/rider/img-teamMember-01.png',
+    name: 'リアッド ハキム',
+    image: '/images/img-theTeam-02.webp',
   },
   {
     id: 3,
-    name: 'KOHEI YAMAMOTO',
-    image: '/images/rider/img-teamMember-01.png',
+    name: 'サユ ベラ',
+    image: '/images/img-theTeam-03.webp',
   },
   {
     id: 4,
-    name: 'KOHEI YAMAMOTO',
-    image: '/images/rider/img-teamMember-01.png',
+    name: '松本 佑太',
+    image: '/images/img-theTeam-04.webp',
+  },
+  {
+    id: 5,
+    name: 'エセビア ニコル',
+    image: '/images/img-theTeam-05.webp',
   },
 ];
 
 export const TeamMemberRiders: FC = () => {
+  const navigate = useNavigate();
+
   return (
     <MainLayout>
       <Box mb="160px">
@@ -41,31 +43,39 @@ export const TeamMemberRiders: FC = () => {
           gap={8}
         >
           {riders.map(rider => (
-            <Box key={rider.id} position="relative">
-              <Link to="/member-page">
-                <Image src={rider.image} />
-                <Box
-                  position="absolute"
-                  bottom="0"
-                  left="50%"
-                  transform="translate(-50%, -50%)"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  w="100%"
-                >
-                  <Text fontSize="24px" mr="48px">
-                    {rider.name}
-                  </Text>
-                  <Box>
-                    <Image
-                      w="11px"
-                      h="25px"
-                      src="/images/ico-arrow-white-brock.svg"
-                    />
-                  </Box>
+            <Box
+              key={rider.id}
+              position="relative"
+              onClick={() => {
+                navigate('/member-page', {
+                  state: { id: rider.id },
+                });
+              }}
+            >
+              {/* <Link to="/member-page"> */}
+              <Image src={rider.image} w="100%" h="100%" />
+              <Box
+                position="absolute"
+                bottom="0"
+                left="50%"
+                transform="translate(-50%, -50%)"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                w="100%"
+              >
+                <Text fontSize="24px" mr="48px">
+                  {rider.name}
+                </Text>
+                <Box>
+                  <Image
+                    w="11px"
+                    h="25px"
+                    src="/images/ico-arrow-white-brock.svg"
+                  />
                 </Box>
-              </Link>
+              </Box>
+              {/* </Link> */}
             </Box>
           ))}
         </Grid>
