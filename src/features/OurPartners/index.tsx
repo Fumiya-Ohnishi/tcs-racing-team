@@ -89,7 +89,11 @@ export const OurPartners = () => {
             <Text color="#fff" fontSize="36px" fontWeight="bold" mb="21px">
               Black
             </Text>
-            <Link to="https://www.alpenblick-resort.com/">
+            <Link
+              to="https://www.alpenblick-resort.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Box
                 position="relative"
                 w={{ base: '100%', lg: '50%' }}

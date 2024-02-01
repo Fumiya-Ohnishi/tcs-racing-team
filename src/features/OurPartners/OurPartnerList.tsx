@@ -7,12 +7,13 @@ interface Props {
   imagePath: {
     imagePath: string;
     width: string;
+    link: string;
   }[];
 }
 
 export const OurPartnerList: FC<Props> = ({ title, imagePath }) => {
   const imageContent = imagePath.map((image, index) => (
-    <Link to="#" key={index}>
+    <Link to={image.link} key={index} target="_blank" rel="noopener noreferrer">
       <Box
         position="relative"
         display="flex"
