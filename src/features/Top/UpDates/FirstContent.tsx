@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const FirstContent: FC<Props> = ({ updateArray }) => {
-  if (!updateArray) return <Box>データがありません。</Box>;
+  if (!updateArray) return <Box color="white">データがありません。</Box>;
 
   const navigate = useNavigate();
 

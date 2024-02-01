@@ -13,14 +13,14 @@ export const useUpDateContents = () => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiUrl = 'https://9xm8l8ptud.microcms.io/api/v1/blogs';
-      const categoryFilter = encodeURIComponent(`category[equals]cf2q-t46yvuv`);
+      const apiUrl = 'https://9y1fv8d4hm.microcms.io/api/v1/blogs';
+      const categoryFilter = encodeURIComponent(`category[equals]akksc0wgpp`);
       const urlWithFilter = `${apiUrl}?filters=${categoryFilter}&limit=8&orders=-publishedAt`;
 
       try {
         const response = await axios.get(urlWithFilter, {
           headers: {
-            'X-API-KEY': 'vHrEF1zTpmkjH8TV76k9GJcKMyieNLNxVsX0',
+            'X-API-KEY': '6TEV2O1HTegnPlQz0Pr9Xqpth9eKxx2ceMrT',
           },
         });
         setNews(response.data.contents);

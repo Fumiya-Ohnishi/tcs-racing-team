@@ -28,6 +28,9 @@ export const Schedule = () => {
           <Box flex="1" mb={{ base: '81px', lg: '0px' }}>
             <ScheduleTitle text="Race" />
             <VStack gap="24px" display="grid">
+              {raceScheduleList.length === 0 && (
+                <Box color="white">Coming soon..</Box>
+              )}
               {raceScheduleList.map(item => (
                 <ScheduleItem
                   key={item.id}
@@ -43,6 +46,9 @@ export const Schedule = () => {
           <Box flex="1">
             <ScheduleTitle text="Events" />
             <VStack gap="24px" display="grid">
+              {eventScheduleList.length === 0 && (
+                <Box color="white">Coming soon..</Box>
+              )}
               {eventScheduleList.map(item => (
                 <ScheduleItem
                   key={item.id}

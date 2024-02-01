@@ -12,12 +12,12 @@ export const useGetSchedule = ({ limit }: Props) => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiUrl = 'https://9xm8l8ptud.microcms.io/api/v1/schedule';
+      const apiUrl = 'https://9y1fv8d4hm.microcms.io/api/v1/schedule';
       const raceCategoryFilter = encodeURIComponent(
-        `category[equals]wirz3e8ue_y`,
+        `category[equals]ticmjofd83m`,
       );
       const eventCategoryFilter = encodeURIComponent(
-        `category[equals]kf-0ocxoj15g`,
+        `category[equals]d--puacxtl`,
       );
       const urlWithRaceFilter = `${apiUrl}?filters=${raceCategoryFilter}&limit=${limit}&orders=-publishedAt`;
       const urlWithEventFilter = `${apiUrl}?filters=${eventCategoryFilter}&limit=${limit}&orders=-publishedAt`;
@@ -25,14 +25,14 @@ export const useGetSchedule = ({ limit }: Props) => {
       try {
         const responseRaceFilter = await axios.get(urlWithRaceFilter, {
           headers: {
-            'X-API-KEY': 'vHrEF1zTpmkjH8TV76k9GJcKMyieNLNxVsX0',
+            'X-API-KEY': '6TEV2O1HTegnPlQz0Pr9Xqpth9eKxx2ceMrT',
           },
         });
         setRaceSchedule(responseRaceFilter.data.contents);
 
         const responseEventFilter = await axios.get(urlWithEventFilter, {
           headers: {
-            'X-API-KEY': 'vHrEF1zTpmkjH8TV76k9GJcKMyieNLNxVsX0',
+            'X-API-KEY': '6TEV2O1HTegnPlQz0Pr9Xqpth9eKxx2ceMrT',
           },
         });
         setEventSchedule(responseEventFilter.data.contents);
@@ -43,7 +43,7 @@ export const useGetSchedule = ({ limit }: Props) => {
 
     fetchNews();
   }, []);
-  
+
   return {
     raceScheduleList: raceSchedule,
     eventScheduleList: eventSchedule,

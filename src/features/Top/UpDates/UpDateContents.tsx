@@ -2,7 +2,6 @@ import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box } from '@chakra-ui/react';
 import { FirstContent } from './FirstContent';
 import { SecondContent } from './SecondContent';
-import { LinkButton } from '@/components/Elements/LinkButton';
 import { OtherContents } from './OtherContents';
 import { useUpDateContents } from './hooks/useUpDateContents';
 
@@ -32,16 +31,15 @@ export const UpdatesContent = () => {
           justifyContent="space-between"
           mb="79px"
         >
-          {updateFirstArray.length !== 0 && updateSecondArray.length !== 0 && (
+          {updateFirstArray.length !== 0 && (
             <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
-              {updateFirstArray.length !== 0 && (
-                <FirstContent updateArray={updateFirstArray} />
-              )}
+              <FirstContent updateArray={updateFirstArray} />
               {updateSecondArray.length !== 0 && (
                 <SecondContent updateArray={updateSecondArray} />
               )}
             </Box>
           )}
+
           {updateThirdArray.length !== 0 && (
             <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
               <OtherContents updateArray={updateThirdArray} />

@@ -56,9 +56,7 @@ export const ScheduleItem = ({
             </Box>
             <Flex pl="50px" alignItems="center" w="calc( 100% - 62px)">
               <Box w="50px" textAlign="center" mr="18px" flex="0 0 50px">
-                <Text fontSize="12px">
-                  {startDate ? formatDateNoYear(startDate) : ''}
-                </Text>
+                <Text fontSize="12px">{startDate}</Text>
                 <Box
                   display="inline-block"
                   transform="rotate(90deg)"
@@ -66,9 +64,7 @@ export const ScheduleItem = ({
                 >
                   〜
                 </Box>
-                <Text fontSize="12px">
-                  {endDate ? formatDateNoYear(endDate) : ''}
-                </Text>
+                <Text fontSize="12px">{endDate}</Text>
               </Box>
               <Box w="calc(100% - 80px)" overflow="hidden">
                 <Text isTruncated fontSize={{ base: '12px', lg: '16px' }}>
