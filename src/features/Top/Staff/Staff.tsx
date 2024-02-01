@@ -1,5 +1,4 @@
 import { LinkButton } from '@/components/Elements/LinkButton';
-import { LinkUnderBarButton } from '@/components/Elements/LinkUnderBarButton';
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import {
   Box,
@@ -24,7 +23,7 @@ interface StaffImages {
 const staffImages: StaffImages[] = [
   {
     id: 1,
-    src: '/images/img-staff-1.png',
+    src: '/images/top/staff/img-team-staff01.jpg',
     alt: 'スタッフ画像',
     name: '福光 悠介',
     jobType: 'GM',
@@ -32,21 +31,21 @@ const staffImages: StaffImages[] = [
   },
   {
     id: 2,
-    src: '/images/img-staff-1.png',
+    src: '/images/top/staff/img-team-staff02.jpg',
     alt: 'スタッフ画像',
     name: '佐藤 寿美',
     jobType: 'マネージャー',
   },
   {
     id: 3,
-    src: '/images/img-staff-1.png',
+    src: '/images/top/staff/img-team-staff03.jpg',
     alt: 'スタッフ画像',
     name: '汐澤 芳治',
     jobType: '広報',
   },
   {
     id: 4,
-    src: '/images/img-staff-1.png',
+    src: '',
     alt: 'スタッフ画像',
     name: 'Ms. X -Coming Soon',
     jobType: 'アンバサダー',
@@ -61,10 +60,11 @@ export const Staff = () => {
         <Grid
           templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
           gap={{ base: '16px', lg: 12 }}
+          mb="16px"
         >
           {staffImages.map(image => (
             <GridItem key={image.id}>
-              <Box position="relative" bg="#4D4D4D" mb="16px" py="30px">
+              <Box position="relative" bg="#000" mb="16px" py="30px" h="100%">
                 <Image src={image.src} margin="auto" />
                 <Box
                   position="absolute"
@@ -72,8 +72,12 @@ export const Staff = () => {
                   left="15%"
                   transform="translateY(-100%)"
                 >
-                  <Text fontSize="xs">{image.jobType}</Text>
-                  <Text>{image.name}</Text>
+                  <Text fontSize={{ base: '10px', lg: '16px' }}>
+                    {image.jobType}
+                  </Text>
+                  <Text fontSize={{ base: '10px', lg: '16px' }}>
+                    {image.name}
+                  </Text>
                 </Box>
               </Box>
               {image.isReadMore && (
