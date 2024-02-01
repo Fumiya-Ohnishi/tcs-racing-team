@@ -74,7 +74,16 @@ export const Carousel = () => {
         {images.map(image => (
           <Box key={image.id} w="100%" h="100%" position="relative">
             <Box w="100%" objectFit="cover" position="relative">
-              <Image src="/images/top/img-top-slider-filter.png" display="block" w="100%" h="100%" objectFit="cover" position="absolute" top="0" left="0" /> 
+              <Image
+                src="/images/top/img-top-slider-filter.png"
+                display="block"
+                w="100%"
+                h="100%"
+                objectFit="cover"
+                position="absolute"
+                top="0"
+                left="0"
+              />
               <Image
                 display="block"
                 w="100%"
@@ -128,8 +137,9 @@ export const Carousel = () => {
         position="absolute"
         display={{ base: 'none', lg: 'block' }}
         bottom="3%"
-        left="50%"
-        transform="translateX(-50%)"
+        left="0"
+        w="100vw"
+        textAlign="center"
         color="white"
         css={{
           animation: 'scrollAnimation 1s ease-in-out infinite',
