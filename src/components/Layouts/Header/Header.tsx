@@ -95,7 +95,7 @@ export const Header = () => {
 
           <Spacer display={{ base: 'block', lg: 'none' }} />
 
-          {/* <Select
+          <Select
             w="80px"
             h="26px"
             bg="#fff"
@@ -104,8 +104,8 @@ export const Header = () => {
             onChange={handleLanguageChange}
           >
             <option value="ja">JP</option>
-            <option value="en">EN</option>
-          </Select> */}
+            {/* <option value="en">EN</option> */}
+          </Select>
 
           <Box
             display={{ base: 'block', lg: 'none' }}

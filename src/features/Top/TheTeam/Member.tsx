@@ -1,7 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import { MemberContent } from './MemberContent';
-import { useNavigate } from 'react-router-dom';
 
 type Props = {
   leftName: string;

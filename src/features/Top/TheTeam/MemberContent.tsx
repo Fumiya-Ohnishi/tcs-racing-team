@@ -1,6 +1,6 @@
 import { Box, Text, Image } from '@chakra-ui/react';
 import { FC, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './LinkStyles.css';
 
 interface Props {
