@@ -1,19 +1,19 @@
 import { FirstContent } from '@/features/Top/UpDates/FirstContent';
 import { Box, Grid } from '@chakra-ui/react';
 import ReactPaginate from 'react-paginate';
-import { useUpdateListPageNation } from '../hooks/useUpdateListPageNation';
+import { useUpdateListPagiNation } from '../hooks/useUpdateListPagiNation';
 import { useEffect, useState } from 'react';
 import { NewsItem } from '@/features/Top/UpDates/UpDateContents';
 import '../Pagination.css';
 import { MainLayout } from '@/components/Layouts/MainLayout';
 
-export const UpdateListPageNation = () => {
+export const UpdateListPagiNation = () => {
   const [currentNews, setCurrentNews] = useState<NewsItem[]>([]); // 現在のページのニュース
   const [pageCount, setPageCount] = useState<number>(0); // 全ページ数
   const [itemOffset, setItemOffset] = useState<number>(0); // 現在のオフセット（表示開始位置）
   const newsPerPage = 24; // 1ページあたりのニュース数
 
-  const { news } = useUpdateListPageNation(); // APIからニュースを取得
+  const { news } = useUpdateListPagiNation(); // APIからニュースを取得
 
   useEffect(() => {
     // ニュースが更新されたとき、またはオフセットが変更されたときに実行

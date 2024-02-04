@@ -2,7 +2,7 @@ import { NewsItem } from '@/features/Top/UpDates/UpDateContents';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export const useUpdateListPageNation = () => {
+export const useUpdateListPagiNation = () => {
   const [news, setNews] = useState<NewsItem[]>([]);
 
   useEffect(() => {
