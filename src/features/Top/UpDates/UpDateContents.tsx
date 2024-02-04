@@ -4,6 +4,7 @@ import { FirstContent } from './FirstContent';
 import { SecondContent } from './SecondContent';
 import { OtherContents } from './OtherContents';
 import { useUpDateContents } from './hooks/useUpDateContents';
+import { LinkButton } from '@/components/Elements/LinkButton';
 
 // MicroCMSから返されるニュースアイテムの型を定義
 export interface NewsItem {
@@ -53,7 +54,7 @@ export const UpdatesContent = () => {
             )}
         </Box>
 
-        {/* <LinkButton link="#" text="More Updates" /> */}
+        <LinkButton link="/update-list" text="More Updates" />
       </Box>
     </MainLayout>
   );
