@@ -3,7 +3,7 @@ import { PageLayout } from '@/components/Layouts/PageLayout';
 import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { Box } from '@chakra-ui/react';
-import { UpdateListPageNation } from './UpdateListPageNation/UpdateListPagenation';
+import { UpdateListPageNation } from './UpdateListPageNation/UpdateListPageNation';
 
 export const UpdateListContent = () => {
   return (
