@@ -3,7 +3,7 @@ import { PageLayout } from '@/components/Layouts/PageLayout';
 import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { Box } from '@chakra-ui/react';
-import { UpdateListPageNation } from './UpdateListPageNation/UpdateListPageNation';
+import { UpdateListPagiNation } from './UpdateListPagiNation/UpdateListPagiNation';
 
 export const UpdateListContent = () => {
   return (
@@ -11,7 +11,7 @@ export const UpdateListContent = () => {
       <Box pt="128px" mb="128px">
         <Title title="Updates" subTitle="Updates" />
       </Box>
-        <UpdateListPageNation />
+        <UpdateListPagiNation />
         <Title title="Our Partners" subTitle="Our Partners" />
         <OurPartners />
         <OfficialMedia />
