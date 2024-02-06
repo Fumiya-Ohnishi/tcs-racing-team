@@ -7,14 +7,14 @@ export const useUpDateContents = (id: string) => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiUrl = 'https://9y1fv8d4hm.microcms.io/api/v1/blogs';
-      const categoryFilter = encodeURIComponent(`category[equals]akksc0wgpp`);
+      const apiUrl = `${import.meta.env.VITE_API_URL}blogs`
+      const categoryFilter = encodeURIComponent(`category[equals]${import.meta.env.VITE_UPDATES_CONTENTS_ID}`);
       const excludeIdFilter = encodeURIComponent(`id[not_equals]${id}`);
       const urlWithFilter = `${apiUrl}?filters=${categoryFilter}[and]${excludeIdFilter}&limit=3&orders=-publishedAt`;
       try {
         const response = await axios.get(urlWithFilter, {
           headers: {
-            'X-API-KEY': '6TEV2O1HTegnPlQz0Pr9Xqpth9eKxx2ceMrT',
+            'X-API-KEY': import.meta.env.VITE_API_KEY,
           },
         });
         setNews(response.data.contents);
