@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 interface Props {
-  url: string;
+  url?: string;
   title: string;
   startDate: string;
-  endDate: string;
+  endDate?: string;
   location: string;
 }
 
@@ -22,7 +22,7 @@ export const ScheduleItem = ({
   return (
     <>
       <Box position="relative" w={{ base: '100%', lg: '100%' }} h="80px">
-        <Link to={url}>
+        <Link to={url || ''}>
           <Box
             position="absolute"
             w="100%"
@@ -53,19 +53,39 @@ export const ScheduleItem = ({
                 src="/images/ico-hexagon-black.svg"
               />
             </Box>
-            <Flex pl="50px" alignItems="center" w="calc( 100% - 62px)">
-              <Box w="50px" textAlign="center" mr="18px" flex="0 0 50px">
-                <Text fontSize="12px">{startDate}</Text>
+            <Flex
+              pl={{ base: '42px', lg: '50px' }}
+              alignItems="center"
+              w={{ base: 'calc( 100% - 48px)', lg: 'calc( 100% - 62px)' }}
+            >
+              <Box
+                w="50px"
+                textAlign="center"
+                mr={{ base: '12px', lg: '18px' }}
+                flex={{ base: '0 0 40px', lg: '0 0 64px' }}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                flexDirection="column"
+              >
+                <Text fontSize={{ base: '10px', sm: '11px', lg: '12px' }}>
+                  {startDate}
+                </Text>
                 <Box
                   display="inline-block"
                   transform="rotate(90deg)"
                   fontSize="12px"
                 >
-                  〜
+                  {endDate ? '〜' : ''}
                 </Box>
-                <Text fontSize="12px">{endDate}</Text>
+                <Text fontSize={{ base: '10px', sm: '11px', lg: '12px' }}>
+                  {endDate || ''}
+                </Text>
               </Box>
-              <Box w="calc(100% - 80px)" overflow="hidden">
+              <Box
+                w={{ base: 'calc(100% - 48px)', lg: 'calc(100% - 80px)' }}
+                overflow="hidden"
+              >
                 <Text isTruncated fontSize={{ base: '12px', lg: '16px' }}>
                   {title}
                 </Text>
@@ -84,7 +104,7 @@ export const ScheduleItem = ({
               ml="8px"
               transform={isHovered ? 'translateX(6px)' : 'translateX(0px)'}
               transition="transform 0.3s ease-in-out"
-              flex="0 0 50px"
+              flex={{ base: '0 0 40px', lg: '0 0 50px' }}
               display="flex"
               alignItems="center"
               justifyContent="center"

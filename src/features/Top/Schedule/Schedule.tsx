@@ -1,6 +1,6 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box, VStack } from '@chakra-ui/react';
-import { ScheduleItem } from './ScheduleItem';
+import { ScheduleItem } from '@/components/Elements/ScheduleItem';
 import { LinkButton } from '@/components/Elements/LinkButton';
 import { ScheduleTitle } from './components/ScheduleTitle';
 import { useGetSchedule } from '@/shared/hooks/useGetSchedule';
@@ -9,9 +9,9 @@ export interface ScheduleItem {
   id: number;
   title: string;
   startDate: string;
-  endDate: string;
+  endDate?: string;
   location: string;
-  url: string;
+  url?: string;
 }
 
 const limit = 6;
