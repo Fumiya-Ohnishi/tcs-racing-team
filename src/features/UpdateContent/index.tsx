@@ -13,8 +13,6 @@ export const UpdateContent = () => {
   const location = useLocation();
   const updateArray = location.state.item;
 
-  console.log(updateArray);
-
   return (
     <PageLayout>
       <Box

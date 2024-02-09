@@ -15,14 +15,15 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/state/languageState/useLanguage';
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { i18n } = useTranslation();
-  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+  const [selectedLanguage, setSelectedLanguage] = useLanguage();
 
   const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const newLanguage = event.target.value;
