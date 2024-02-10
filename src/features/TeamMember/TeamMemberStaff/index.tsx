@@ -35,7 +35,7 @@ const subStaffs: TeamMemberStaff[] = [
   },
   {
     id: 2,
-    name: 'Ms. X -Coming Soon',
+    name: 'Dr. ドニー クスマ',
     image: 'https://placehold.jp/000000/000000/327x218.png',
   },
 ];

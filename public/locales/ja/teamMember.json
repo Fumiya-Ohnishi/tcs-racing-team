@@ -7,11 +7,12 @@
     "MATSUMOTO\nYUTA",
     "ESEVIER\nNICOLE"
   ],
+  "menuTitle": ["国籍", "出身地", "生年月日", "身長", "趣味"],
   "title": [
     "Lifetime Challenger",
     "成功とは、自分に価値ある目標を設定し挑む事である。",
     "The only way to predict the future, is to create it.",
-    "熱狂的に | Go Crazy\n~前進・革新・熱心~",
+    "There is no secret to success. Success is simply the result of preparation, hard work, perseverance and learning from failure",
     "夢なき者に理想なし、\n理想なき者に計画なし、\n計画なき者に実行なし、\n実行なき者に成功なし。\n故に、夢なき者に成功なし。\n\n-　吉田松陰　-",
     "The only way to achieve the impossible is to believe it is possible"
   ],
@@ -33,7 +34,6 @@
     "2001年5月5日"
   ],
   "stature": ["180cm", "173cm", "165cm", "-", "183cm", "168cm"],
-  "bodyWeight": ["-", "-", "-", "-", "-", "-"],
   "tastes": [
     "MTBに乗ること・コーヒー、ワイン愛好家",
     "アウトドア・フィールドDIY",

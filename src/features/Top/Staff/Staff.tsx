@@ -47,7 +47,7 @@ const staffImages: StaffImages[] = [
     id: 4,
     src: '',
     alt: 'スタッフ画像',
-    name: 'Ms. X -Coming Soon',
+    name: 'Dr. ドニー クスマ',
     jobType: 'アンバサダー',
   },
 ];
