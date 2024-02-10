@@ -111,6 +111,7 @@ export const Header = () => {
           >
             <option value="Ja">JP</option>
             <option value="En">EN</option>
+            <option value="Id">ID</option>
           </Select>
 
           <Box

@@ -5,9 +5,11 @@ import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { useUpDateContents } from './hooks/useContact';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
+import { useLanguage } from '@/state/languageState/useLanguage';
 
 export const Contact = () => {
   const { news } = useUpDateContents();
+  const [selectedLanguage] = useLanguage();
 
   const newsList = news.map(item => {
     return (
@@ -27,10 +29,12 @@ export const Contact = () => {
           </Text>
         </Box>
         <Text color="#fff" fontSize="16px" fontWeight="bold">
-          {item.title}
+          {item[`title${selectedLanguage}`]}
         </Text>
         <Box
-          dangerouslySetInnerHTML={{ __html: item.content }}
+          dangerouslySetInnerHTML={{
+            __html: item[`content${selectedLanguage}`],
+          }}
           style={{
             display: '-webkit-box',
             WebkitBoxOrient: 'vertical',
