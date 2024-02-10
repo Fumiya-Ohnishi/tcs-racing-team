@@ -3,6 +3,7 @@ import { Box, VStack } from '@chakra-ui/react';
 import { ScheduleItem } from '@/components/Elements/ScheduleItem';
 import { ScheduleTitle } from './components/ScheduleTitle';
 import { useGetSchedule } from '@/shared/hooks/useGetSchedule';
+import { useLanguage } from '@/state/languageState/useLanguage';
 
 export interface ScheduleItem {
   id: number;
@@ -19,6 +20,7 @@ export const Schedule = () => {
   const { raceScheduleList, eventScheduleList } = useGetSchedule({ limit });
   if (!raceScheduleList || !eventScheduleList)
     return <Box>データがありません。</Box>;
+  const [selectedLanguage] = useLanguage();
 
   return (
     <Box mb="117px">
@@ -34,10 +36,10 @@ export const Schedule = () => {
                 <ScheduleItem
                   key={item.id}
                   url={item.url}
-                  title={item.title}
-                  startDate={item.startDate}
-                  endDate={item.endDate}
-                  location={item.location}
+                  title={item[`title${selectedLanguage}`]}
+                  startDate={item[`startDate${selectedLanguage}`]}
+                  endDate={item[`endDate${selectedLanguage}`]}
+                  location={item[`location${selectedLanguage}`]}
                 />
               ))}
             </VStack>
@@ -52,10 +54,10 @@ export const Schedule = () => {
                 <ScheduleItem
                   key={item.id}
                   url={item.url}
-                  title={item.title}
-                  startDate={item.startDate}
-                  endDate={item.endDate}
-                  location={item.location}
+                  title={item[`title${selectedLanguage}`]}
+                  startDate={item[`startDate${selectedLanguage}`]}
+                  endDate={item[`endDate${selectedLanguage}`]}
+                  location={item[`location${selectedLanguage}`]}
                 />
               ))}
             </VStack>

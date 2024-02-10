@@ -4,13 +4,14 @@ import { ScheduleItem } from '@/components/Elements/ScheduleItem';
 import { LinkButton } from '@/components/Elements/LinkButton';
 import { ScheduleTitle } from './components/ScheduleTitle';
 import { useGetSchedule } from '@/shared/hooks/useGetSchedule';
+import { useLanguage } from '@/state/languageState/useLanguage';
 
 export interface ScheduleItem {
   id: number;
-  title: string;
-  startDate: string;
-  endDate?: string;
-  location: string;
+  [key: `title${string}`]: string;
+  [key: `location${string}`]: string;
+  [key: `startDate${string}`]: string;
+  [key: `endDate${string}`]: string;
   url?: string;
 }
 
@@ -18,6 +19,7 @@ const limit = 6;
 
 export const Schedule = () => {
   const { raceScheduleList, eventScheduleList } = useGetSchedule({ limit });
+  const [selectedLanguage] = useLanguage();
   if (!raceScheduleList || !eventScheduleList)
     return <Box>データがありません。</Box>;
 
@@ -35,10 +37,10 @@ export const Schedule = () => {
                 <ScheduleItem
                   key={item.id}
                   url={item.url}
-                  title={item.title}
-                  startDate={item.startDate}
-                  endDate={item.endDate}
-                  location={item.location}
+                  title={item[`title${selectedLanguage}`]}
+                  startDate={item[`startDate${selectedLanguage}`]}
+                  endDate={item[`endDate${selectedLanguage}`]}
+                  location={item[`location${selectedLanguage}`]}
                 />
               ))}
             </VStack>
@@ -53,10 +55,10 @@ export const Schedule = () => {
                 <ScheduleItem
                   key={item.id}
                   url={item.url}
-                  title={item.title}
-                  startDate={item.startDate}
-                  endDate={item.endDate}
-                  location={item.location}
+                  title={item[`title${selectedLanguage}`]}
+                  startDate={item[`startDate${selectedLanguage}`]}
+                  endDate={item[`endDate${selectedLanguage}`]}
+                  location={item[`location${selectedLanguage}`]}
                 />
               ))}
             </VStack>
