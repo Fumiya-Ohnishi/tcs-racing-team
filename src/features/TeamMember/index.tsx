@@ -17,11 +17,40 @@ export const TeamMemberContent = () => {
   return (
     <Box>
       <PageLayout>
-        <Box display={{ base: 'block', lg: 'none' }}>
+        <Box
+          position="relative"
+          display={{ base: 'block', lg: 'none' }}
+          h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
+        >
           <Image src="/images/team/img-top-sp.webp" mt="108px" />
+          <Box
+            position="absolute"
+            top="0"
+            left="0"
+            right="0"
+            bottom="0"
+            bg="#000"
+            opacity={0.5}
+            zIndex="1"
+          />
         </Box>
-        <Box display={{ base: 'none', lg: 'block' }}>
-          <Image src="/images/team/img-team-top.jpg" w="100%" />
+        <Box
+          position="relative"
+          display={{ base: 'none', lg: 'block' }}
+          h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
+          mt="52px"
+        >
+          <Image src="/images/team/img-team-top.jpg" w="100%" h="100%" />
+          <Box
+            position="absolute"
+            top="0"
+            left="0"
+            right="0"
+            bottom="0"
+            bg="#000"
+            opacity={0.5}
+            zIndex="1"
+          />
         </Box>
         <Message message={message} />
         <TeamMemberCoreValue />

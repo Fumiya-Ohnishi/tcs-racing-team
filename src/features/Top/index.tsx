@@ -21,7 +21,11 @@ export const TopContent = () => {
   return (
     <>
       <PageLayout>
-        <Box position="relative" mt={{ base: '110px', lg: '50px' }}>
+        <Box
+          position="relative"
+          h={{ base: 'auto', lg: 'calc(100vh - 90px)' }}
+          mt={{ base: '110px', lg: '50px' }}
+        >
           <Carousel />
         </Box>
         <Message message={message} />

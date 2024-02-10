@@ -72,14 +72,24 @@ export const Carousel = () => {
     <>
       <Slider {...settings}>
         {images.map(image => (
-          <Box key={image.id} w="100%" h="100%" position="relative">
-            <Box w="100%" objectFit="cover" position="relative">
+          <Box
+            key={image.id}
+            w="100%"
+            h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
+            position="relative"
+          >
+            <Box
+              w="100%"
+              h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
+              objectFit="cover"
+              position="relative"
+            >
               <Image
                 src="/images/top/img-top-slider-filter.png"
                 display="block"
                 w="100%"
-                h="100%"
-                objectFit="cover"
+                h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
+                objectFit="contain"
                 position="absolute"
                 top="0"
                 left="0"
@@ -87,8 +97,8 @@ export const Carousel = () => {
               <Image
                 display="block"
                 w="100%"
-                h="100%"
-                objectFit="cover"
+                h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
+                objectFit="contain"
                 src={isSmallerThan768 ? image.src.sp : image.src.pc}
                 alt={image.alt}
               />

@@ -1,7 +1,6 @@
 import { Box, HStack, Text, VStack, useMediaQuery } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { MainLayout } from '../MainLayout';
-import { FooterLinkButton } from './FooterLinkButton';
 
 export const Footer = () => {
   const [isTablet] = useMediaQuery('(max-width: 768px)');
@@ -26,7 +25,7 @@ export const Footer = () => {
                 USEFUL LINKS
               </Text>
               <VStack align="start">
-                <FooterLinkButton to="Updates">News</FooterLinkButton>
+                <Link to="/update-list">News</Link>
                 <Link to="/team-member">Team</Link>
                 <Link to="/schedule-page">Schedule</Link>
                 <Link to="/our-partners">Partner</Link>
