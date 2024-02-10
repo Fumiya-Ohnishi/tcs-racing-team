@@ -41,8 +41,16 @@ export const OfficialMedia = () => {
             icon="images/ico-Instagram.webp"
             label="Instagram"
           />
-          <SnsIcon href="#" icon="images/ico-YouTube.webp" label="YouTube" />
-          <SnsIcon href="#" icon="images/ico-TikTok.webp" label="TikTok" />
+          <SnsIcon
+            href="https://www.youtube.com/@AsiaUnionTCSRacingTeam"
+            icon="images/ico-YouTube.webp"
+            label="YouTube"
+          />
+          <SnsIcon
+            href="https://www.tiktok.com/@asiauniontcsracin"
+            icon="images/ico-TikTok.webp"
+            label="TikTok"
+          />
         </HStack>
       </Box>
     </Box>

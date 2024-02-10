@@ -8,7 +8,7 @@ i18n
   .use(LanguageDetector) // ブラウザの言語設定を検出するために使用
   .use(initReactI18next) // react-i18nextの初期化
   .init({
-    fallbackLng: 'ja', // デフォルトの言語
+    fallbackLng: 'Ja', // デフォルトの言語
     debug: false, // 開発中はデバッグ情報を表示する
     interpolation: {
       escapeValue: false, // XSSの危険がない場合はHTMLエスケープを無効化

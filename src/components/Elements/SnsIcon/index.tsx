@@ -10,7 +10,7 @@ interface Props {
 
 export const SnsIcon: FC<Props> = ({ href, icon, label }) => {
   return (
-    <Link to={href}>
+    <Link to={href} target="_blank" rel="noopener noreferrer">
       <Box w="35px" h="35px" borderRadius="50%">
         <Image src={icon} alt={label} />
       </Box>

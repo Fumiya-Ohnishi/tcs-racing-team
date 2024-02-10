@@ -64,7 +64,7 @@ export const ProfileContent: FC<Props> = ({ id }) => {
         <Box css={beforeImage} boxShadow="10px -10px #333333">
           <HStack mb="16px">
             <Text minW="106px" css={afterDot}>
-              国 籍
+              {t(`menuTitle.${0}`)}
             </Text>
             <Text fontSize="18px">
               {convertNewlineToBreak(t(`nationality.${id}`))}
@@ -72,7 +72,7 @@ export const ProfileContent: FC<Props> = ({ id }) => {
           </HStack>
           <HStack mb="16px">
             <Text minW="106px" css={afterDot}>
-              出身地
+              {t(`menuTitle.${1}`)}
             </Text>
             <Text fontSize="18px">
               {convertNewlineToBreak(t(`birthplace.${id}`))}
@@ -80,25 +80,19 @@ export const ProfileContent: FC<Props> = ({ id }) => {
           </HStack>
           <HStack mb="16px">
             <Text minW="106px" css={afterDot}>
-              生年月日
+              {t(`menuTitle.${2}`)}
             </Text>
             <Text fontSize="18px">{t(`berthDay.${id}`)}</Text>
           </HStack>
           <HStack mb="16px">
             <Text minW="106px" css={afterDot}>
-              身 長
+              {t(`menuTitle.${3}`)}
             </Text>
             <Text fontSize="18px">{t(`stature.${id}`)}</Text>
           </HStack>
-          <HStack mb="16px">
-            <Text minW="106px" css={afterDot}>
-              体 重
-            </Text>
-            <Text fontSize="18px">{t(`bodyWeight.${id}`)}</Text>
-          </HStack>
           <HStack>
             <Text minW="106px" css={afterDot}>
-              趣 味
+              {t(`menuTitle.${4}`)}
             </Text>
             <Text fontSize="18px">
               {convertNewlineToBreak(t(`tastes.${id}`))}
