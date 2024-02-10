@@ -5,6 +5,7 @@ import { HStack, Box, Text, Grid } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUpDateContents } from './hooks/useContact';
+import { useLanguage } from '@/state/languageState/useLanguage';
 
 interface Props {
   id: string;
@@ -12,6 +13,8 @@ interface Props {
 
 export const RelatedUpdates: FC<Props> = ({ id }) => {
   const navigate = useNavigate();
+
+  const [selectedLanguage] = useLanguage();
 
   const updateArray = useUpDateContents(id);
 
@@ -52,7 +55,7 @@ export const RelatedUpdates: FC<Props> = ({ id }) => {
                 {formatDate(item.publishedAt)}
               </Text>
             </HStack>
-            <Text color="#fff">{item.title}</Text>
+            <Text color="#fff">{item[`title${selectedLanguage}`]}</Text>
             <Box
               maxH="200px"
               maxW="450px"
@@ -63,7 +66,9 @@ export const RelatedUpdates: FC<Props> = ({ id }) => {
             >
               <Box
                 as="span"
-                dangerouslySetInnerHTML={{ __html: item.content }}
+                dangerouslySetInnerHTML={{
+                  __html: item[`content${selectedLanguage}`],
+                }}
                 style={{
                   display: '-webkit-box',
                   WebkitBoxOrient: 'vertical',
