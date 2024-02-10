@@ -8,10 +8,13 @@ import { OfficialMedia } from '../Top/OfficialMedia';
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { RelatedUpdates } from './RelatedUpdates';
 import './style.css';
+import { useLanguage } from '@/state/languageState/useLanguage';
 
 export const UpdateContent = () => {
   const location = useLocation();
   const updateArray = location.state.item;
+
+  const [selectedLanguage] = useLanguage();
 
   return (
     <PageLayout>
@@ -72,7 +75,7 @@ export const UpdateContent = () => {
           fontWeight="bold"
           mb="34px"
         >
-          {updateArray.title}
+          {updateArray[`title${selectedLanguage}`]}
         </Text>
 
         <Text
@@ -86,7 +89,9 @@ export const UpdateContent = () => {
 
         <Box
           mb="37px"
-          dangerouslySetInnerHTML={{ __html: updateArray.content }}
+          dangerouslySetInnerHTML={{
+            __html: updateArray[`content${selectedLanguage}`],
+          }}
         />
 
         <Box
