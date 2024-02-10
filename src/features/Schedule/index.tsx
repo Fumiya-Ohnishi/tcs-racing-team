@@ -32,11 +32,46 @@ const winCounterData = [
 export const ScheduleComponent = () => {
   return (
     <PageLayout>
-      <Box display={{ base: 'block', lg: 'none' }} mb="64px">
-        <Image src="/images/rider/img-top-sp.webp" mt="108px" />
+      <Box
+        position="relative"
+        display={{ base: 'block', lg: 'none' }}
+        h={{ base: 'auto', lg: 'calc(100vh - 55px)' }}
+        mb="64px"
+      >
+        <Image
+          src="/images/rider/img-top-sp.webp"
+          mt="108px"
+          objectFit="contain"
+        />
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bottom="0"
+          bg="#000"
+          opacity={0.5}
+          zIndex="1"
+        />
       </Box>
-      <Box display={{ base: 'none', lg: 'block' }} mb="128px">
-        <Image src="/images/schedule/img-schedule-top.jpg" w="100%" />
+      <Box
+        position="relative"
+        display={{ base: 'none', lg: 'block' }}
+        h={{ base: 'auto', lg: 'calc(100vh - 55px)' }}
+        mb="128px"
+        mt="52px"
+      >
+        <Image src="/images/schedule/img-schedule-top.jpg" w="100%" h="100%" />
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bottom="0"
+          bg="#000"
+          opacity={0.5}
+          zIndex="1"
+        />
       </Box>
       <Title title="Schedule" subTitle="Schedule" />
       <Schedule />

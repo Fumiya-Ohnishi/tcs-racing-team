@@ -1,4 +1,3 @@
-import { NavLink } from '@/components/Elements/NavLink';
 import {
   Box,
   Drawer,
@@ -14,8 +13,8 @@ import {
   useDisclosure,
   useMediaQuery,
 } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
-import { ChangeEvent } from 'react';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { ChangeEvent, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/state/languageState/useLanguage';
 
@@ -24,6 +23,12 @@ export const Header = () => {
 
   const { i18n } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useLanguage();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const newLanguage = event.target.value;
@@ -62,8 +67,9 @@ export const Header = () => {
                 justifyContent="center"
                 flexDirection="column"
               >
-                <NavLink to="Updates">Updates</NavLink>
-                <NavLink to="TheTeam">The Team</NavLink>
+                <RouterLink to="/update-list" style={{ marginBottom: mb }}>
+                  Updates
+                </RouterLink>
                 <RouterLink to="/team-member" style={{ marginBottom: mb }}>
                   Our Team
                 </RouterLink>
@@ -86,8 +92,7 @@ export const Header = () => {
             mr="16px"
             display={{ base: 'none', lg: 'flex' }}
           >
-            <NavLink to="Updates">Updates</NavLink>
-            <NavLink to="TheTeam">The Team</NavLink>
+            <RouterLink to="/update-list">Updates</RouterLink>
             <RouterLink to="/team-member">Our Team</RouterLink>
             <RouterLink to="/schedule-page">Schedule</RouterLink>
             <RouterLink to="/our-partners">Partners</RouterLink>
