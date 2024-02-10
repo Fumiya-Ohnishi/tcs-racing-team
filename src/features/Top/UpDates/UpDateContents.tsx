@@ -5,7 +5,6 @@ import { SecondContent } from './SecondContent';
 import { OtherContents } from './OtherContents';
 import { useUpDateContents } from './hooks/useUpDateContents';
 import { LinkButton } from '@/components/Elements/LinkButton';
-import { useLanguage } from '@/state/languageState/useLanguage';
 
 // MicroCMSから返されるニュースアイテムの型を定義
 export interface NewsItem {
@@ -25,15 +24,11 @@ export interface NewsItem {
   };
   eyecatch: {
     url: string;
-    height: number;
-    width: number;
   };
 }
 export const UpdatesContent = () => {
   const { updateFirstArray, updateSecondArray, updateThirdArray } =
     useUpDateContents();
-  const [selectedLanguage] = useLanguage();
-  console.log(selectedLanguage);
 
   return (
     <MainLayout>
