@@ -8,18 +8,24 @@ import { LinkButton } from '@/components/Elements/LinkButton';
 
 // MicroCMSから返されるニュースアイテムの型を定義
 export interface NewsItem {
-  createdAt: string;
   id: string;
+  [key: `title${string}`]: string;
+  [key: `content${string}`]: string;
+  createdAt: string;
   publishedAt: string;
   revisedAt: string;
-  title: string;
-  content: string;
   updatedAt: string;
+  category: {
+    id: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    revisedAt: string;
+  };
   eyecatch: {
     url: string;
   };
 }
-
 export const UpdatesContent = () => {
   const { updateFirstArray, updateSecondArray, updateThirdArray } =
     useUpDateContents();

@@ -5,6 +5,7 @@ import { FC } from 'react';
 import { NewsItem } from './UpDateContents';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '@/state/languageState/useLanguage';
 
 interface Props {
   updateArray: NewsItem[];
@@ -14,6 +15,7 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
   if (!updateArray) return <Box color="white">データがありません。</Box>;
 
   const navigate = useNavigate();
+  const [selectedLanguage] = useLanguage();
 
   return (
     <>
@@ -49,7 +51,7 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
                 {formatDate(item.publishedAt)}
               </Text>
             </HStack>
-            <Text color="#fff">{item.title}</Text>
+            <Text color="#fff">{item[`title${selectedLanguage}`]}</Text>
             <Box
               maxH="200px"
               maxW="450px"
@@ -60,7 +62,9 @@ export const FirstContent: FC<Props> = ({ updateArray }) => {
             >
               <Box
                 as="span"
-                dangerouslySetInnerHTML={{ __html: item.content }}
+                dangerouslySetInnerHTML={{
+                  __html: item[`content${selectedLanguage}`],
+                }}
                 style={{
                   display: '-webkit-box',
                   WebkitBoxOrient: 'vertical',

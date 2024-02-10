@@ -104,8 +104,8 @@ export const Header = () => {
             value={selectedLanguage}
             onChange={handleLanguageChange}
           >
-            <option value="ja">JP</option>
-            {/* <option value="en">EN</option> */}
+            <option value="Ja">JP</option>
+            <option value="En">EN</option>
           </Select>
 
           <Box
