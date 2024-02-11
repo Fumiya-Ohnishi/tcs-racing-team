@@ -7,13 +7,22 @@ import { Title } from '@/components/Elements/Title';
 import { TeamMemberStaff } from './TeamMemberStaff';
 import { TeamMemberCoreValue } from './TeamMemberCoreValue';
 import { TeamMemberRiders } from './TeamMemberRiders';
+import { useTranslation } from 'react-i18next';
 
-const message = {
-  title: '日本からアジアへ、そして世界へ',
-  text: 'マウンテンバイクを通じて、アジアから世界への架け橋となるチームを目指し、アジア各国のチャンピオンライダーを集めたドリームチーム。',
-};
+// TODO:多言語ファイルを使う
+// const message = {
+//   title: '日本からアジアへ、そして世界へ',
+//   text: 'マウンテンバイクを通じて、アジアから世界への架け橋となるチームを目指し、アジア各国のチャンピオンライダーを集めたドリームチーム。',
+// };
 
 export const TeamMemberContent = () => {
+  const { t } = useTranslation('ourTeam');
+  const message = {
+    title: t('ourTeamMissionTitle'),
+    text: t('ourTeamMissionText'),
+  };
+  console.log('message', message);
+
   return (
     <Box>
       <PageLayout>
@@ -40,7 +49,12 @@ export const TeamMemberContent = () => {
           h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
           mt="52px"
         >
-          <Image src="/images/team/img-team-top.jpg" w="100%" h="100%" objectFit="cover" />
+          <Image
+            src="/images/team/img-team-top.jpg"
+            w="100%"
+            h="100%"
+            objectFit="cover"
+          />
           <Box
             position="absolute"
             top="0"
