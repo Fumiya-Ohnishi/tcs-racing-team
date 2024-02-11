@@ -36,6 +36,7 @@ export const ImageFilter: FC<Props> = ({
         src={src}
         alt=""
         transition={isHoverEffectEnabled ? 'transform 0.3s ease' : ''}
+        objectFit="cover"
       />
     </Box>
   );
