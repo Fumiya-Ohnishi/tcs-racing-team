@@ -18,8 +18,8 @@ import { useTranslation } from 'react-i18next';
 export const TeamMemberContent = () => {
   const { t } = useTranslation('ourTeam');
   const message = {
-    title: t('teamTitle'),
-    text: t('teamDescription'),
+    title: t('ourTeamMissionTitle'),
+    text: t('ourTeamMissionText'),
   };
   console.log('message', message);
 
