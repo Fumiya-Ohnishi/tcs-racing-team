@@ -40,7 +40,7 @@ export const TeamMemberContent = () => {
           h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
           mt="52px"
         >
-          <Image src="/images/team/img-team-top.jpg" w="100%" h="100%" />
+          <Image src="/images/team/img-team-top.jpg" w="100%" h="100%" objectFit="cover" />
           <Box
             position="absolute"
             top="0"
