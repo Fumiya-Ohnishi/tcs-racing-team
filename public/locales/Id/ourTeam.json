@@ -1,13 +1,14 @@
 {
-  "ourTeamMissionTitle": "",
-  "ourTeamMissionText": "",
-  "ourTeamMission": "",
+  "ourTeamMissionTitle": "Dari Jepang ke Asia dan Dunia",
+  "ourTeamMissionText": "Bertujuan untuk menjadi jembatan dari Asia ke dunia melalui sepeda gunung, tim impian ini menyatukan para pembalap juara dari seluruh Asia.",
+  "ourTeamMission": "Menjadi jembatan dari Jepang ke Asia dan dari Asia ke dunia melalui bersepeda gunung.",
   "ourTeamVision": [
-    "",
-    "",
-    ""
+    "Sebagai inti dari Asia, kami akan mempromosikan kerja sama dan koordinasi internasional yang damai. Kolaborasi internasional akan menjadi platform untuk membangun hubungan dengan berbagai negara.",
+    "Kami bertujuan untuk memantapkan diri sebagai peserta reguler dalam kompetisi internasional seperti Piala Dunia UCI dan lolos ke Olimpiade L.A. 2028.",
+    "Sebagai tim No. 1 di benua Asia, kami bertujuan untuk berkontribusi pada promosi MTB di pasar Asia dan menawarkan nilai-nilai baru."
   ],
-  "ourTeamValueBusiness": "",
-  "ourTeamValueChallenge": "",
-  "ourTeamValueFeeling": ""
+  "ourTeamValueTitle": ["Bisnis", "Tantangan", "Perasaan"],
+  "ourTeamValueBusiness": "Kami mengejar kesuksesan dalam olahraga dan bisnis dengan sikap profesional.",
+  "ourTeamValueChallenge": "Kami dengan berani menghadapi tantangan baru, tidak terikat oleh kebijaksanaan konvensional.",
+  "ourTeamValueFeeling": "Kami bersemangat dan menghargai semua orang yang terlibat dalam olahraga ini, termasuk para penggemar, sponsor, dan pihak-pihak lain dalam industri sepeda."
 }

@@ -67,16 +67,11 @@ export const MemberContent: FC<Props> = ({
     >
       <Box
         position="absolute"
-        top="50%"
         left="0"
-        transform="translateY(-50%)"
+        bottom="30px"
         zIndex="2"
         display="flex"
         flexDirection="column"
-        justifyContent="space-between"
-        height="100%"
-        pt="99px"
-        pb="35px"
       >
         <Text
           color="#fff"
