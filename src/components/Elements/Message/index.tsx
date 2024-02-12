@@ -1,7 +1,6 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 interface Props {
   message: {
@@ -27,7 +26,7 @@ export const Message: FC<Props> = ({ message }) => {
           zIndex="2"
         >
           <Text
-            fontSize={{ base: '18px', lg: '50px' }}
+            fontSize={{ base: '17px', lg: '50px' }}
             fontWeight="bold"
             mb="16px"
             color="white"
