@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 export const TeamMemberCoreValue: FC = () => {
   const { t } = useTranslation('ourTeam');
+  
   return (
     <Box mb="192px" color="white">
       <Divider orientation="horizontal" mx="auto" w="76%" />
@@ -25,7 +26,10 @@ export const TeamMemberCoreValue: FC = () => {
           mt="128px"
           w={{ base: '76%', lg: '418px' }}
         >
-          <Text textAlign="center" fontSize="18px">
+          <Text
+            textAlign="center"
+            fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+          >
             {t('ourTeamMission')}
           </Text>
         </VStack>
@@ -48,13 +52,22 @@ export const TeamMemberCoreValue: FC = () => {
           mt="128px"
           w={{ base: '76%', lg: '648px' }}
         >
-          <Text textAlign="center" fontSize="18px">
+          <Text
+            textAlign="center"
+            fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+          >
             {t(`ourTeamVision.${0}`)}
           </Text>
-          <Text textAlign="center" fontSize="18px">
+          <Text
+            textAlign="center"
+            fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+          >
             {t(`ourTeamVision.${1}`)}
           </Text>
-          <Text textAlign="center" fontSize="18px">
+          <Text
+            textAlign="center"
+            fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+          >
             {t(`ourTeamVision.${2}`)}
           </Text>
         </VStack>
@@ -78,26 +91,47 @@ export const TeamMemberCoreValue: FC = () => {
           w={{ base: '76%', lg: '648px' }}
         >
           <Box>
-            <Text textAlign="center" fontSize="18px">
+            <Text
+              textAlign="center"
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+              fontWeight="bold"
+            >
               {t(`ourTeamValueTitle.${0}`)}
             </Text>
-            <Text textAlign="center" fontSize="18px">
+            <Text
+              textAlign="center"
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+            >
               {t('ourTeamValueBusiness')}
             </Text>
           </Box>
           <Box>
-            <Text textAlign="center" fontSize="18px">
+            <Text
+              textAlign="center"
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+              fontWeight="bold"
+            >
               {t(`ourTeamValueTitle.${1}`)}
             </Text>
-            <Text textAlign="center" fontSize="18px">
+            <Text
+              textAlign="center"
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+            >
               {t('ourTeamValueChallenge')}
             </Text>
           </Box>
           <Box>
-            <Text textAlign="center" fontSize="18px">
+            <Text
+              textAlign="center"
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+              fontWeight="bold"
+            >
               {t(`ourTeamValueTitle.${2}`)}
             </Text>
-            <Text textAlign="center" fontSize="18px">
+            <Text
+              textAlign="center"
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+            >
               {t('ourTeamValueFeeling')}
             </Text>
           </Box>

@@ -2,18 +2,12 @@ import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Message } from '@/components/Elements/Message';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { OurPartners } from '../Top/OurPartners';
-import { Box, Image } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
 import { Title } from '@/components/Elements/Title';
 import { TeamMemberStaff } from './TeamMemberStaff';
 import { TeamMemberCoreValue } from './TeamMemberCoreValue';
 import { TeamMemberRiders } from './TeamMemberRiders';
 import { useTranslation } from 'react-i18next';
-
-// TODO:多言語ファイルを使う
-// const message = {
-//   title: '日本からアジアへ、そして世界へ',
-//   text: 'マウンテンバイクを通じて、アジアから世界への架け橋となるチームを目指し、アジア各国のチャンピオンライダーを集めたドリームチーム。',
-// };
 
 export const TeamMemberContent = () => {
   const { t } = useTranslation('ourTeam');
@@ -21,7 +15,6 @@ export const TeamMemberContent = () => {
     title: t('ourTeamMissionTitle'),
     text: t('ourTeamMissionText'),
   };
-  console.log('message', message);
 
   return (
     <Box>
@@ -31,7 +24,7 @@ export const TeamMemberContent = () => {
           display={{ base: 'block', lg: 'none' }}
           h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
         >
-          <Image src="/images/team/img-top-sp.webp" mt="108px" />
+          <Image src="/images/team/img-team-top.jpg" mt="108px" />
           <Box
             position="absolute"
             top="0"
@@ -42,7 +35,23 @@ export const TeamMemberContent = () => {
             opacity={0.5}
             zIndex="1"
           />
+          <Text
+            fontSize="18px"
+            fontWeight="bold"
+            color="#FFF"
+            position="absolute"
+            bottom="0"
+            left="50%"
+            transform="translate(-50%, -50%)"
+            zIndex="2"
+          >
+            熱狂的に | Go Crazy
+            <Box as="span" display="block" textAlign="center" fontSize="12px">
+              - 前進・革新・熱心 -
+            </Box>
+          </Text>
         </Box>
+
         <Box
           position="relative"
           display={{ base: 'none', lg: 'block' }}
@@ -65,6 +74,21 @@ export const TeamMemberContent = () => {
             opacity={0.5}
             zIndex="1"
           />
+          <Text
+            fontSize="48px"
+            fontWeight="bold"
+            color="#FFF"
+            position="absolute"
+            bottom="0"
+            left="50%"
+            transform="translate(-50%, -50%)"
+            zIndex="2"
+          >
+            熱狂的に | Go Crazy
+            <Box as="span" display="block" textAlign="center" fontSize="30px">
+              - 前進・革新・熱心 -
+            </Box>
+          </Text>
         </Box>
         <Message message={message} />
         <TeamMemberCoreValue />
