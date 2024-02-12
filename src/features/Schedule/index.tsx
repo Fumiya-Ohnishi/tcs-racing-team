@@ -39,7 +39,7 @@ export const ScheduleComponent = () => {
         mb="64px"
       >
         <Image
-          src="/images/rider/img-top-sp.webp"
+          src="/images/schedule/img-schedule-top.jpg"
           mt="108px"
           objectFit="contain"
         />
