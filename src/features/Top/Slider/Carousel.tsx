@@ -15,6 +15,7 @@ interface images {
     main: string;
     sub: string;
   };
+  isMovie?: boolean;
 }
 
 const settings = {
@@ -28,6 +29,19 @@ const settings = {
 };
 
 const images: images[] = [
+  {
+    id: 0,
+    src: {
+      sp: '/images/top/movie.mp4',
+      pc: '/images/top/movie.mp4',
+    },
+    alt: 'スライド0',
+    text: {
+      main: 'TCS',
+      sub: 'Racing Team',
+    },
+    isMovie: true,
+  },
   {
     id: 1,
     src: {
@@ -84,24 +98,58 @@ export const Carousel = () => {
               objectFit="cover"
               position="relative"
             >
-              <Image
-                src="/images/top/img-top-slider-filter.png"
-                display="block"
-                w="100%"
-                h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
-                objectFit="contain"
-                position="absolute"
-                top="0"
-                left="0"
-              />
-              <Image
-                display="block"
-                w="100%"
-                h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
-                objectFit="contain"
-                src={isSmallerThan768 ? image.src.sp : image.src.pc}
-                alt={image.alt}
-              />
+              {image.isMovie ? (
+                <>
+                  <Image
+                    src="/images/top/img-top-slider-filter.png"
+                    display="block"
+                    w="100%"
+                    h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
+                    objectFit="contain"
+                    position="absolute"
+                    top="0"
+                    left="0"
+                  />
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={
+                      isSmallerThan768
+                        ? { objectFit: 'cover', height: 'calc(100vh - 256px)' }
+                        : { objectFit: 'cover', height: '100vh' }
+                    }
+                  >
+                    <source
+                      src={isSmallerThan768 ? image.src.sp : image.src.pc}
+                      type="video/mp4"
+                    />
+                    お使いのブラウザはビデオタグをサポートしていません。
+                  </video>
+                </>
+              ) : (
+                <>
+                  <Image
+                    src="/images/top/img-top-slider-filter.png"
+                    display="block"
+                    w="100%"
+                    h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
+                    objectFit="contain"
+                    position="absolute"
+                    top="0"
+                    left="0"
+                  />
+                  <Image
+                    display="block"
+                    w="100%"
+                    h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
+                    objectFit="contain"
+                    src={isSmallerThan768 ? image.src.sp : image.src.pc}
+                    alt={image.alt}
+                  />
+                </>
+              )}
             </Box>
             <Box
               position="absolute"
