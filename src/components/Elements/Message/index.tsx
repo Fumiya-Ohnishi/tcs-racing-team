@@ -1,6 +1,7 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   message: {

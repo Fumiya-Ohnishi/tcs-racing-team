@@ -1,8 +1,10 @@
 import { Box, Divider, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { TeamMemberTitle } from '../components/TeamMemberTitle';
+import { useTranslation } from 'react-i18next';
 
 export const TeamMemberCoreValue: FC = () => {
+  const { t } = useTranslation('ourTeam');
   return (
     <Box mb="192px" color="white">
       <Divider orientation="horizontal" mx="auto" w="76%" />
@@ -24,8 +26,7 @@ export const TeamMemberCoreValue: FC = () => {
           w={{ base: '76%', lg: '418px' }}
         >
           <Text textAlign="center" fontSize="18px">
-            マウンテンバイクを通うじて、日本からアジアへ、
-            そしてアジアから世界への架け橋となります
+            {t('ourTeamMission')}
           </Text>
         </VStack>
       </Box>
@@ -48,16 +49,13 @@ export const TeamMemberCoreValue: FC = () => {
           w={{ base: '76%', lg: '648px' }}
         >
           <Text textAlign="center" fontSize="18px">
-            アジア中核の存在として、国際平和な協力と協調を促進します。国際的な協力が、
-            異なる国々との関係を築くための基板となる役割を果たします。
+            {t(`ourTeamVision.${0}`)}
           </Text>
           <Text textAlign="center" fontSize="18px">
-            UCIワールドカップなどの国際大会で常連としての地位を築き上げ2028年ロス
-            オリンピック出場を目指します。
+            {t(`ourTeamVision.${1}`)}
           </Text>
           <Text textAlign="center" fontSize="18px">
-            アジア大陸NO.1のチームとして、アジアの市場でのMTBの普及に貢献し、新たな
-            価値を提供します。
+            {t(`ourTeamVision.${2}`)}
           </Text>
         </VStack>
       </Box>
@@ -81,26 +79,26 @@ export const TeamMemberCoreValue: FC = () => {
         >
           <Box>
             <Text textAlign="center" fontSize="18px">
-              Business
+              {t(`ourTeamValueTitle.${0}`)}
             </Text>
             <Text textAlign="center" fontSize="18px">
-              プロフェッショナルな姿勢でスポーツとビジネス両面での成功を追求します。
-            </Text>
-          </Box>
-          <Box>
-            <Text textAlign="center" fontSize="18px">
-              Challenge
-            </Text>
-            <Text textAlign="center" fontSize="18px">
-              常識にとらわれず、新しい挑戦に果敢に取り組みます。
+              {t('ourTeamValueBusiness')}
             </Text>
           </Box>
           <Box>
             <Text textAlign="center" fontSize="18px">
-              Feeling
+              {t(`ourTeamValueTitle.${1}`)}
             </Text>
             <Text textAlign="center" fontSize="18px">
-              ファン・スポンサー・自転車関係者、全ての人に熱くかかわり大切にします。
+              {t('ourTeamValueChallenge')}
+            </Text>
+          </Box>
+          <Box>
+            <Text textAlign="center" fontSize="18px">
+              {t(`ourTeamValueTitle.${2}`)}
+            </Text>
+            <Text textAlign="center" fontSize="18px">
+              {t('ourTeamValueFeeling')}
             </Text>
           </Box>
         </VStack>
