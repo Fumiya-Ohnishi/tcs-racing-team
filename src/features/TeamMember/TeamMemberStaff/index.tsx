@@ -14,24 +14,24 @@ const mainStaffs: TeamMemberStaff[] = [
   {
     id: 0,
     name: '山本幸平',
-    image: '/images/team/img-team-staff01.jpg',
+    image: '/images/team/img-team-staff01.webp',
   },
   {
     id: 1,
     name: '福光悠佑',
-    image: '/images/team/img-team-staff02.jpg',
+    image: '/images/team/img-team-staff02.webp',
   },
 ];
 const subStaffs: TeamMemberStaff[] = [
   {
     id: 0,
     name: '佐藤寿美',
-    image: '/images/team/img-team-staff03.jpg',
+    image: '/images/team/img-team-staff03.webp',
   },
   {
     id: 1,
     name: '汐澤芳治',
-    image: '/images/team/img-team-staff04.jpg',
+    image: '/images/team/img-team-staff04.webp',
   },
   {
     id: 2,

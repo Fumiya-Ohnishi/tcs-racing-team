@@ -23,7 +23,7 @@ interface StaffImages {
 const staffImages: StaffImages[] = [
   {
     id: 1,
-    src: '/images/top/staff/img-team-staff01.jpg',
+    src: '/images/top/staff/img-team-staff01.webp',
     alt: 'スタッフ画像',
     name: '福光 悠介',
     jobType: 'GM',
@@ -31,14 +31,14 @@ const staffImages: StaffImages[] = [
   },
   {
     id: 2,
-    src: '/images/top/staff/img-team-staff02.jpg',
+    src: '/images/top/staff/img-team-staff02.webp',
     alt: 'スタッフ画像',
     name: '佐藤 寿美',
     jobType: 'マネージャー',
   },
   {
     id: 3,
-    src: '/images/top/staff/img-team-staff03.jpg',
+    src: '/images/top/staff/img-team-staff03.webp',
     alt: 'スタッフ画像',
     name: '汐澤 芳治',
     jobType: '広報',
@@ -64,7 +64,7 @@ export const Staff = () => {
         >
           {staffImages.map(image => (
             <GridItem key={image.id}>
-              <Box position="relative" bg="#000" mb="16px" py="30px" h="100%">
+              <Box position="relative" bg="#000" mb="16px" h="100%">
                 <Image src={image.src} margin="auto" />
                 <Box
                   position="absolute"
