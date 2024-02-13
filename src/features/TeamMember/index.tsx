@@ -24,7 +24,7 @@ export const TeamMemberContent = () => {
           display={{ base: 'block', lg: 'none' }}
           h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
         >
-          <Image src="/images/team/img-team-top.jpg" mt="108px" />
+          <Image src="/images/team/img-team-top.webp" mt="108px" />
           <Box
             position="absolute"
             top="0"
@@ -59,7 +59,7 @@ export const TeamMemberContent = () => {
           mt="52px"
         >
           <Image
-            src="/images/team/img-team-top.jpg"
+            src="/images/team/img-team-top.webp"
             w="100%"
             h="100%"
             objectFit="cover"

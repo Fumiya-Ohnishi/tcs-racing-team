@@ -64,7 +64,7 @@ export const Contact = () => {
             w="100%"
             objectFit="contain"
             display="block"
-            src="/images/contact/img-contact-01.jpeg"
+            src="/images/contact/img-contact-01.webp"
             alt="contact"
           />
           <Box

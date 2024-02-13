@@ -39,7 +39,7 @@ export const ScheduleComponent = () => {
         mb="64px"
       >
         <Image
-          src="/images/schedule/img-schedule-top.jpg"
+          src="/images/schedule/img-schedule-top.webp"
           mt="108px"
           objectFit="contain"
         />
@@ -61,7 +61,7 @@ export const ScheduleComponent = () => {
         mb="128px"
         mt="52px"
       >
-        <Image src="/images/schedule/img-schedule-top.jpg" w="100%" h="100%" objectFit="cover" />
+        <Image src="/images/schedule/img-schedule-top.webp" w="100%" h="100%" objectFit="cover" />
         <Box
           position="absolute"
           top="0"
