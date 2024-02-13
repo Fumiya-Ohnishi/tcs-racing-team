@@ -24,7 +24,7 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
+  // autoplay: true,
   autoplaySpeed: 3000,
 };
 
@@ -45,8 +45,8 @@ const images: images[] = [
   {
     id: 1,
     src: {
-      sp: '/images/img-slide1-sp.jpg',
-      pc: '/images/top/img-slider01.jpg',
+      sp: '/images/top/img-slider01.webp',
+      pc: '/images/top/img-slider01.webp',
     },
     alt: 'スライド1',
     text: {
@@ -57,8 +57,8 @@ const images: images[] = [
   {
     id: 2,
     src: {
-      sp: '/images/img-slide1-sp.jpg',
-      pc: '/images/top/img-slider02.jpg',
+      sp: '/images/top/img-slider02.webp',
+      pc: '/images/top/img-slider02.webp',
     },
     alt: 'スライド2',
     text: {
@@ -69,8 +69,8 @@ const images: images[] = [
   {
     id: 3,
     src: {
-      sp: '/images/img-slide1-sp.jpg',
-      pc: '/images/top/img-slider03.jpg',
+      sp: '/images/top/img-slider03.webp',
+      pc: '/images/top/img-slider03.webp',
     },
     alt: 'スライド3',
     text: {
