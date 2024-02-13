@@ -23,7 +23,7 @@ export const TopContent = () => {
       <PageLayout>
         <Box
           position="relative"
-          h={{ base: 'auto', lg: 'calc(100vh - 90px)' }}
+          h={{ base: 'calc(100vh - 90px)', lg: 'calc(100vh - 90px)' }}
           mt={{ base: '110px', lg: '50px' }}
         >
           <Carousel />
