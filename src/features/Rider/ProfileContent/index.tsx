@@ -63,38 +63,42 @@ export const ProfileContent: FC<Props> = ({ id }) => {
         </Text>
         <Box css={beforeImage} boxShadow="10px -10px #333333">
           <HStack mb="16px">
-            <Text minW="106px" css={afterDot}>
+            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {t(`menuTitle.${0}`)}
             </Text>
-            <Text fontSize="18px">
+            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {convertNewlineToBreak(t(`nationality.${id}`))}
             </Text>
           </HStack>
           <HStack mb="16px">
-            <Text minW="106px" css={afterDot}>
+            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {t(`menuTitle.${1}`)}
             </Text>
-            <Text fontSize="18px">
+            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {convertNewlineToBreak(t(`birthplace.${id}`))}
             </Text>
           </HStack>
           <HStack mb="16px">
-            <Text minW="106px" css={afterDot}>
+            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {t(`menuTitle.${2}`)}
             </Text>
-            <Text fontSize="18px">{t(`berthDay.${id}`)}</Text>
+            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
+              {t(`berthDay.${id}`)}
+            </Text>
           </HStack>
           <HStack mb="16px">
-            <Text minW="106px" css={afterDot}>
+            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {t(`menuTitle.${3}`)}
             </Text>
-            <Text fontSize="18px">{t(`stature.${id}`)}</Text>
+            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
+              {t(`stature.${id}`)}
+            </Text>
           </HStack>
           <HStack>
-            <Text minW="106px" css={afterDot}>
+            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {t(`menuTitle.${4}`)}
             </Text>
-            <Text fontSize="18px">
+            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {convertNewlineToBreak(t(`tastes.${id}`))}
             </Text>
           </HStack>
@@ -104,7 +108,11 @@ export const ProfileContent: FC<Props> = ({ id }) => {
         <Text fontSize="24px" mb="16px">
           Result
         </Text>
-        <Box css={beforeImage} boxShadow="10px -10px #333333">
+        <Box
+          css={beforeImage}
+          boxShadow="10px -10px #333333"
+          fontSize={{ base: '16px !important', md: '17px !important', lg: '18px !important' }}
+        >
           {convertNewlineToBreak(t(`result.${id}`))}
         </Box>
       </Box>

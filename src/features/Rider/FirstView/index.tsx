@@ -1,6 +1,6 @@
 import { SnsIcon } from '@/components/Elements/SnsIcon';
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
-import { HStack, Box, Image, Text, useMediaQuery } from '@chakra-ui/react';
+import { HStack, Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -8,23 +8,37 @@ interface Props {
   id: number;
 }
 
+const images = [
+  {
+    firstViewImages: '/images/menber/img-menber-top01.webp',
+    humanImage: '/images/menber/img-menber01.webp',
+  },
+  {
+    firstViewImages: '/images/menber/img-menber-top02.webp',
+    humanImage: '/images/menber/img-menber02.webp',
+  },
+  {
+    firstViewImages: '/images/menber/img-menber-top03.webp',
+    humanImage: '/images/menber/img-menber03.webp',
+  },
+  {
+    firstViewImages: '/images/menber/img-menber-top04.webp',
+    humanImage: '/images/menber/img-menber04.webp',
+  },
+  {
+    firstViewImages: '/images/menber/img-menber-top05.webp',
+    humanImage: '/images/menber/img-menber05.webp',
+  },
+  {
+    firstViewImages: '/images/menber/img-menber-top06.webp',
+    humanImage: '/images/menber/img-menber06.webp',
+  },
+];
+
 export const FirstView: FC<Props> = ({ id }) => {
-  const [isMobile] = useMediaQuery('(max-width: 768px)');
+  // const [isMobile] = useMediaQuery('(max-width: 768px)');
   const { t } = useTranslation('teamMember');
 
-  // PC用とスマートフォン用の画像パス
-  const imagePath = isMobile
-    ? '/images/rider/img-top-sp.webp'
-    : '/images/menber/img-menber-top.jpeg';
-
-  const humanImage = [
-    '/images/menber/img-menber01.webp',
-    '/images/menber/img-menber02.webp',
-    '/images/menber/img-menber03.webp',
-    '/images/menber/img-menber04.webp',
-    '/images/menber/img-menber05.webp',
-    '/images/menber/img-menber06.webp',
-  ];
   return (
     <Box
       position="relative"
@@ -41,7 +55,7 @@ export const FirstView: FC<Props> = ({ id }) => {
         objectFit="cover"
         position="relative"
       >
-        <Image src={imagePath} alt="Rider" w="100%" h="100%" />
+        <Image src={images[id].firstViewImages} alt="Rider" w="100%" h="100%" />
         <Box
           position="absolute"
           top="0"
@@ -69,7 +83,7 @@ export const FirstView: FC<Props> = ({ id }) => {
           w="100%"
           h="100%"
           objectFit="cover"
-          src={humanImage[id]}
+          src={images[id].humanImage}
           alt="Rider"
         />
       </Box>
