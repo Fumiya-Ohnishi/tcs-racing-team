@@ -36,7 +36,6 @@ const images = [
 ];
 
 export const FirstView: FC<Props> = ({ id }) => {
-  // const [isMobile] = useMediaQuery('(max-width: 768px)');
   const { t } = useTranslation('teamMember');
 
   return (
@@ -56,16 +55,6 @@ export const FirstView: FC<Props> = ({ id }) => {
         position="relative"
       >
         <Image src={images[id].firstViewImages} alt="Rider" w="100%" h="100%" />
-        <Box
-          position="absolute"
-          top="0"
-          left="0"
-          right="0"
-          bottom="0"
-          bg="#000"
-          opacity={0.5}
-          zIndex="1"
-        />
       </Box>
       <Box
         position="absolute"
@@ -89,7 +78,8 @@ export const FirstView: FC<Props> = ({ id }) => {
       </Box>
       <Box
         position="absolute"
-        right={{ base: 'auto', lg: '100px' }}
+        w={{ base: 'auto', lg: '40%' }}
+        right={{ base: 'auto', lg: '10px' }}
         left={{ base: '10%', lg: 'auto' }}
         top={{ base: '40%', lg: '50%' }}
         transform={{ base: 'translateY(-60%)', lg: 'translateY(-50%)' }}
