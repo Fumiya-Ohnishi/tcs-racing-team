@@ -13,7 +13,7 @@ export const ProfileContent: FC<Props> = ({ id }) => {
   const beforeImage = css`
     position: relative;
     width: 100%;
-    height: 85%;
+    height: 90%;
     padding-top: 24px;
     padding-bottom: 24px;
     padding-left: 30px;
@@ -27,7 +27,7 @@ export const ProfileContent: FC<Props> = ({ id }) => {
       left: 0;
       top: -10px;
       bottom: 0;
-      width: 60%;
+      width: 108%;
       height: 5px;
       background-image: url('/images/img-text-bg.webp');
       background-size: cover;
@@ -57,13 +57,19 @@ export const ProfileContent: FC<Props> = ({ id }) => {
       <Box
         w={{ base: '100%', lg: 'calc(50% - 22px)' }}
         mb={{ base: '16px', lg: '0px' }}
+        display="flex"
+        flexDirection="column"
       >
         <Text fontSize="24px" mb="16px">
           Profile
         </Text>
         <Box css={beforeImage} boxShadow="10px -10px #333333">
           <HStack mb="16px">
-            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
+            <Text
+              minW="106px"
+              css={afterDot}
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+            >
               {t(`menuTitle.${0}`)}
             </Text>
             <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
@@ -71,7 +77,11 @@ export const ProfileContent: FC<Props> = ({ id }) => {
             </Text>
           </HStack>
           <HStack mb="16px">
-            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
+            <Text
+              minW="106px"
+              css={afterDot}
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+            >
               {t(`menuTitle.${1}`)}
             </Text>
             <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
@@ -79,7 +89,11 @@ export const ProfileContent: FC<Props> = ({ id }) => {
             </Text>
           </HStack>
           <HStack mb="16px">
-            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
+            <Text
+              minW="106px"
+              css={afterDot}
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+            >
               {t(`menuTitle.${2}`)}
             </Text>
             <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
@@ -87,7 +101,11 @@ export const ProfileContent: FC<Props> = ({ id }) => {
             </Text>
           </HStack>
           <HStack mb="16px">
-            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
+            <Text
+              minW="106px"
+              css={afterDot}
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+            >
               {t(`menuTitle.${3}`)}
             </Text>
             <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
@@ -95,7 +113,11 @@ export const ProfileContent: FC<Props> = ({ id }) => {
             </Text>
           </HStack>
           <HStack>
-            <Text minW="106px" css={afterDot} fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
+            <Text
+              minW="106px"
+              css={afterDot}
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+            >
               {t(`menuTitle.${4}`)}
             </Text>
             <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
@@ -109,9 +131,15 @@ export const ProfileContent: FC<Props> = ({ id }) => {
           Result
         </Text>
         <Box
+          display="flex"
+          flexDirection="column"
           css={beforeImage}
           boxShadow="10px -10px #333333"
-          fontSize={{ base: '16px !important', md: '17px !important', lg: '18px !important' }}
+          fontSize={{
+            base: '16px !important',
+            md: '17px !important',
+            lg: '18px !important',
+          }}
         >
           {convertNewlineToBreak(t(`result.${id}`))}
         </Box>

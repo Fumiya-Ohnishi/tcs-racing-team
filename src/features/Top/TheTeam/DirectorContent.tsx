@@ -36,7 +36,6 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
   return (
     <Box
       w="100%"
-      bg="red"
       background={`linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.8),rgba(0, 0, 0, 0.3)), url(/images/img-lattice-background.webp)`}
       backgroundSize="80%"
       cursor="pointer"
@@ -57,7 +56,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
       >
         <Box w="86%" m="0 auto">
           <Box
-            minH={{ base: '150px', lg: '457px' }}
+            minH={{ base: '280px', lg: '457px' }}
             p="99px 0"
             position="relative"
           >
@@ -77,7 +76,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
               </Text>
               <Text
                 color="#fff"
-                mb="71px"
+                mb={{ base: '8px', lg: '71px' }}
                 fontWeight="bold"
                 fontSize={{ base: '24px', lg: '52px' }}
               >

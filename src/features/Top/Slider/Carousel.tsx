@@ -24,7 +24,6 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  // autoplay: true,
   autoplaySpeed: 3000,
 };
 
@@ -104,7 +103,7 @@ export const Carousel = () => {
                     src="/images/top/img-top-slider-filter.png"
                     display="block"
                     w="100%"
-                    h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
+                    h={{ base: 'auto', lg: 'calc(100vh - 90px) !important' }}
                     objectFit="contain"
                     position="absolute"
                     top="0"
@@ -130,21 +129,41 @@ export const Carousel = () => {
                 </>
               ) : (
                 <>
-                  <Image
-                    src="/images/top/img-top-slider-filter.png"
-                    display="block"
-                    w="100%"
-                    h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
-                    objectFit="contain"
+                  <Box
                     position="absolute"
                     top="0"
                     left="0"
+                    right="0"
+                    bottom="0"
+                    bg="#000"
+                    opacity={0.5}
+                    zIndex="0"
                   />
+                  <Text
+                    position="absolute"
+                    top="50%"
+                    left="50%"
+                    transform="translate(-50%, -50%)"
+                    color="white"
+                    fontSize="7vw" // ビューポート幅に基づいたフォントサイズ
+                    fontWeight="bold"
+                    textAlign="center"
+                    bg={`url(${isSmallerThan768 ? image.src.sp : image.src.pc})`}
+                    backgroundClip="text"
+                    backgroundRepeat="no-repeat"
+                    backgroundSize="cover"
+                    backgroundPosition="center"
+                    pt="calc(100vh - 43vh)"
+                    w="100%"
+                    h="100%" // テキストの高さを調整
+                  >
+                    Asia Union TCS Racing Team
+                  </Text>
                   <Image
                     display="block"
                     w="100%"
-                    h={{ base: 'auto', lg: 'calc(100vh - 52px) !important' }}
-                    objectFit="contain"
+                    h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
+                    objectFit={{ base: 'contain', lg: 'cover' }} // objectFitをcoverに変更
                     src={isSmallerThan768 ? image.src.sp : image.src.pc}
                     alt={image.alt}
                   />
