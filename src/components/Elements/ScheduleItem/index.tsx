@@ -1,4 +1,3 @@
-import { useLanguage } from '@/state/languageState/useLanguage';
 import { Box, Flex, Text, Image } from '@chakra-ui/react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -19,7 +18,6 @@ export const ScheduleItem = ({
   location,
 }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [selectedLanguage] = useLanguage();
 
   return (
     <>

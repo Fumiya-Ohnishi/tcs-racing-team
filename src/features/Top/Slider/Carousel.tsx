@@ -9,6 +9,7 @@ interface images {
   src: {
     sp: string;
     pc: string;
+    bg?: string;
   };
   alt: string;
   text: {
@@ -31,7 +32,7 @@ const images: images[] = [
   {
     id: 0,
     src: {
-      sp: '/images/top/movie.mp4',
+      sp: '/images/top/movie-sp.mp4',
       pc: '/images/top/movie.mp4',
     },
     alt: 'スライド0',
@@ -44,8 +45,9 @@ const images: images[] = [
   {
     id: 1,
     src: {
-      sp: '/images/top/img-slider01.webp',
+      sp: '/images/top/img-slider-sp01.webp',
       pc: '/images/top/img-slider01.webp',
+      bg: '/images/top/img-slider-sp-bg01.png',
     },
     alt: 'スライド1',
     text: {
@@ -56,8 +58,9 @@ const images: images[] = [
   {
     id: 2,
     src: {
-      sp: '/images/top/img-slider02.webp',
+      sp: '/images/top/img-slider-sp02.webp',
       pc: '/images/top/img-slider02.webp',
+      bg: '/images/top/img-slider-sp-bg02.png',
     },
     alt: 'スライド2',
     text: {
@@ -68,8 +71,9 @@ const images: images[] = [
   {
     id: 3,
     src: {
-      sp: '/images/top/img-slider03.webp',
+      sp: '/images/top/img-slider-sp03.webp',
       pc: '/images/top/img-slider03.webp',
+      bg: '/images/top/img-slider-sp-bg03.png',
     },
     alt: 'スライド3',
     text: {
@@ -88,27 +92,61 @@ export const Carousel = () => {
           <Box
             key={image.id}
             w="100%"
-            h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
+            h={{
+              base: 'calc(100vh - 110px) !important',
+              lg: 'calc(100vh - 90px) !important',
+            }}
             position="relative"
           >
             <Box
               w="100%"
-              h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
+              h={{
+                base: 'calc(100vh - 110px) !important',
+                lg: 'calc(100vh - 52px) !important',
+              }}
               objectFit="cover"
               position="relative"
             >
               {image.isMovie ? (
                 <>
-                  <Image
-                    src="/images/top/img-top-slider-filter.png"
-                    display="block"
-                    w="100%"
-                    h={{ base: 'auto', lg: 'calc(100vh - 90px) !important' }}
-                    objectFit="contain"
+                  <Box
                     position="absolute"
                     top="0"
                     left="0"
+                    right="0"
+                    bottom="0"
+                    bg="#000"
+                    opacity={0.5}
+                    zIndex="0"
                   />
+                  <Text
+                    position="absolute"
+                    top={{ base: '0', lg: '50%' }}
+                    left={{ base: '0', lg: '50%' }}
+                    transform={{
+                      base: 'rotate(-90deg)',
+                      lg: 'translate(-50%, -50%)',
+                    }}
+                    color="white"
+                    fontSize={{
+                      customSm: '40px',
+                      customMd: '56px',
+                      lg: '7vw',
+                    }}
+                    fontWeight="bold"
+                    textAlign={{ base: 'left', lg: 'center' }}
+                    bg="white"
+                    backgroundClip="text"
+                    backgroundRepeat="no-repeat"
+                    backgroundSize={{ base: 'contain', lg: 'cover' }}
+                    backgroundPosition={{ base: '0px 0px', lg: 'center' }}
+                    pt={{ base: '0px', lg: 'calc(100vh - 43vh)' }}
+                    w={{ base: 'calc(100vh - 115px)', lg: '100%' }}
+                    h="100%"
+                    opacity={0.3}
+                  >
+                    Asia Union TCS Racing Team
+                  </Text>
                   <video
                     autoPlay
                     loop
@@ -116,7 +154,7 @@ export const Carousel = () => {
                     playsInline
                     style={
                       isSmallerThan768
-                        ? { objectFit: 'cover', height: 'calc(100vh - 256px)' }
+                        ? { objectFit: 'cover', height: 'calc(100vh - 110px)' }
                         : { objectFit: 'cover', height: '100vh' }
                     }
                   >
@@ -148,24 +186,32 @@ export const Carousel = () => {
                       lg: 'translate(-50%, -50%)',
                     }}
                     color="white"
-                    fontSize={{ base: '13.5vw', lg: '7vw' }}
+                    fontSize={{
+                      customSm: '40px',
+                      customMd: '56px',
+                      lg: '7vw',
+                    }}
                     fontWeight="bold"
                     textAlign={{ base: 'left', lg: 'center' }}
-                    bg={`url(${isSmallerThan768 ? image.src.sp : image.src.pc})`}
+                    bg="white"
                     backgroundClip="text"
                     backgroundRepeat="no-repeat"
-                    backgroundSize="cover"
-                    backgroundPosition="center"
+                    backgroundSize={{ base: 'contain', lg: 'cover' }}
+                    backgroundPosition={{ base: '0px 0px', lg: 'center' }}
                     pt={{ base: '0px', lg: 'calc(100vh - 43vh)' }}
-                    w={{ base: 'calc(100vh - 110px)', lg: '100%' }}
+                    w={{ base: 'calc(100vh - 115px)', lg: '100%' }}
                     h="100%"
+                    opacity={0.3}
                   >
                     Asia Union TCS Racing Team
                   </Text>
                   <Image
                     display="block"
                     w="100%"
-                    h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
+                    h={{
+                      base: 'calc(100vh - 110px) !important',
+                      lg: 'calc(100vh - 90px) !important',
+                    }}
                     objectFit={{ base: 'contain', lg: 'cover' }} // objectFitをcoverに変更
                     src={isSmallerThan768 ? image.src.sp : image.src.pc}
                     alt={image.alt}
