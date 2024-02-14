@@ -2,7 +2,7 @@ import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Message } from '@/components/Elements/Message';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { OurPartners } from '../Top/OurPartners';
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Image, Text, useMediaQuery } from '@chakra-ui/react';
 import { Title } from '@/components/Elements/Title';
 import { TeamMemberStaff } from './TeamMemberStaff';
 import { TeamMemberCoreValue } from './TeamMemberCoreValue';
@@ -10,6 +10,8 @@ import { TeamMemberRiders } from './TeamMemberRiders';
 import { useTranslation } from 'react-i18next';
 
 export const TeamMemberContent = () => {
+  const [isSmallerThan768] = useMediaQuery('(max-width: 768px)');
+
   const { t } = useTranslation('ourTeam');
   const message = {
     title: t('ourTeamMissionTitle'),
@@ -24,7 +26,14 @@ export const TeamMemberContent = () => {
           display={{ base: 'block', lg: 'none' }}
           h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
         >
-          <Image src="/images/team/img-team-top.webp" mt="108px" />
+          <Image
+            src={
+              isSmallerThan768
+                ? '/images/team/img-team-top-sp.webp'
+                : '/images/team/img-team-top.webp'
+            }
+            mt="108px"
+          />
           <Box
             position="absolute"
             top="0"
@@ -34,6 +43,7 @@ export const TeamMemberContent = () => {
             bg="#000"
             opacity={0.5}
             zIndex="1"
+            display={{ base: 'none', lg: 'block' }}
           />
           <Text
             fontSize="18px"
@@ -44,6 +54,7 @@ export const TeamMemberContent = () => {
             left="50%"
             transform="translate(-50%, -50%)"
             zIndex="2"
+            display={{ base: 'none', lg: 'block' }}
           >
             熱狂的に | Go Crazy
             <Box as="span" display="block" textAlign="center" fontSize="12px">

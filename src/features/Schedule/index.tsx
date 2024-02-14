@@ -1,6 +1,6 @@
 import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Title } from '@/components/Elements/Title';
-import { Box, Grid, Image } from '@chakra-ui/react';
+import { Box, Grid, Image, useMediaQuery } from '@chakra-ui/react';
 import { Schedule } from './Schedule';
 import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
@@ -30,6 +30,7 @@ const winCounterData = [
 ];
 
 export const ScheduleComponent = () => {
+  const [isSmallerThan768] = useMediaQuery('(max-width: 768px)');
   return (
     <PageLayout>
       <Box
@@ -39,7 +40,11 @@ export const ScheduleComponent = () => {
         mb="64px"
       >
         <Image
-          src="/images/schedule/img-schedule-top.webp"
+          src={
+            isSmallerThan768
+              ? '/images/schedule/img-schedule-top-sp.webp'
+              : '/images/schedule/img-schedule-top.webp'
+          }
           mt="108px"
           objectFit="contain"
         />
@@ -61,7 +66,12 @@ export const ScheduleComponent = () => {
         mb="128px"
         mt="52px"
       >
-        <Image src="/images/schedule/img-schedule-top.webp" w="100%" h="100%" objectFit="cover" />
+        <Image
+          src="/images/schedule/img-schedule-top.webp"
+          w="100%"
+          h="100%"
+          objectFit="cover"
+        />
         <Box
           position="absolute"
           top="0"
