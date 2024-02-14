@@ -141,21 +141,24 @@ export const Carousel = () => {
                   />
                   <Text
                     position="absolute"
-                    top="50%"
-                    left="50%"
-                    transform="translate(-50%, -50%)"
+                    top={{ base: '0', lg: '50%' }}
+                    left={{ base: '0', lg: '50%' }}
+                    transform={{
+                      base: 'rotate(-90deg)',
+                      lg: 'translate(-50%, -50%)',
+                    }}
                     color="white"
-                    fontSize="7vw" // ビューポート幅に基づいたフォントサイズ
+                    fontSize={{ base: '13.5vw', lg: '7vw' }}
                     fontWeight="bold"
-                    textAlign="center"
+                    textAlign={{ base: 'left', lg: 'center' }}
                     bg={`url(${isSmallerThan768 ? image.src.sp : image.src.pc})`}
                     backgroundClip="text"
                     backgroundRepeat="no-repeat"
                     backgroundSize="cover"
                     backgroundPosition="center"
-                    pt="calc(100vh - 43vh)"
-                    w="100%"
-                    h="100%" // テキストの高さを調整
+                    pt={{ base: '0px', lg: 'calc(100vh - 43vh)' }}
+                    w={{ base: 'calc(100vh - 110px)', lg: '100%' }}
+                    h="100%"
                   >
                     Asia Union TCS Racing Team
                   </Text>
