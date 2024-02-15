@@ -17,6 +17,7 @@ export const ProfileContent: FC<Props> = ({ id }) => {
     padding-top: 24px;
     padding-bottom: 24px;
     padding-left: 30px;
+    padding-right: 30px;
     background-color: #666666;
     overflow: hidden;
     font-size: 18px;
