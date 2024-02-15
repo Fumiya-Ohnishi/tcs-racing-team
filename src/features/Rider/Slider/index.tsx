@@ -24,14 +24,14 @@ const images: images[] = [
     id: 3,
     imgPath: '/images/rider/img-member-03.webp',
     alt: 'スライド3',
-    text: 'RIAD HAKIM',
+    text: 'RIYADH HAKIM',
     linkId: 2,
   },
   {
     id: 4,
     imgPath: '/images/rider/img-member-04.webp',
     alt: 'スライド4',
-    text: 'SAYU VERA',
+    text: 'SAYU BELLA',
     linkId: 3,
   },
   {
@@ -45,7 +45,7 @@ const images: images[] = [
     id: 6,
     imgPath: '/images/rider/img-member-06.webp',
     alt: 'スライド6',
-    text: 'ESEVIER NICOLE',
+    text: 'EUSEBIA NICOLE',
     linkId: 5,
   },
 ];
