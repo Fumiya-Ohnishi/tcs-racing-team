@@ -22,7 +22,7 @@ export const About: FC<Props> = ({ id }) => {
     <Box
       w={{ base: '100%', lg: '88%' }}
       ml="auto"
-      mb="132px"
+      mb="288px"
       position="relative"
     >
       <Box display={{ base: 'flex', lg: 'none' }} justifyContent="center">
@@ -83,7 +83,7 @@ export const About: FC<Props> = ({ id }) => {
           mb="65px"
           display={{ base: 'none', lg: 'block' }}
         >
-          About Eusebia Nicole
+          {t(`aboutTitle.${id}`)}
         </Text>
         <Text lineHeight="2" fontSize="14px">
           {convertNewlineToBreak(t(`about.${id}`))}
