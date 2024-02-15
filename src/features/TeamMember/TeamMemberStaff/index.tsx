@@ -18,7 +18,7 @@ const mainStaffs: TeamMemberStaff[] = [
   },
   {
     id: 1,
-    name: '福光悠佑',
+    name: '福光悠介',
     image: '/images/team/img-team-staff02.webp',
   },
 ];
