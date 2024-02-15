@@ -2,12 +2,18 @@
   "name": [
     "YAMAMOTO\nKOHEI",
     "FUKUMITU\nYUSUKE",
-    "RIAD\nHAKIM",
-    "SAYU\nVERA",
+    "RIYADH\nHAKIM",
+    "SAYU\nBELLA",
     "MATSUMOTO\nYUTA",
-    "ESEVIER\nNICOLE"
+    "EUSEBIA\nNICOLE"
   ],
-  "menuTitle": ["国籍", "出身地", "生年月日", "身長", "趣味"],
+  "menuTitle": [
+    "国籍",
+    "出身地",
+    "生年月日",
+    "身長",
+    "趣味"
+  ],
   "title": [
     "Lifetime Challenger",
     "成功とは、自分に価値ある目標を設定し挑む事である。",
@@ -24,7 +30,14 @@
     "日本",
     "フィリピン"
   ],
-  "birthplace": ["北海道", "北海道", "シンガポール", "-", "鉾浜", "ケソン市"],
+  "birthplace": [
+    "北海道",
+    "北海道",
+    "シンガポール",
+    "-",
+    "鉾浜",
+    "ケソン市"
+  ],
   "berthDay": [
     "1985年8月20日",
     "1987年6月19日",
@@ -33,7 +46,14 @@
     "1997年4月21日",
     "2001年5月5日"
   ],
-  "stature": ["180cm", "173cm", "165cm", "-", "183cm", "168cm"],
+  "stature": [
+    "180cm",
+    "173cm",
+    "165cm",
+    "-",
+    "183cm",
+    "168cm"
+  ],
   "tastes": [
     "MTBに乗ること・コーヒー、ワイン愛好家",
     "アウトドア・フィールドDIY",
@@ -49,6 +69,14 @@
     "2022\nアジア選手権XCO2位\nインドネシア選手権XCO1位\n2023\nシーゲームXCO1位\nインドネシア選手権XCO1位",
     "2022\n全日本選手権XCE優勝\nWカップXCE10位",
     "2023\nフィリピン選手権XCE3位\nシーゲーム出場"
+  ],
+  "aboutTitle": [
+    "About Yamamoto Kohei",
+    "About Yusuke Fukumitsu",
+    "About Riyadh Hakim",
+    "About Sayu Bella",
+    "About Matsumoto Yuta",
+    "About Eusebia Nicole"
   ],
   "about": [
     "北京オリンピックから４大会連続オリンピック日本代表。全日本選手権では12度の優勝、アジア選手権では10度優勝を果たし、２０１３年には世界ランキング11位となる。アジアマウンテンバイク界の生きるレジェンド。現在もプレイングマネージャーとしてレース活動を行いながら、これまでの経験を生かして、これからの若い世代へスポーツの素晴らしさを伝えていく活動を行なっている。アジアから世界チャンピオン獲得へ貢献をしたいという強い想いを胸に掲げて活動中。",
