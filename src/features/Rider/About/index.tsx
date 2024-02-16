@@ -34,19 +34,6 @@ export const About: FC<Props> = ({ id }) => {
           fontSize="24px"
           fontWeight="bold"
           color="#fff"
-          sx={{
-            '::after': {
-              content: '""',
-              position: 'absolute',
-              bottom: '0',
-              left: '0%',
-              width: '15%',
-              height: '3px',
-              backgroundImage: `url(${backGroundImage[id]})`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-          }}
         >
           {t(`aboutTitle.${id}`)}
         </Text>
