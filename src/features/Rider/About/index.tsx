@@ -48,7 +48,7 @@ export const About: FC<Props> = ({ id }) => {
             },
           }}
         >
-          About Eusebia Nicole
+          {t(`aboutTitle.${id}`)}
         </Text>
       </Box>
 
