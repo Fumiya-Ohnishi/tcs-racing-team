@@ -56,7 +56,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
       >
         <Box w="86%" m="0 auto">
           <Box
-            minH={{ base: '280px', lg: '457px' }}
+            minH={{ base: '360px', lg: '457px' }}
             p="99px 0"
             position="relative"
           >
