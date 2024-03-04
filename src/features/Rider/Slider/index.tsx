@@ -77,7 +77,15 @@ export const MemberSlider = () => {
     <SimpleGrid columns={2} spacing={10}>
       {images.map(image => (
         <Box key={image.id} w="100%" h="100%" pr="16px">
-          <Box w="100%" objectFit="cover">
+          <Box
+            w="100%"
+            objectFit="cover"
+            onClick={() => {
+              navigate('/member-page', {
+                state: { id: image.linkId },
+              });
+            }}
+          >
             <Image
               display="block"
               w="100%"
