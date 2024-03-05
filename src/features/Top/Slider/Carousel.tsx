@@ -32,8 +32,8 @@ const images: images[] = [
   {
     id: 0,
     src: {
-      sp: '/images/top/movie-sp.mp4',
-      pc: '/images/top/movie.mp4',
+      sp: '/movie/movie-top-sp.mp4',
+      pc: '/movie/movie-top-pc.mp4',
     },
     alt: 'スライド0',
     text: {
@@ -109,16 +109,6 @@ export const Carousel = () => {
             >
               {image.isMovie ? (
                 <>
-                  <Box
-                    position="absolute"
-                    top="0"
-                    left="0"
-                    right="0"
-                    bottom="0"
-                    bg="#000"
-                    opacity={0.5}
-                    zIndex="0"
-                  />
                   <Text
                     position="absolute"
                     top={{ base: '0', lg: '50%' }}
