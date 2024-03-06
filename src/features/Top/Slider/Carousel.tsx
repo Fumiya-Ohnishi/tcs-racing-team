@@ -144,7 +144,7 @@ export const Carousel = () => {
                     playsInline
                     style={
                       isSmallerThan768
-                        ? { objectFit: 'cover', height: 'calc(100vh - 110px)' }
+                        ? { objectFit: 'cover', height: 'calc(100vh - 110px)' ,width: '100vw'}
                         : { objectFit: 'cover', height: '100vh' }
                     }
                   >
