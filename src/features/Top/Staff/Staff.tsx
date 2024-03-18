@@ -23,7 +23,7 @@ interface StaffImages {
 const staffImages: StaffImages[] = [
   {
     id: 1,
-    src: '/images/top/staff/img-team-staff01.webp',
+    src: '/images/top/staff/img-team-staff01.png',
     alt: 'スタッフ画像',
     name: '福光 悠介',
     jobType: 'GM',
@@ -31,24 +31,24 @@ const staffImages: StaffImages[] = [
   },
   {
     id: 2,
-    src: '/images/top/staff/img-team-staff02.webp',
+    src: '/images/top/staff/img-team-staff02.png',
     alt: 'スタッフ画像',
     name: '佐藤 寿美',
     jobType: 'マネージャー',
   },
   {
     id: 3,
-    src: '/images/top/staff/img-team-staff03.webp',
+    src: '/images/top/staff/img-team-staff03.png',
     alt: 'スタッフ画像',
     name: '汐澤 芳治',
     jobType: '広報',
   },
   {
     id: 4,
-    src: '',
+    src: '/images/top/staff/img-team-staff04.png',
     alt: 'スタッフ画像',
     name: 'Dr. ドニー クスマ',
-    jobType: 'アンバサダー',
+    jobType: 'スポーツドクター',
   },
 ];
 
