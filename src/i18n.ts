@@ -13,7 +13,14 @@ i18n
     interpolation: {
       escapeValue: false, // XSSの危険がない場合はHTMLエスケープを無効化
     },
-    ns: ['topMessage', 'topTheTeam', 'teamMember', 'rider', 'ourTeam'], // 翻訳ファイルの名前
+    ns: [
+      'topMessage',
+      'topTheTeam',
+      'teamMember',
+      'rider',
+      'ourTeam',
+      'contact',
+    ], // 翻訳ファイルの名前
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json', // 翻訳ファイルのパス
     },
