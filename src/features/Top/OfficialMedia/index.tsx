@@ -33,22 +33,22 @@ export const OfficialMedia = () => {
         >
           <SnsIcon
             href="https://www.facebook.com/asiauniontcs"
-            icon="images/ico-facebook.webp"
+            icon="/images/ico-facebook.webp"
             label="Facebook"
           />
           <SnsIcon
             href="https://www.instagram.com/asia.union.tcs/"
-            icon="images/ico-Instagram.webp"
+            icon="/images/ico-Instagram.webp"
             label="Instagram"
           />
           <SnsIcon
             href="https://www.youtube.com/@AsiaUnionTCSRacingTeam"
-            icon="images/ico-YouTube.webp"
+            icon="/images/ico-YouTube.webp"
             label="YouTube"
           />
           <SnsIcon
             href="https://www.tiktok.com/@asiauniontcsracin"
-            icon="images/ico-TikTok.webp"
+            icon="/images/ico-TikTok.webp"
             label="TikTok"
           />
         </HStack>
