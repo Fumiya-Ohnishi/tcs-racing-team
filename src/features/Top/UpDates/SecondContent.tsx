@@ -29,11 +29,7 @@ export const SecondContent: FC<Props> = ({ updateArray }) => {
           boxShadow="5px -5px #626063"
           transition="box-shadow 0.3s ease"
           _hover={{ boxShadow: '10px -10px #626063' }}
-          onClick={() =>
-            navigate('/update-content', {
-              state: { item },
-            })
-          }
+          onClick={() => navigate(`/update-content/${item.id}`)}
         >
           <ImageFilter
             src={
