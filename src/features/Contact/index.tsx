@@ -25,11 +25,7 @@ export const Contact = () => {
         pt="27px"
         pb="19px"
         cursor="pointer"
-        onClick={() =>
-          navigate('/update-content', {
-            state: { item },
-          })
-        }
+        onClick={() => navigate(`/update-content/${item.id}`)}
       >
         <Box display="flex" alignItems="center" mb="15px">
           <Text color="#FF8F80" fontSize="16px" fontWeight="bold">

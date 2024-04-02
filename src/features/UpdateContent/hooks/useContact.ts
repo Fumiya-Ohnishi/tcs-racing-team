@@ -7,8 +7,10 @@ export const useUpDateContents = (id: string) => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiUrl = `${import.meta.env.VITE_API_URL}blogs`
-      const categoryFilter = encodeURIComponent(`category[equals]${import.meta.env.VITE_UPDATES_CONTENTS_ID}`);
+      const apiUrl = `${import.meta.env.VITE_API_URL}blogs`;
+      const categoryFilter = encodeURIComponent(
+        `category[equals]${import.meta.env.VITE_UPDATES_CONTENTS_ID}`,
+      );
       const excludeIdFilter = encodeURIComponent(`id[not_equals]${id}`);
       const urlWithFilter = `${apiUrl}?filters=${categoryFilter}[and]${excludeIdFilter}&limit=3&orders=-publishedAt`;
       try {

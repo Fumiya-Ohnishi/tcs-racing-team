@@ -33,11 +33,7 @@ export const RelatedUpdates: FC<Props> = ({ id }) => {
           boxShadow="10px -10px #626063"
           transition="box-shadow 0.3s ease"
           _hover={{ boxShadow: '15px -15px #626063' }}
-          onClick={() =>
-            navigate('/update-content', {
-              state: { item },
-            })
-          }
+          onClick={() => navigate(`/update-content/${item.id}`)}
         >
           <ImageFilter
             src={

@@ -39,7 +39,7 @@ export const publicRoutes = [
     children: [{ path: '', element: <OurPartnersPage /> }],
   },
   {
-    path: '/update-content',
+    path: '/update-content/:id',
     element: <UpdateContentPage />,
     children: [{ path: '', element: <UpdateContentPage /> }],
   },

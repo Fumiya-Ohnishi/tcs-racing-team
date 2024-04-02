@@ -23,11 +23,7 @@ export const OtherContents: FC<Props> = ({ updateArray }) => {
           borderColor="#fff"
           mb="16px"
           cursor="pointer"
-          onClick={() =>
-            navigate('/update-content', {
-              state: { item },
-            })
-          }
+          onClick={() => navigate(`/update-content/${item.id}`)}
         >
           <HStack mb={{ base: '8px', lg: '8px' }}>
             <Text color="#FF9080">News |</Text>
