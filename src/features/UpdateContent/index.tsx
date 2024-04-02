@@ -2,17 +2,19 @@ import { Title } from '@/components/Elements/Title';
 import { PageLayout } from '@/components/Layouts/PageLayout';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
 import { Box, HStack, Image, Text } from '@chakra-ui/react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { RelatedUpdates } from './RelatedUpdates';
 import './style.css';
 import { useLanguage } from '@/state/languageState/useLanguage';
+import { useSingleNewsContent } from './hooks/useSingleNewsContent';
 
 export const UpdateContent = () => {
-  const location = useLocation();
-  const updateArray = location.state.item;
+  const { id } = useParams();
+
+  const { singleNews } = useSingleNewsContent(id || '');
 
   const [selectedLanguage] = useLanguage();
 
@@ -65,7 +67,7 @@ export const UpdateContent = () => {
             fontSize={{ base: '12px', lg: '16px' }}
             fontWeight="bold"
           >
-            {formatDate(updateArray.publishedAt)}
+            {singleNews?.publishedAt && formatDate(singleNews.publishedAt)}
           </Text>
         </HStack>
 
@@ -75,7 +77,7 @@ export const UpdateContent = () => {
           fontWeight="bold"
           mb="34px"
         >
-          {updateArray[`title${selectedLanguage}`]}
+          {singleNews?.[`title${selectedLanguage}`]}
         </Text>
 
         <Text
@@ -87,12 +89,14 @@ export const UpdateContent = () => {
           News
         </Text>
 
-        <Box
-          mb="37px"
-          dangerouslySetInnerHTML={{
-            __html: updateArray[`content${selectedLanguage}`],
-          }}
-        />
+        {singleNews?.[`content${selectedLanguage}`] && (
+          <Box
+            mb="37px"
+            dangerouslySetInnerHTML={{
+              __html: singleNews?.[`content${selectedLanguage}`],
+            }}
+          />
+        )}
 
         <Box
           display="flex"
@@ -161,7 +165,7 @@ export const UpdateContent = () => {
         >
           Related Updates
         </Text>
-        <RelatedUpdates id={updateArray.id} />
+        {id && <RelatedUpdates id={id} />}
       </MainLayout>
 
       <Title title="Our Partners" subTitle="Our Partners" id="Partners" />
