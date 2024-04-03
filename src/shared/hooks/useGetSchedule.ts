@@ -19,8 +19,8 @@ export const useGetSchedule = ({ limit }: Props) => {
       const eventCategoryFilter = encodeURIComponent(
         `category[equals]${import.meta.env.VITE_EVENT_SCHEDULE_CONTENTS_ID}`,
       );
-      const urlWithRaceFilter = `${apiUrl}?filters=${raceCategoryFilter}&limit=${limit}&orders=-publishedAt`;
-      const urlWithEventFilter = `${apiUrl}?filters=${eventCategoryFilter}&limit=${limit}&orders=-publishedAt`;
+      const urlWithRaceFilter = `${apiUrl}?filters=${raceCategoryFilter}&limit=${limit}&orders=-updatedAt`;
+      const urlWithEventFilter = `${apiUrl}?filters=${eventCategoryFilter}&limit=${limit}&orders=-updatedAt`;
 
       try {
         const responseRaceFilter = await axios.get(urlWithRaceFilter, {
