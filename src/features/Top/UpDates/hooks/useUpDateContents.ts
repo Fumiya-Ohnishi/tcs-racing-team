@@ -17,7 +17,7 @@ export const useUpDateContents = () => {
       const categoryFilter = encodeURIComponent(
         `category[equals]${import.meta.env.VITE_UPDATES_CONTENTS_ID}`,
       );
-      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}&limit=8&orders=-publishedAt`;
+      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}&limit=8&orders=-updatedAt`;
 
       try {
         const response = await axios.get(urlWithFilter, {

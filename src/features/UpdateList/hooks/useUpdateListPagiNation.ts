@@ -9,7 +9,7 @@ export const useUpdateListPagiNation = () => {
     const fetchNews = async () => {
       const apiUrl = `${import.meta.env.VITE_API_URL}blogs`
       const categoryFilter = encodeURIComponent(`category[equals]${import.meta.env.VITE_UPDATES_CONTENTS_ID}`);
-      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}&limit=100&orders=-publishedAt`;
+      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}&limit=100&orders=-updatedAt`;
 
       try {
         const response = await axios.get(urlWithFilter, {

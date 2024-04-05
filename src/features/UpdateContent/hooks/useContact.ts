@@ -12,7 +12,7 @@ export const useUpDateContents = (id: string) => {
         `category[equals]${import.meta.env.VITE_UPDATES_CONTENTS_ID}`,
       );
       const excludeIdFilter = encodeURIComponent(`id[not_equals]${id}`);
-      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}[and]${excludeIdFilter}&limit=3&orders=-publishedAt`;
+      const urlWithFilter = `${apiUrl}?filters=${categoryFilter}[and]${excludeIdFilter}&limit=3&orders=-updatedAt`;
       try {
         const response = await axios.get(urlWithFilter, {
           headers: {
