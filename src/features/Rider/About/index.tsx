@@ -48,7 +48,7 @@ export const About: FC<Props> = ({ id }) => {
       >
         <Image
           w="100%"
-          minH={{ customSm: '270px', custom: '350px', lg: '400px' }}
+          minH={{ customSm: '270px', custom: '350px', lg: '550px' }}
           maxH={{ customSm: 'none', custom: '450px', lg: 'auto' }}
           src={backGroundImage[id]}
           alt="Rider"
