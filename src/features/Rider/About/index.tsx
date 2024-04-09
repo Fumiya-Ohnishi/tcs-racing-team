@@ -22,7 +22,7 @@ export const About: FC<Props> = ({ id }) => {
     <Box
       w={{ base: '100%', lg: '88%' }}
       ml="auto"
-      mb="288px"
+      mb={{ base: '139px', lg: '288px' }}
       position="relative"
     >
       <Box display={{ base: 'flex', lg: 'none' }} justifyContent="center">
@@ -41,17 +41,25 @@ export const About: FC<Props> = ({ id }) => {
 
       <Box
         w={{ base: '100%', lg: '50%' }}
+        minW={{ base: '350px', lg: '850px' }}
         ml="auto"
         mb={{ base: '16px', lg: '0' }}
         objectFit="cover"
       >
-        <Image w="100%" src={backGroundImage[id]} alt="Rider" />
+        <Image
+          w="100%"
+          minH={{ customSm: '270px', custom: '350px', lg: '400px' }}
+          maxH={{ customSm: 'none', custom: '450px', lg: 'auto' }}
+          src={backGroundImage[id]}
+          alt="Rider"
+        />
       </Box>
       <Box
         position="absolute"
         top="0"
         right="0"
         w="50%"
+        minW={{ base: 'auto', lg: '850px' }}
         h="100%"
         bgGradient="linear(to-r, #1A1A1A, transparent)"
         display={{ base: 'none', lg: 'block' }}

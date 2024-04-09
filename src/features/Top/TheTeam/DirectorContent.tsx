@@ -56,7 +56,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
       >
         <Box w="86%" m="0 auto">
           <Box
-            minH={{ base: '360px', lg: '457px' }}
+            minH={{ base: '280px', lg: '457px' }}
             p="99px 0"
             position="relative"
           >
@@ -84,7 +84,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
               </Text>
               <Text
                 color="#fff"
-                fontSize={{ base: '12px', lg: '16px' }}
+                fontSize={{ base: '10px', lg: '16px' }}
                 w={{ base: '50%', lg: '50%' }}
               >
                 {comment}
@@ -95,6 +95,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
               bottom="0"
               right={{ base: '-60px', lg: '0' }}
               w={{ base: '100%', lg: '50%' }}
+              maxW={{ base: '380px', lg: 'auto' }}
               overflow="hidden"
             >
               <Image
