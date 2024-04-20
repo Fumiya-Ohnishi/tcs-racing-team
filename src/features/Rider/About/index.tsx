@@ -12,7 +12,7 @@ export const About: FC<Props> = ({ id }) => {
 
   const backGroundImage = [
     '/images/menber/img-menberbg01.png',
-    '/images/menber/img-menberbg01.png',
+    '/images/menber/img-menberbg02.jpeg',
     '/images/menber/img-menberbg03.png',
     '/images/menber/img-menberbg04.jpeg',
     '/images/menber/img-menberbg05.jpeg',
