@@ -1,9 +1,10 @@
-import { Box, Text, Image, useMediaQuery, SimpleGrid } from '@chakra-ui/react';
+import { Box, Text, Image, SimpleGrid } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Carousel.css';
 import { useNavigate } from 'react-router-dom';
+import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 const images: images[] = [
   {
@@ -17,7 +18,7 @@ const images: images[] = [
     id: 2,
     imgPath: '/images/rider/img-member-02.webp',
     alt: 'スライド2',
-    text: 'FUKUMITSU YUSUKE',
+    text: 'YUSUKE FUKUMITSU',
     linkId: 1,
   },
   {
@@ -38,7 +39,7 @@ const images: images[] = [
     id: 5,
     imgPath: '/images/rider/img-member-05.webp',
     alt: 'スライド5',
-    text: 'MATSUMOTO YUTA',
+    text: 'YUTA MATSUMOTO',
     linkId: 4,
   },
   {
@@ -70,10 +71,10 @@ interface images {
 }
 
 export const MemberSlider = () => {
-  const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const { isTablet } = useGetWindowWidth();
   const navigate = useNavigate();
 
-  const slider = isMobile ? (
+  const slider = isTablet ? (
     <SimpleGrid columns={2} spacing={10}>
       {images.map(image => (
         <Box key={image.id} w="100%" h="100%" pr="16px">

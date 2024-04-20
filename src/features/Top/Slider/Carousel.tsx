@@ -1,8 +1,9 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { Box, Image, Text, useMediaQuery } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
 import './Carousel.css';
+import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 interface images {
   id: number;
@@ -84,7 +85,7 @@ const images: images[] = [
 ];
 
 export const Carousel = () => {
-  const [isSmallerThan768] = useMediaQuery('(max-width: 768px)');
+  const { isTablet } = useGetWindowWidth();
   return (
     <>
       <Slider {...settings}>
@@ -143,13 +144,17 @@ export const Carousel = () => {
                     muted
                     playsInline
                     style={
-                      isSmallerThan768
-                        ? { objectFit: 'cover', height: 'calc(100vh - 110px)' ,width: '100vw'}
+                      isTablet
+                        ? {
+                            objectFit: 'cover',
+                            height: 'calc(100vh - 110px)',
+                            width: '100vw',
+                          }
                         : { objectFit: 'cover', height: '100vh' }
                     }
                   >
                     <source
-                      src={isSmallerThan768 ? image.src.sp : image.src.pc}
+                      src={isTablet ? image.src.sp : image.src.pc}
                       type="video/mp4"
                     />
                     お使いのブラウザはビデオタグをサポートしていません。
@@ -203,7 +208,7 @@ export const Carousel = () => {
                       lg: 'calc(100vh - 90px) !important',
                     }}
                     objectFit={{ base: 'contain', lg: 'cover' }} // objectFitをcoverに変更
-                    src={isSmallerThan768 ? image.src.sp : image.src.pc}
+                    src={isTablet ? image.src.sp : image.src.pc}
                     alt={image.alt}
                   />
                 </>

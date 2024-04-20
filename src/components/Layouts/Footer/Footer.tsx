@@ -1,9 +1,10 @@
-import { Box, HStack, Text, VStack, useMediaQuery } from '@chakra-ui/react';
+import { Box, HStack, Text, VStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { MainLayout } from '../MainLayout';
+import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 export const Footer = () => {
-  const [isTablet] = useMediaQuery('(max-width: 768px)');
+  const { isTablet } = useGetWindowWidth();
 
   const fontSize = isTablet ? '10px' : '24px';
   return (

@@ -2,15 +2,16 @@ import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Message } from '@/components/Elements/Message';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { OurPartners } from '../Top/OurPartners';
-import { Box, Image, Text, useMediaQuery } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
 import { Title } from '@/components/Elements/Title';
 import { TeamMemberStaff } from './TeamMemberStaff';
 import { TeamMemberCoreValue } from './TeamMemberCoreValue';
 import { TeamMemberRiders } from './TeamMemberRiders';
 import { useTranslation } from 'react-i18next';
+import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 export const TeamMemberContent = () => {
-  const [isSmallerThan768] = useMediaQuery('(max-width: 768px)');
+  const { isTablet } = useGetWindowWidth();
 
   const { t } = useTranslation('ourTeam');
   const message = {
@@ -28,7 +29,7 @@ export const TeamMemberContent = () => {
         >
           <Image
             src={
-              isSmallerThan768
+              isTablet
                 ? '/images/team/img-team-top-sp.webp'
                 : '/images/team/img-team-top.webp'
             }

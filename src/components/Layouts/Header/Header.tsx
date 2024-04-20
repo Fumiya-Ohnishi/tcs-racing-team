@@ -11,12 +11,12 @@ import {
   Select,
   Spacer,
   useDisclosure,
-  useMediaQuery,
 } from '@chakra-ui/react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { ChangeEvent, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/state/languageState/useLanguage';
+import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -36,7 +36,7 @@ export const Header = () => {
     setSelectedLanguage(newLanguage);
   };
 
-  const [isTablet] = useMediaQuery('(max-width: 768px)');
+  const { isTablet } = useGetWindowWidth();
   const mb = isTablet ? '16px' : '0';
 
   return (

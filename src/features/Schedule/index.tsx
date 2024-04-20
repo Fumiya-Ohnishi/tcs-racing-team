@@ -1,11 +1,12 @@
 import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Title } from '@/components/Elements/Title';
-import { Box, Grid, Image, useMediaQuery } from '@chakra-ui/react';
+import { Box, Grid, Image } from '@chakra-ui/react';
 import { Schedule } from './Schedule';
 import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { WinCounter } from './WinCounter';
+import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 const winCounterData = [
   {
@@ -30,7 +31,7 @@ const winCounterData = [
 ];
 
 export const ScheduleComponent = () => {
-  const [isSmallerThan768] = useMediaQuery('(max-width: 768px)');
+  const { isTablet } = useGetWindowWidth();
   return (
     <PageLayout>
       <Box
@@ -41,7 +42,7 @@ export const ScheduleComponent = () => {
       >
         <Image
           src={
-            isSmallerThan768
+            isTablet
               ? '/images/schedule/img-schedule-top-sp.webp'
               : '/images/schedule/img-schedule-top.webp'
           }
