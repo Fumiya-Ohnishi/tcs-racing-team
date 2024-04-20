@@ -2,7 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { useLocation } from 'react-router-dom';
 import { FC, useEffect } from 'react';
-import { useMediaQuery } from '@chakra-ui/react';
+import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 interface Props {
   to: string;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const NavLink: FC<Props> = ({ to, children }) => {
-  const [isTablet] = useMediaQuery('(max-width: 768px)');
+  const { isTablet } = useGetWindowWidth();
   const location = useLocation();
   const isTopPage = location.pathname === '/';
 
