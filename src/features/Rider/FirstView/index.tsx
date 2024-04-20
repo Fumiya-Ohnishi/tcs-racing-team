@@ -37,6 +37,7 @@ const images = [
 
 export const FirstView: FC<Props> = ({ id }) => {
   const { t } = useTranslation('teamMember');
+  const firstViewBaseTopValue = id === 3 || id === 4 ? '36%' : '24%';
 
   return (
     <Box
@@ -60,8 +61,8 @@ export const FirstView: FC<Props> = ({ id }) => {
         position="absolute"
         bottom={{ base: 'auto', lg: '0' }}
         left={{ base: 'auto', lg: '60%' }}
-        top={{ base: '40%', lg: 'auto' }}
-        right={{ base: '-30px', lg: 'auto' }}
+        top={{ base: '28%', lg: 'auto' }}
+        right={{ base: '-64px', lg: 'auto' }}
         transform={{ base: 'translateY(-60%)', lg: 'translateX(-40%)' }}
         width={{ base: '80%', lg: 'auto' }}
         h={{ base: 'auto', lg: '100%' }}
@@ -78,12 +79,12 @@ export const FirstView: FC<Props> = ({ id }) => {
       </Box>
       <Box
         position="absolute"
-        w={{ base: 'auto', lg: '40%' }}
+        w={{ base: '66vw', lg: '40%' }}
         right={{ base: 'auto', lg: '10px' }}
         left={{ base: '10%', lg: 'auto' }}
-        top={{ base: '40%', lg: '50%' }}
+        top={{ base: firstViewBaseTopValue, lg: '50%' }}
         transform={{ base: 'translateY(-60%)', lg: 'translateY(-50%)' }}
-        textAlign="center"
+        textAlign={{ base: 'left', lg: 'center' }}
         zIndex="2"
       >
         <Text fontSize={{ base: '16px', lg: '32px' }} fontWeight="bold">
@@ -92,7 +93,7 @@ export const FirstView: FC<Props> = ({ id }) => {
       </Box>
       <Box
         position="absolute"
-        bottom={{ base: '165px', lg: '0' }}
+        bottom={{ base: '96px', lg: '0' }}
         left="50%"
         w="76%"
         transform="translateX(-50%)"
