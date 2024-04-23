@@ -45,7 +45,7 @@ const staffImages: StaffImages[] = [
   },
   {
     id: 4,
-    src: '',
+    src: '/images/top/staff/img-team-staff04.png',
     alt: 'スタッフ画像',
     name: 'Dr. ドニー クスマ',
     jobType: 'アンバサダー',
@@ -63,9 +63,15 @@ export const Staff = () => {
           mb="16px"
         >
           {staffImages.map(image => (
-            <GridItem key={image.id}>
-              <Box position="relative" bg="#000" mb="16px" h="100%">
-                <Image src={image.src} margin="auto" />
+            <GridItem key={image.id} w="full" h="auto">
+              <Box position="relative" mb="16px" h="100%">
+                <Image
+                  src={image.src}
+                  margin="auto"
+                  w={image.id === 4 ? '64%' : '100%'}
+                  h="auto"
+                  objectFit="cover"
+                />
                 <Box
                   position="absolute"
                   top="96%"
