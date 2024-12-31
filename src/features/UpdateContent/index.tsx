@@ -46,7 +46,7 @@ export const UpdateContent = () => {
 
       <Box
         position="relative"
-        w="70%"
+        w={{ base: '85%', lg: '70%' }}
         mt="-50px"
         mb="120px"
         mx="auto"
