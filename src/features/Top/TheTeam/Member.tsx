@@ -10,13 +10,13 @@ type Props = {
   leftWidth?: string;
   leftLink: string;
   leftId: number;
-  rightName: string;
-  rightComment: React.ReactNode;
-  rightImage: string;
-  rightBg: string;
+  rightName?: string;
+  rightComment?: React.ReactNode;
+  rightImage?: string;
+  rightBg?: string;
   rightWidth?: string;
-  rightLink: string;
-  rightId: number;
+  rightLink?: string;
+  rightId?: number;
 };
 
 export const Member: FC<Props> = ({
@@ -47,7 +47,7 @@ export const Member: FC<Props> = ({
         borderBottom={{ base: 'none', lg: 'solid 1px' }}
         borderColor="#fff"
       >
-        <Box w="86%" m="0 auto">
+        <Box w="86%" m="0 auto" position="relative">
           <Box
             display={{ base: 'block', lg: 'flex' }}
             justifyContent="space-between"
@@ -63,22 +63,26 @@ export const Member: FC<Props> = ({
             />
             <Box
               width="1px"
+              height="80%"
               bgColor="#fff"
-              alignSelf="stretch"
-              mx="4px"
-              mt="76px"
-              mb="16px"
+              position="absolute"
+              top="50%"
+              left="50%"
+              transform="translate(-50%, -50%)"
               display={{ base: 'none', lg: 'block' }}
             />
-            <MemberContent
-              backgroundUrl={rightBg}
-              name={rightName}
-              comment={rightComment}
-              imageUrl={rightImage}
-              width={rightWidth}
-              link={rightLink}
-              id={rightId}
-            />
+
+            {rightBg && rightName && rightImage && rightLink && rightId && (
+              <MemberContent
+                backgroundUrl={rightBg}
+                name={rightName}
+                comment={rightComment}
+                imageUrl={rightImage}
+                width={rightWidth}
+                link={rightLink}
+                id={rightId}
+              />
+            )}
           </Box>
         </Box>
       </Box>
