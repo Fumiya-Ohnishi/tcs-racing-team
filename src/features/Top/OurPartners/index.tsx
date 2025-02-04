@@ -9,6 +9,7 @@ export const OurPartners = () => {
         bg="white"
         pt="85px"
         pb={{ base: '31px', lg: '64px' }}
+        px={4}
         mb="95px"
       >
         <Box
@@ -22,92 +23,104 @@ export const OurPartners = () => {
             alt="OurPartners"
           />
         </Box>
-        <HStack justifyContent="space-around" mb={{ base: '54px', lg: '84px' }}>
-          <Box maxW="100px" mx="auto">
-            <Image
-              src="/images/top/ourPartners/img-sponsor-02.webp"
-              alt="OurPartners"
-            />
-          </Box>
-          <Box maxW="112px" mx="auto">
-            <Image
-              src="/images/top/ourPartners/img-sponsor-03.webp"
-              alt="OurPartners"
-            />
-          </Box>
-          <Box maxW="191px" mx="auto">
+        <HStack
+          justifyContent="space-evenly" // 均等配置
+          mb={{ base: '54px', lg: '84px' }}
+          mx="auto"
+        >
+          <Box flex="1" maxW="148px">
             <Image
               src="/images/top/ourPartners/img-sponsor-04.webp"
               alt="OurPartners"
+              w="100%"
+              h="auto"
             />
           </Box>
-          <Box maxW="112px" mx="auto">
+          <Box flex="1" maxW="148px">
             <Image
               src="/images/top/ourPartners/img-sponsor-05.webp"
               alt="OurPartners"
+              w="100%"
+              h="auto"
+            />
+          </Box>
+          <Box flex="1" maxW="148px">
+            <Image
+              src="/images/top/ourPartners/img-sponsor-polygonbike.png"
+              alt="OurPartners"
+              w="100%"
+              h="auto"
             />
           </Box>
         </HStack>
         <HStack
-          justifyContent="space-around"
-          w="50%"
+          justifyContent="space-evenly" // 均等配置
           mb={{ base: '54px', lg: '84px' }}
           mx="auto"
         >
-          <Box maxW="178px" mx="auto">
+          <Box flex="1" maxW="148px">
+            <Image
+              src="/images/top/ourPartners/img-sponsor-02.webp"
+              alt="OurPartners"
+              w="100%"
+              h="auto"
+            />
+          </Box>
+          <Box flex="1" maxW="148px">
             <Image
               src="/images/top/ourPartners/img-sponsor-06.webp"
               alt="OurPartners"
+              w="100%"
+              h="auto"
             />
           </Box>
-          <Box maxW="112px" mx="auto">
+          <Box flex="1" maxW="148px">
             <Image
               src="/images/top/ourPartners/img-sponsor-07.webp"
               alt="OurPartners"
+              w="100%"
+              h="auto"
             />
           </Box>
         </HStack>
         <HStack
-          justifyContent="space-around"
-          w="70%"
+          justifyContent="space-evenly" // 均等配置
           mb={{ base: '54px', lg: '84px' }}
           mx="auto"
+          w="33%"
         >
-          <Box maxW="136px" mx="auto">
-            <Image
-              src="/images/top/ourPartners/img-sponsor-08.webp"
-              alt="OurPartners"
-            />
-          </Box>
-          <Box maxW="100px" mx="auto">
-            <Image
-              src="/images/top/ourPartners/img-sponsor-09.webp"
-              alt="OurPartners"
-            />
-          </Box>
-          <Box maxW="109px" mx="auto">
+          <Box flex="1" maxW="148px">
             <Image
               src="/images/top/ourPartners/img-sponsor-10.webp"
               alt="OurPartners"
+              w="100%"
+              h="auto"
             />
           </Box>
         </HStack>
-        <HStack
-          justifyContent="space-around"
-          w="50%"
-          mb={{ base: '0px', lg: '84px' }}
-          mx="auto"
-        >
-          <Box maxW="178px" mx="auto">
+        <HStack justifyContent="space-evenly" mb={{ base: '54px', lg: '84px' }}>
+          <Box flex="1" maxW="148px">
             <Image
               src="/images/top/ourPartners/img-sponsor-12.webp"
               alt="OurPartners"
+              w="100%"
+              h="auto"
             />
           </Box>
-          <Box maxW="178px" mx="auto">
+          <Box flex="1" maxW="148px">
             <Image
               src="/images/top/ourPartners/img-sponsor-13.webp"
               alt="OurPartners"
+              w="100%"
+              h="auto"
+            />
+          </Box>
+          <Box flex="1" maxW="148px">
+            <Image
+              src="/images/top/ourPartners/img-sponsor-03.webp"
+              alt="OurPartners"
+              w="100%"
+              h="auto"
             />
           </Box>
         </HStack>
