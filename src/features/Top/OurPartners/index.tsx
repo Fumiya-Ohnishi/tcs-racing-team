@@ -1,5 +1,5 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import { Box, HStack, Image } from '@chakra-ui/react';
+import { Box, Image, SimpleGrid } from '@chakra-ui/react';
 
 export const OurPartners = () => {
   return (
@@ -12,23 +12,42 @@ export const OurPartners = () => {
         px={4}
         mb="95px"
       >
-        <Box
-          maxW="294px"
-          w={{ base: '167px', lg: 'auto' }}
-          mx="auto"
-          mb={{ base: '47px', lg: '84px' }}
-        >
-          <Image
-            src="/images/top/ourPartners/img-sponsor-01.webp"
-            alt="OurPartners"
-          />
-        </Box>
-        <HStack
-          justifyContent="space-evenly" // 均等配置
+        {/* 一番上の画像（中央配置） */}
+        <SimpleGrid
+          columns={3}
+          spacing={4}
+          justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
-          mx="auto"
         >
-          <Box flex="1" maxW="128px">
+          <Box
+            maxW="272px"
+            gridColumn="2 / 3"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Image
+              src="/images/top/ourPartners/img-sponsor-01.webp"
+              alt="OurPartners"
+              w="100%"
+              h="auto"
+            />
+          </Box>
+        </SimpleGrid>
+
+        {/* 2段目（3つの画像） */}
+        <SimpleGrid
+          columns={3}
+          spacing={4}
+          justifyItems="center"
+          mb={{ base: '54px', lg: '84px' }}
+        >
+          <Box
+            maxW="128px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-04.webp"
               alt="OurPartners"
@@ -36,7 +55,12 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-          <Box flex="1" maxW="80px">
+          <Box
+            maxW="80px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-05.webp"
               alt="OurPartners"
@@ -44,7 +68,12 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-          <Box flex="1" maxW="96px">
+          <Box
+            maxW="96px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-polygonbike.png"
               alt="OurPartners"
@@ -52,13 +81,21 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-        </HStack>
-        <HStack
-          justifyContent="space-evenly" // 均等配置
+        </SimpleGrid>
+
+        {/* 3段目（3つの画像） */}
+        <SimpleGrid
+          columns={3}
+          spacing={4}
+          justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
-          mx="auto"
         >
-          <Box flex="1" maxW="88px">
+          <Box
+            maxW="88px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-02.webp"
               alt="OurPartners"
@@ -66,7 +103,12 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-          <Box flex="1" maxW="112px">
+          <Box
+            maxW="112px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-07.webp"
               alt="OurPartners"
@@ -74,7 +116,12 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-          <Box flex="1" maxW="96px">
+          <Box
+            maxW="96px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-09.webp"
               alt="OurPartners"
@@ -82,13 +129,22 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-        </HStack>
-        <HStack
-          justifyContent="space-evenly" // 均等配置
+        </SimpleGrid>
+
+        {/* 4段目（中央配置） */}
+        <SimpleGrid
+          columns={3}
+          spacing={4}
+          justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
-          mx="auto"
         >
-          <Box flex="1" maxW="96px">
+          <Box
+            maxW="112px"
+            gridColumn="2 / 3"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-10.webp"
               alt="OurPartners"
@@ -96,9 +152,21 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-        </HStack>
-        <HStack justifyContent="space-evenly" mb={{ base: '54px', lg: '84px' }}>
-          <Box flex="1" maxW="152px">
+        </SimpleGrid>
+
+        {/* 5段目（3つの画像） */}
+        <SimpleGrid
+          columns={3}
+          spacing={4}
+          justifyItems="center"
+          mb={{ base: '54px', lg: '84px' }}
+        >
+          <Box
+            maxW="160px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-12.webp"
               alt="OurPartners"
@@ -106,7 +174,12 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-          <Box flex="1" maxW="152px">
+          <Box
+            maxW="168px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-13.webp"
               alt="OurPartners"
@@ -114,7 +187,12 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-          <Box flex="1" maxW="88px">
+          <Box
+            maxW="80px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Image
               src="/images/top/ourPartners/img-sponsor-03.webp"
               alt="OurPartners"
@@ -122,7 +200,7 @@ export const OurPartners = () => {
               h="auto"
             />
           </Box>
-        </HStack>
+        </SimpleGrid>
       </Box>
     </MainLayout>
   );
