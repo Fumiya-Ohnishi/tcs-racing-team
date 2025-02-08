@@ -144,7 +144,7 @@ export type PartnerCategory =
   | 'supporters'
   | 'suppliers';
 
-// **3️⃣ スポンサーのカテゴリごとの配列を作成**
+// スポンサーのカテゴリごとの配列を作成
 export const partnersImages: Record<PartnerCategory, Partner[]> = {
   black: [partners.alpenBlick],
   platinum: [partners.blisStage, partners.hokuei, partners.polygonBike],
@@ -165,4 +165,4 @@ export const partnersImages: Record<PartnerCategory, Partner[]> = {
     partners.proApparel,
     partners.inno,
   ],
-};
+} as const;
