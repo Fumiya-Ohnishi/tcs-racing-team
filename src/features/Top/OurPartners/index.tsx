@@ -1,4 +1,5 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
+import { partnersImages } from '@/constants';
 import { Box, Image, SimpleGrid } from '@chakra-ui/react';
 
 export const OurPartners = () => {
@@ -14,192 +15,127 @@ export const OurPartners = () => {
       >
         {/* 一番上の画像（中央配置） */}
         <SimpleGrid
-          columns={3}
+          columns={partnersImages.black.length}
           spacing={4}
           justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
         >
-          <Box
-            maxW="272px"
-            gridColumn="2 / 3"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-01.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
+          {partnersImages.black.map((partnerImage, index) => (
+            <Box
+              key={index}
+              maxW={partnerImage.commonLogoImageWidth}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Image
+                src={partnerImage.imagePath}
+                alt="OurPartners"
+                w="100%"
+                h="auto"
+              />
+            </Box>
+          ))}
         </SimpleGrid>
 
         {/* 2段目（3つの画像） */}
         <SimpleGrid
-          columns={3}
+          columns={partnersImages.platinum.length}
           spacing={4}
           justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
         >
-          <Box
-            maxW="128px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-04.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
-          <Box
-            maxW="80px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-05.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
-          <Box
-            maxW="96px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-polygonbike.png"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
+          {partnersImages.platinum.map((partnerImage, index) => (
+            <Box
+              key={index}
+              maxW={partnerImage.partnersPageLogoImageWidth} // ✅ 定数を適用
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Image
+                src={partnerImage.imagePath}
+                alt="OurPartners"
+                w="100%"
+                h="auto"
+              />
+            </Box>
+          ))}
         </SimpleGrid>
 
         {/* 3段目（4つの画像） */}
         <SimpleGrid
-          columns={4}
+          columns={partnersImages.gold.length}
           spacing={4}
           justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
         >
-          <Box
-            maxW="80px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-02.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
-          <Box
-            maxW="104px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-07.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
-          <Box
-            maxW="96px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-09.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
-          <Box
-            maxW="80px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-revofish.png"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
+          {partnersImages.gold.map((partnerImage, index) => (
+            <Box
+              key={index}
+              maxW={partnerImage.partnersPageLogoImageWidth} // ✅ 定数を適用
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Image
+                src={partnerImage.imagePath}
+                alt="OurPartners"
+                w="100%"
+                h="auto"
+              />
+            </Box>
+          ))}
         </SimpleGrid>
 
         {/* 4段目（中央配置） */}
         <SimpleGrid
-          columns={3}
+          columns={partnersImages.silver.length}
           spacing={4}
           justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
         >
-          <Box
-            maxW="112px"
-            gridColumn="2 / 3"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-10.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
+          {partnersImages.silver.map((partnerImage, index) => (
+            <Box
+              key={index}
+              maxW={partnerImage.commonLogoImageWidth}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Image
+                src={partnerImage.imagePath}
+                alt="OurPartners"
+                w="100%"
+                h="auto"
+              />
+            </Box>
+          ))}
         </SimpleGrid>
 
         {/* 5段目（2つの画像） */}
         <SimpleGrid
-          columns={2}
+          columns={partnersImages.bronze.length}
           spacing={4}
           justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
         >
-          <Box
-            maxW="168px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-13.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
-          <Box
-            maxW="80px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-03.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
+          {partnersImages.bronze.map((partnerImage, index) => (
+            <Box
+              key={index}
+              maxW={partnerImage.commonLogoImageWidth}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Image
+                src={partnerImage.imagePath}
+                alt="OurPartners"
+                w="100%"
+                h="auto"
+              />
+            </Box>
+          ))}
         </SimpleGrid>
       </Box>
     </MainLayout>

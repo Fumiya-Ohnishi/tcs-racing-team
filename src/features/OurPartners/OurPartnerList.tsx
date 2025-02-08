@@ -6,7 +6,7 @@ interface Props {
   title: string;
   imagePath: {
     imagePath: string;
-    width: string;
+    partnersPageLogoImageWidth: string;
     link: string;
   }[];
 }
@@ -33,7 +33,11 @@ export const OurPartnerList: FC<Props> = ({ title, imagePath }) => {
           },
         }}
       >
-        <Box w={image.width} maxW="131px" objectFit="contain">
+        <Box
+          w={image.partnersPageLogoImageWidth}
+          maxW="131px"
+          objectFit="contain"
+        >
           {image.imagePath !== '' && (
             <Image
               className="image"

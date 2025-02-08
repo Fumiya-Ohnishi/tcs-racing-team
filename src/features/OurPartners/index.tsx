@@ -5,130 +5,21 @@ import { Box, Divider, Image, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { OurPartnerList } from './OurPartnerList';
 import { OfficialMedia } from '../Top/OfficialMedia';
+import { partnersImages, partners } from '@/constants'; // ✅ 追加
 
 export const OurPartners = () => {
-  // widthは適時いい感じにする
-  const platinumImages = [
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-04.webp',
-      width: '112px',
-      link: 'https://www.blisstage.jp/',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-05.webp',
-      width: '64px',
-      link: 'https://www.hokuei-gr.com/',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-polygonbike.png',
-      width: '80px',
-      link: 'https://www.polygonbikes.com/',
-    },
-  ];
-
-  const goldImages = [
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-02.webp',
-      width: '72px',
-      link: 'https://www.3plmnt.co.jp/',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-07.webp',
-      width: '96px',
-      link: 'https://repetir.official.ec/?fbclid=IwAR3Fr4c0JcKGq6LNAaLSObOsWdLO-zIKLB7T7QCWYUhc_48O6zTuf8UC1fI',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-09.webp',
-      width: '95px',
-      link: 'https://yowapeda.com/',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-revofish.png',
-      width: '64px',
-      link: 'https://www.revofish.com/',
-    },
-  ];
-
-  const sliverImages = [
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-10.webp',
-      width: '96px',
-      link: 'https://www.ogkkabuto.co.jp/',
-    },
-  ];
-
-  const bronzeImages = [
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-13.webp',
-      width: '150px',
-      link: 'https://www.hiroosangyo.jp/',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-03.webp',
-      width: '80px',
-      link: 'https://house-ws.com/',
-    },
-  ];
-
-  const supporterImages = [
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-beespeed.png',
-      width: '152px',
-      link: 'https://www.beespeed.jp/',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-12.webp',
-      width: '152px',
-      link: 'http://www.shibaken-inc.co.jp/',
-    },
-  ];
-
-  const suppliersImages = [
-    // TODO: 差し替えのHONDAの画像が来たら追加する
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-honda.png',
-      width: '144px',
-      link: 'https://www.honda-indonesia.com/',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-11.jpg',
-      width: '112px',
-      link: 'https://www.maxxis.co.jp/',
-    },
-    // TODO: Foxのlinkを追加する
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-fox.png',
-      width: '80px',
-      link: '',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-raceface.png',
-      width: '144px',
-      link: 'https://www.raceface.com/',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-pro-apparel.webp',
-      width: '104px',
-      link: 'https://www.proapparel.asia/',
-    },
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-08.webp',
-      width: '112px',
-      link: 'https://www.innoracks.com/',
-    },
-  ];
-
   return (
     <PageLayout>
       <Box pt="110px" bg="#1a1a1a">
         <Title title="Our Partners" subTitle="Our Partners" id="Partners" />
         <MainLayout>
+          {/* Black Partner */}
           <Box mt="72px" mb="47px">
             <Text color="#fff" fontSize="36px" fontWeight="bold" mb="21px">
               Black
             </Text>
             <Link
-              to="https://www.alpenblick-resort.com/"
+              to={partners.alpenBlick.link}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -154,7 +45,7 @@ export const OurPartners = () => {
                 <Box w="100%" objectFit="cover">
                   <Image
                     className="image"
-                    src="images/top/ourPartners/img-sponsor-01.webp"
+                    src={partners.alpenBlick.imagePath}
                     alt="black"
                     transition="transform 0.3s ease-in-out"
                   />
@@ -183,13 +74,24 @@ export const OurPartners = () => {
               </Box>
             </Link>
           </Box>
-          <OurPartnerList title="Platinum" imagePath={platinumImages} />
-          <OurPartnerList title="Gold" imagePath={goldImages} />
-          <OurPartnerList title="Silver" imagePath={sliverImages} />
-          <OurPartnerList title="Bronze" imagePath={bronzeImages} />
-          <OurPartnerList title="Supporter" imagePath={supporterImages} />
+
+          {/* Other Partners */}
+          <OurPartnerList
+            title="Platinum"
+            imagePath={partnersImages.platinum}
+          />
+          <OurPartnerList title="Gold" imagePath={partnersImages.gold} />
+          <OurPartnerList title="Silver" imagePath={partnersImages.silver} />
+          <OurPartnerList title="Bronze" imagePath={partnersImages.bronze} />
+          <OurPartnerList
+            title="Supporter"
+            imagePath={partnersImages.supporters}
+          />
           <Divider orientation="horizontal" mx="auto" w="100%" mb="40px" />
-          <OurPartnerList title="Suppliers" imagePath={suppliersImages} />
+          <OurPartnerList
+            title="Suppliers"
+            imagePath={partnersImages.suppliers}
+          />
         </MainLayout>
         <Box mt="121px">
           <OfficialMedia />
