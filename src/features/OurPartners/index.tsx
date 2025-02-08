@@ -7,20 +7,21 @@ import { OurPartnerList } from './OurPartnerList';
 import { OfficialMedia } from '../Top/OfficialMedia';
 
 export const OurPartners = () => {
+  // widthは適時いい感じにする
   const platinumImages = [
     {
       imagePath: '/images/top/ourPartners/img-sponsor-04.webp',
-      width: '115px',
+      width: '112px',
       link: 'https://www.blisstage.jp/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-05.webp',
-      width: '72px',
+      width: '64px',
       link: 'https://www.hokuei-gr.com/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-polygonbike.png',
-      width: '81px',
+      width: '80px',
       link: 'https://www.polygonbikes.com/',
     },
   ];
@@ -28,12 +29,12 @@ export const OurPartners = () => {
   const goldImages = [
     {
       imagePath: '/images/top/ourPartners/img-sponsor-02.webp',
-      width: '81px',
+      width: '72px',
       link: 'https://www.3plmnt.co.jp/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-07.webp',
-      width: '104px',
+      width: '96px',
       link: 'https://repetir.official.ec/?fbclid=IwAR3Fr4c0JcKGq6LNAaLSObOsWdLO-zIKLB7T7QCWYUhc_48O6zTuf8UC1fI',
     },
     {
@@ -41,22 +42,22 @@ export const OurPartners = () => {
       width: '95px',
       link: 'https://yowapeda.com/',
     },
+    {
+      imagePath: '/images/top/ourPartners/img-sponsor-revofish.png',
+      width: '64px',
+      link: 'https://www.revofish.com/',
+    },
   ];
 
   const sliverImages = [
     {
       imagePath: '/images/top/ourPartners/img-sponsor-10.webp',
-      width: '117px',
+      width: '96px',
       link: 'https://www.ogkkabuto.co.jp/',
     },
   ];
 
   const bronzeImages = [
-    {
-      imagePath: '/images/top/ourPartners/img-sponsor-12.webp',
-      width: '150px',
-      link: 'http://www.shibaken-inc.co.jp/',
-    },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-13.webp',
       width: '150px',
@@ -64,51 +65,55 @@ export const OurPartners = () => {
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-03.webp',
-      width: '85px',
+      width: '80px',
       link: 'https://house-ws.com/',
     },
   ];
 
-  const supportAssistanceImages = [
+  const supporterImages = [
     {
       imagePath: '/images/top/ourPartners/img-sponsor-beespeed.png',
-      width: '150px',
+      width: '152px',
       link: 'https://www.beespeed.jp/',
+    },
+    {
+      imagePath: '/images/top/ourPartners/img-sponsor-12.webp',
+      width: '152px',
+      link: 'http://www.shibaken-inc.co.jp/',
     },
   ];
 
   const suppliersImages = [
-    // TODO: HONDAの画像を追加する
+    // TODO: 差し替えのHONDAの画像が来たら追加する
     {
-      imagePath: '',
-      width: '136px',
+      imagePath: '/images/top/ourPartners/img-sponsor-honda.png',
+      width: '144px',
       link: 'https://www.honda-indonesia.com/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-11.jpg',
-      width: '136px',
+      width: '112px',
       link: 'https://www.maxxis.co.jp/',
     },
-    // TODO: Foxの画像とlinkを追加する
+    // TODO: Foxのlinkを追加する
     {
-      imagePath: '',
-      width: '85px',
+      imagePath: '/images/top/ourPartners/img-sponsor-fox.png',
+      width: '80px',
       link: '',
     },
-    // TODO: Racefaceの画像を追加する
     {
-      imagePath: '',
-      width: '136px',
+      imagePath: '/images/top/ourPartners/img-sponsor-raceface.png',
+      width: '144px',
       link: 'https://www.raceface.com/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-pro-apparel.webp',
-      width: '136px',
+      width: '104px',
       link: 'https://www.proapparel.asia/',
     },
     {
       imagePath: '/images/top/ourPartners/img-sponsor-08.webp',
-      width: '136px',
+      width: '112px',
       link: 'https://www.innoracks.com/',
     },
   ];
@@ -182,11 +187,7 @@ export const OurPartners = () => {
           <OurPartnerList title="Gold" imagePath={goldImages} />
           <OurPartnerList title="Silver" imagePath={sliverImages} />
           <OurPartnerList title="Bronze" imagePath={bronzeImages} />
-          <Divider orientation="horizontal" mx="auto" w="100%" mb="40px" />
-          <OurPartnerList
-            title="Support Assistance"
-            imagePath={supportAssistanceImages}
-          />
+          <OurPartnerList title="Supporter" imagePath={supporterImages} />
           <Divider orientation="horizontal" mx="auto" w="100%" mb="40px" />
           <OurPartnerList title="Suppliers" imagePath={suppliersImages} />
         </MainLayout>

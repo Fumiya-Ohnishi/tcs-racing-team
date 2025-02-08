@@ -83,15 +83,15 @@ export const OurPartners = () => {
           </Box>
         </SimpleGrid>
 
-        {/* 3段目（3つの画像） */}
+        {/* 3段目（4つの画像） */}
         <SimpleGrid
-          columns={3}
+          columns={4}
           spacing={4}
           justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
         >
           <Box
-            maxW="88px"
+            maxW="80px"
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -104,7 +104,7 @@ export const OurPartners = () => {
             />
           </Box>
           <Box
-            maxW="112px"
+            maxW="104px"
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -124,6 +124,19 @@ export const OurPartners = () => {
           >
             <Image
               src="/images/top/ourPartners/img-sponsor-09.webp"
+              alt="OurPartners"
+              w="100%"
+              h="auto"
+            />
+          </Box>
+          <Box
+            maxW="80px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Image
+              src="/images/top/ourPartners/img-sponsor-revofish.png"
               alt="OurPartners"
               w="100%"
               h="auto"
@@ -154,26 +167,13 @@ export const OurPartners = () => {
           </Box>
         </SimpleGrid>
 
-        {/* 5段目（3つの画像） */}
+        {/* 5段目（2つの画像） */}
         <SimpleGrid
-          columns={3}
+          columns={2}
           spacing={4}
           justifyItems="center"
           mb={{ base: '54px', lg: '84px' }}
         >
-          <Box
-            maxW="160px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Image
-              src="/images/top/ourPartners/img-sponsor-12.webp"
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
-          </Box>
           <Box
             maxW="168px"
             display="flex"
