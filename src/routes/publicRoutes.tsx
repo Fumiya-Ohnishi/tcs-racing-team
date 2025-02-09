@@ -19,7 +19,7 @@ export const publicRoutes = [
     children: [{ path: '', element: <TeamMemberPage /> }],
   },
   {
-    path: '/member-page',
+    path: '/member-page/:id',
     element: <RiderPage />,
     children: [{ path: '', element: <RiderPage /> }],
   },
