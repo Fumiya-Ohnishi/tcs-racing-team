@@ -1,54 +1,37 @@
 import { LinkButton } from '@/components/Elements/LinkButton';
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import {
-  Box,
-  Divider,
-  Grid,
-  GridItem,
-  HStack,
-  Image,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
 interface StaffImages {
   id: number;
   src: string;
-  alt: string;
   name: string;
   jobType: string;
-  isReadMore?: boolean;
+  navigateLink?: string;
+  navigateState?: number;
 }
 
 const staffImages: StaffImages[] = [
   {
     id: 1,
-    src: '/images/top/staff/img-team-staff01.webp',
-    alt: 'スタッフ画像',
+    src: '/images/staff/img-staff-fukumitsu.webp',
     name: '福光 悠介',
     jobType: 'GM',
-    isReadMore: true,
+    navigateLink: '/member-page',
+    navigateState: 1,
   },
   {
     id: 2,
-    src: '/images/top/staff/img-team-staff02.webp',
-    alt: 'スタッフ画像',
-    name: '佐藤 寿美',
-    jobType: 'マネージャー',
-  },
-  {
-    id: 3,
-    src: '/images/top/staff/img-team-staff03.webp',
-    alt: 'スタッフ画像',
+    src: '/images/staff/img-staff-shiozawa.webp',
     name: '汐澤 芳治',
     jobType: '広報',
   },
   {
-    id: 4,
-    src: '/images/top/staff/img-team-staff04.png',
-    alt: 'スタッフ画像',
-    name: 'Dr. ドニー クスマ',
-    jobType: 'アンバサダー',
+    id: 3,
+    src: '/images/staff/img-staff-deddy.png',
+    name: 'デディー クルニアワン',
+    jobType: 'スタッフ',
   },
 ];
 
@@ -58,24 +41,46 @@ export const Staff = () => {
     <Box mb="116px">
       <MainLayout>
         <Grid
-          templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
+          templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
           gap={{ base: '16px', lg: 12 }}
           mb="16px"
+          justifyItems="center"
         >
           {staffImages.map(image => (
-            <GridItem key={image.id} w="full" h="auto">
-              <Box position="relative" mb="16px" h="100%">
+            <GridItem
+              key={image.id}
+              w="full"
+              h="auto"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Box
+                position="relative"
+                mb="16px"
+                h="100%"
+                cursor={image.navigateLink ? 'pointer' : 'default'}
+                onClick={() => {
+                  if (image.navigateLink && image.navigateState) {
+                    navigate(image.navigateLink, {
+                      state: { id: image.navigateState },
+                    });
+                  }
+                }}
+              >
                 <Image
                   src={image.src}
+                  alt="スタッフ画像"
                   margin="auto"
-                  w={image.id === 4 ? '64%' : '100%'}
+                  w="full"
+                  maxW={{ base: 'full', lg: '216px' }}
                   h="auto"
                   objectFit="cover"
                 />
                 <Box
                   position="absolute"
-                  top="96%"
-                  left="15%"
+                  top="104%"
+                  left="10%"
                   transform="translateY(-100%)"
                 >
                   <Text fontSize={{ base: '10px', lg: '16px' }}>
@@ -86,32 +91,10 @@ export const Staff = () => {
                   </Text>
                 </Box>
               </Box>
-              {image.isReadMore && (
-                <Box display="inline-block">
-                  <HStack
-                    borderBottom="solid 1px #FF9080"
-                    cursor="pointer"
-                    onClick={() => {
-                      navigate('/member-page', {
-                        state: { id: 1 },
-                      });
-                    }}
-                  >
-                    <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
-                      もっと見る
-                    </Text>
-                    <Image
-                      w="5px"
-                      h="10px"
-                      src="/images/ico-arrow-white-brock.svg"
-                    />
-                  </HStack>
-                </Box>
-              )}
             </GridItem>
           ))}
         </Grid>
-        <LinkButton link="#" text="Overview" />
+        <LinkButton link="/team-member" text="Overview" />
       </MainLayout>
       <Divider orientation="horizontal" mt="64px" mx="auto" w="90%" />
     </Box>

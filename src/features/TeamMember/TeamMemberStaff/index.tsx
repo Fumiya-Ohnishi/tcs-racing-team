@@ -19,24 +19,19 @@ const mainStaffs: TeamMemberStaff[] = [
   {
     id: 1,
     name: '福光悠介',
-    image: '/images/team/img-team-staff02.webp',
+    image: '/images/staff/img-staff-fukumitsu.webp',
   },
 ];
 const subStaffs: TeamMemberStaff[] = [
   {
     id: 0,
-    name: '佐藤寿美',
-    image: '/images/team/img-team-staff03.webp',
+    name: '汐澤芳治',
+    image: '/images/staff/img-staff-shiozawa.webp',
   },
   {
     id: 1,
-    name: '汐澤芳治',
-    image: '/images/team/img-team-staff04.webp',
-  },
-  {
-    id: 2,
-    name: 'Dr. ドニー クスマ',
-    image: 'https://placehold.jp/000000/000000/327x218.png',
+    name: 'デディー クルニアワン',
+    image: '/images/staff/img-staff-deddy.png',
   },
 ];
 
@@ -54,6 +49,7 @@ export const TeamMemberStaff: FC = () => {
             {mainStaffs.map(staff => (
               <Box
                 key={staff.id}
+                cursor="pointer"
                 position="relative"
                 onClick={() => {
                   navigate('/member-page', {
@@ -95,12 +91,18 @@ export const TeamMemberStaff: FC = () => {
           </Grid>
 
           <Grid
-            templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
-            gap={{ base: 8, lg: 16 }}
+            templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }}
+            gap={{ base: 8, lg: 8 }}
           >
             {subStaffs.map(staff => (
               <Box key={staff.id} position="relative">
-                <Box w="100%" m="0 auto" bg="black" h="100%" minH="126px">
+                <Box
+                  w={{ base: '100%', lg: '72%' }}
+                  m="0 auto"
+                  bg="black"
+                  h="100%"
+                  minH="126px"
+                >
                   <Image src={staff.image} />
                 </Box>
                 <Box
@@ -113,7 +115,14 @@ export const TeamMemberStaff: FC = () => {
                   justifyContent="center"
                   w="100%"
                 >
-                  <Text fontSize="18px">{staff.name}</Text>
+                  <Text
+                    fontSize={{
+                      base: staff.name.length >= 7 ? '12px' : '18px',
+                      lg: '18px',
+                    }}
+                  >
+                    {staff.name}
+                  </Text>
                 </Box>
               </Box>
             ))}
