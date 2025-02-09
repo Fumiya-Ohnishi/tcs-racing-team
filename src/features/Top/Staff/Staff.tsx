@@ -15,7 +15,7 @@ interface StaffImages {
 const staffImages: StaffImages[] = [
   {
     id: 1,
-    src: '/images/staff/img-staff-fukumitsu.webp',
+    src: '/images/member/img-member-fukumitsu.webp',
     name: '福光 悠介',
     jobType: 'GM',
     navigateLink: '/member-page',
@@ -23,13 +23,13 @@ const staffImages: StaffImages[] = [
   },
   {
     id: 2,
-    src: '/images/staff/img-staff-shiozawa.webp',
+    src: '/images/member/img-member-shiozawa.webp',
     name: '汐澤 芳治',
     jobType: '広報',
   },
   {
     id: 3,
-    src: '/images/staff/img-staff-deddy.png',
+    src: '/images/member/img-member-deddy.png',
     name: 'デディー クルニアワン',
     jobType: 'スタッフ',
   },
