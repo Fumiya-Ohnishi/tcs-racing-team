@@ -28,7 +28,7 @@ export type PartnersKey =
 
 export const partners: Record<PartnersKey, Partner> = {
   alpenBlick: {
-    imagePath: '/images/top/ourPartners/img-sponsor-alpenblick.webp',
+    imagePath: '/images/top/ourPartners/img-sponsor-alpenBlick.webp',
     link: 'https://www.alpenBlick-resort.com/',
     partnersPageLogoImageWidth: '',
     commonLogoImageWidth: '272px',
@@ -66,7 +66,7 @@ export const partners: Record<PartnersKey, Partner> = {
   yowapeda: {
     imagePath: '/images/top/ourPartners/img-sponsor-yowapeda.webp',
     link: 'https://yowapeda.com/',
-    partnersPageLogoImageWidth: '95px',
+    partnersPageLogoImageWidth: '96px',
     commonLogoImageWidth: '96px',
   },
   revoFish: {
