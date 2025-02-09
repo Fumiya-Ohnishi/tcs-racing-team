@@ -8,46 +8,40 @@ import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 const images: images[] = [
   {
-    id: 1,
+    id: '0',
     imgPath: '/images/rider/img-member-01.webp',
     alt: 'スライド1',
     text: 'KOHEI YAMAMOTO',
-    linkId: 0,
   },
   {
-    id: 2,
+    id: '1',
     imgPath: '/images/rider/img-member-02.webp',
     alt: 'スライド2',
     text: 'YUSUKE FUKUMITSU',
-    linkId: 1,
   },
   {
-    id: 3,
+    id: '2',
     imgPath: '/images/rider/img-member-03.webp',
     alt: 'スライド3',
     text: 'RIYADH HAKIM',
-    linkId: 2,
   },
   {
-    id: 4,
+    id: '3',
     imgPath: '/images/rider/img-member-04.webp',
     alt: 'スライド4',
     text: 'SAYU BELLA',
-    linkId: 3,
   },
   {
-    id: 5,
+    id: '4',
     imgPath: '/images/rider/img-member-05.webp',
     alt: 'スライド5',
     text: 'YUTA MATSUMOTO',
-    linkId: 4,
   },
   {
-    id: 6,
+    id: '5',
     imgPath: '/images/rider/img-member-06.webp',
     alt: 'スライド6',
     text: 'EUSEBIA NICOLE',
-    linkId: 5,
   },
 ];
 
@@ -63,9 +57,8 @@ const settings = {
 };
 
 interface images {
-  id: number;
+  id: string;
   imgPath: string;
-  linkId: number;
   alt: string;
   text: string;
 }
@@ -82,9 +75,7 @@ export const MemberSlider = () => {
             w="100%"
             objectFit="cover"
             onClick={() => {
-              navigate('/member-page', {
-                state: { id: image.linkId },
-              });
+              navigate(`/member-page/${image.id}`);
             }}
           >
             <Image
@@ -111,9 +102,7 @@ export const MemberSlider = () => {
             objectFit="cover"
             cursor="pointer"
             onClick={() => {
-              navigate('/member-page', {
-                state: { id: image.linkId },
-              });
+              navigate(`/member-page/${image.id}`);
             }}
           >
             <Image

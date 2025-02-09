@@ -10,7 +10,7 @@ interface Props {
   imageUrl: string;
   width?: string;
   link: string;
-  id: number;
+  id: string;
 }
 
 export const MemberContent: FC<Props> = ({
@@ -60,9 +60,7 @@ export const MemberContent: FC<Props> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => {
-        navigate(link, {
-          state: { id: id },
-        });
+        navigate(`${link}/${id}`);
       }}
     >
       <Box

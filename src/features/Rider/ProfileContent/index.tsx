@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface Props {
-  id: number;
+  id: string;
 }
 
 export const ProfileContent: FC<Props> = ({ id }) => {

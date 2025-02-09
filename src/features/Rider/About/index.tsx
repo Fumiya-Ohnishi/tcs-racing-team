@@ -4,20 +4,28 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface Props {
-  id: number;
+  id: string;
 }
+
+const backGroundImages = [
+  { id: '0', src: '/images/menber/img-menberbg01.png' },
+  { id: '1', src: '/images/menber/img-menberbg02.jpeg' },
+  { id: '2', src: '/images/menber/img-menberbg03.png' },
+  { id: '3', src: '/images/menber/img-menberbg04.jpeg' },
+  { id: '4', src: '/images/menber/img-menberbg05.jpeg' },
+  { id: '5', src: '/images/menber/img-menberbg06.jpeg' },
+];
 
 export const About: FC<Props> = ({ id }) => {
   const { t } = useTranslation('teamMember');
 
-  const backGroundImage = [
-    '/images/menber/img-menberbg01.png',
-    '/images/menber/img-menberbg02.jpeg',
-    '/images/menber/img-menberbg03.png',
-    '/images/menber/img-menberbg04.jpeg',
-    '/images/menber/img-menberbg05.jpeg',
-    '/images/menber/img-menberbg06.jpeg',
-  ];
+  // `id` に対応する画像を取得
+  const imageData = backGroundImages.find(img => img.id === id);
+
+  if (!imageData) {
+    return <Text color="red">No data</Text>;
+  }
+
   return (
     <Box
       w={{ base: '100%', lg: '88%' }}
@@ -50,10 +58,11 @@ export const About: FC<Props> = ({ id }) => {
           w="100%"
           minH={{ customSm: '270px', custom: '350px', lg: '550px' }}
           maxH={{ customSm: 'none', custom: '450px', lg: 'auto' }}
-          src={backGroundImage[id]}
+          src={imageData.src}
           alt="Rider"
         />
       </Box>
+
       <Box
         position="absolute"
         top="0"

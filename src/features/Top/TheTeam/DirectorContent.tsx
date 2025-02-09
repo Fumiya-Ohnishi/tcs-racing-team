@@ -3,13 +3,20 @@ import { FC, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 type Props = {
+  id: string;
   post: string;
   name: string;
   comment: JSX.Element[];
   link: string;
 };
 
-export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
+export const DirectorContent: FC<Props> = ({
+  link,
+  id,
+  post,
+  name,
+  comment,
+}) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const boxRef = useRef<HTMLImageElement>(null);
 
@@ -42,9 +49,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => {
-        navigate('/member-page', {
-          state: { id: 0 },
-        });
+        navigate(`${link}/${id}`);
       }}
     >
       <Box

@@ -4,31 +4,29 @@ import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
 interface StaffImages {
-  id: number;
+  id: string;
   src: string;
   name: string;
   jobType: string;
   navigateLink?: string;
-  navigateState?: number;
 }
 
 const staffImages: StaffImages[] = [
   {
-    id: 1,
+    id: '1',
     src: '/images/member/img-member-fukumitsu.webp',
     name: '福光 悠介',
     jobType: 'GM',
     navigateLink: '/member-page',
-    navigateState: 1,
   },
   {
-    id: 2,
+    id: '2',
     src: '/images/member/img-member-shiozawa.webp',
     name: '汐澤 芳治',
     jobType: '広報',
   },
   {
-    id: 3,
+    id: '3',
     src: '/images/member/img-member-deddy.png',
     name: 'デディー クルニアワン',
     jobType: 'スタッフ',
@@ -61,10 +59,8 @@ export const Staff = () => {
                 h="100%"
                 cursor={image.navigateLink ? 'pointer' : 'default'}
                 onClick={() => {
-                  if (image.navigateLink && image.navigateState) {
-                    navigate(image.navigateLink, {
-                      state: { id: image.navigateState },
-                    });
+                  if (image.navigateLink) {
+                    navigate(`${image.navigateLink}/${image.id}`);
                   }
                 }}
               >

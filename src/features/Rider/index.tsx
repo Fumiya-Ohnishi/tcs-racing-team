@@ -7,11 +7,11 @@ import { MemberSlider } from './Slider';
 import { FirstView } from './FirstView';
 import { ProfileContent } from './ProfileContent';
 import { About } from './About';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 export const RiderComponent = () => {
-  const location = useLocation();
-  const id = location.state.id;
+  const { id } = useParams();
+  if (!id) return;
   return (
     <PageLayout>
       <FirstView id={id} />

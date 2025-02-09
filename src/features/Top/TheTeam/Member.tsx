@@ -9,14 +9,14 @@ type Props = {
   leftBg: string;
   leftWidth?: string;
   leftLink: string;
-  leftId: number;
+  leftId: string;
   rightName?: string;
   rightComment?: React.ReactNode;
   rightImage?: string;
   rightBg?: string;
   rightWidth?: string;
   rightLink?: string;
-  rightId?: number;
+  rightId?: string;
 };
 
 export const Member: FC<Props> = ({
