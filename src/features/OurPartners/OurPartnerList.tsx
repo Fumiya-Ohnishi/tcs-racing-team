@@ -35,7 +35,7 @@ export const OurPartnerList: FC<Props> = ({ title, imagePath }) => {
       >
         <Box
           w={image.partnersPageLogoImageWidth}
-          maxW="131px"
+          maxW={{ base: '132px', lg: '224px' }}
           objectFit="contain"
         >
           {image.imagePath !== '' && (

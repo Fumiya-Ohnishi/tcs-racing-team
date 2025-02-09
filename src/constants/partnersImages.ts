@@ -106,22 +106,22 @@ export const partners: Record<PartnersKey, Partner> = {
   honda: {
     imagePath: '/images/top/ourPartners/img-sponsor-honda.png',
     link: 'https://www.honda-indonesia.com/',
-    partnersPageLogoImageWidth: '144px',
+    partnersPageLogoImageWidth: '184px',
   },
   maxxis: {
     imagePath: '/images/top/ourPartners/img-sponsor-maxxis.jpg',
     link: 'https://www.maxxis.co.jp/',
-    partnersPageLogoImageWidth: '112px',
+    partnersPageLogoImageWidth: '108px',
   },
   fox: {
     imagePath: '/images/top/ourPartners/img-sponsor-fox.png',
     link: '',
-    partnersPageLogoImageWidth: '80px',
+    partnersPageLogoImageWidth: '76px',
   },
   raceface: {
     imagePath: '/images/top/ourPartners/img-sponsor-raceface.png',
     link: 'https://www.raceface.com/',
-    partnersPageLogoImageWidth: '144px',
+    partnersPageLogoImageWidth: '180px',
   },
   proApparel: {
     imagePath: '/images/top/ourPartners/img-sponsor-pro-apparel.webp',
