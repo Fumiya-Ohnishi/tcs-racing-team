@@ -19,6 +19,7 @@ export const TeamMemberRiders: FC = () => {
           {riders.map(rider => (
             <Box
               key={rider.id}
+              cursor="pointer"
               position="relative"
               aspectRatio="1097 / 880"
               onClick={() => {
