@@ -3,7 +3,6 @@ import { FC, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 type Props = {
-  id: string;
   post: string;
   name: string;
   comment: JSX.Element[];
@@ -13,7 +12,6 @@ type Props = {
 
 export const DirectorContent: FC<Props> = ({
   link,
-  id,
   post,
   name,
   comment,
@@ -51,7 +49,7 @@ export const DirectorContent: FC<Props> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => {
-        navigate(`${link}/${id}`);
+        navigate(`${link}`);
       }}
     >
       <Box

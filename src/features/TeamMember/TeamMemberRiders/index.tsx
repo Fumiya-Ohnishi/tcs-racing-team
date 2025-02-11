@@ -20,14 +20,20 @@ export const TeamMemberRiders: FC = () => {
             <Box
               key={rider.id}
               position="relative"
+              aspectRatio="1097 / 880"
               onClick={() => {
+                // TODO: 後でid8,9,10の条件分岐を削除する
+                if (rider.id === '8' || rider.id === '9' || rider.id === '10') {
+                  navigate('/team-member');
+                  return;
+                }
                 navigate(`/member-page/${rider.id}`);
               }}
             >
               <Image
                 src={rider.ourTeamPageTheRiderSectionImagePath}
-                w="100%"
                 h="100%"
+                mx="auto"
               />
               <Box
                 position="absolute"

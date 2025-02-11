@@ -69,7 +69,8 @@ export const Member: FC<Props> = ({
               display={{ base: 'none', lg: 'block' }}
             />
 
-            {rightBg && rightName && rightImage && rightLink && rightId && (
+            {/* TODO: 後でrightBgを必須にする */}
+            {rightName && rightImage && rightLink && rightId && (
               <MemberContent
                 backgroundUrl={rightBg}
                 name={rightName}

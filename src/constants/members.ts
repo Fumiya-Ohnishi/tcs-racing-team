@@ -25,6 +25,9 @@ export const MemberKey = {
   EusebiaNicole: 'eusebiaNicole',
   YoshiharuShiozawa: 'yoshiharuShiozawa',
   DeddyKurniawan: 'deddyKurniawan',
+  FiliYudiono: 'filiYudiono',
+  RinaZaki: 'rinaZaki',
+  HiyoshiAyaka: 'hiyoshiAyaka',
 } as const;
 
 export type MemberKey = (typeof MemberKey)[keyof typeof MemberKey];
@@ -169,6 +172,53 @@ export const members: Record<MemberKey, Member> = {
       '/images/member/img-member-deddy-Kurniawan-gradation.png',
     isTopTheStaff: true,
     isOurTeamTheStaffSub: true,
+  },
+  [MemberKey.FiliYudiono]: {
+    id: '8',
+    nameJa: 'フェリ ユドヨノ',
+    nameEn: 'Fili Yudiono',
+    memberType: 'ライダー',
+    gradationImagesPath: '',
+    topTheTeamSectionBackgroundImagePath: '',
+    topTheTeamSectionImagePath:
+      '/images/member/img-member-fili-yudiono-rider.png',
+    ourTeamPageTheRiderSectionImagePath:
+      '/images/member/img-member-fili-yudiono-rider.png',
+    memberPageAboutSectionImagesPath: undefined,
+    memberPageFirstViewMemberImagePath: '',
+    memberPageFirstViewBackgroundImagePc: '',
+    memberPageFirstViewBackgroundImageSp: '',
+  },
+  [MemberKey.RinaZaki]: {
+    id: '9',
+    nameJa: 'リナ ザキ',
+    nameEn: 'Rina Zaki',
+    memberType: 'ライダー',
+    gradationImagesPath: '',
+    topTheTeamSectionBackgroundImagePath: '',
+    topTheTeamSectionImagePath: '/images/member/img-member-rina-zaki-rider.png',
+    ourTeamPageTheRiderSectionImagePath:
+      '/images/member/img-member-rina-zaki-rider.png',
+    memberPageAboutSectionImagesPath: undefined,
+    memberPageFirstViewMemberImagePath: '',
+    memberPageFirstViewBackgroundImagePc: '',
+    memberPageFirstViewBackgroundImageSp: '',
+  },
+  [MemberKey.HiyoshiAyaka]: {
+    id: '10',
+    nameJa: '日吉 彩華',
+    nameEn: 'Hiyoshi Ayaka',
+    memberType: 'ライダー',
+    gradationImagesPath: '',
+    topTheTeamSectionBackgroundImagePath: '',
+    topTheTeamSectionImagePath:
+      '/images/member/img-member-hiyoshi-ayaka-rider.png',
+    ourTeamPageTheRiderSectionImagePath:
+      '/images/member/img-member-hiyoshi-ayaka-rider.png',
+    memberPageAboutSectionImagesPath: undefined,
+    memberPageFirstViewMemberImagePath: '',
+    memberPageFirstViewBackgroundImagePc: '',
+    memberPageFirstViewBackgroundImageSp: '',
   },
 } as const;
 
