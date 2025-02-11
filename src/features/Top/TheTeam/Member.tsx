@@ -7,7 +7,6 @@ type Props = {
   leftComment: React.ReactNode;
   leftImage: string;
   leftBg: string;
-  leftWidth?: string;
   leftLink: string;
   leftId: string;
   rightName?: string;
@@ -24,7 +23,6 @@ export const Member: FC<Props> = ({
   leftComment,
   leftImage,
   leftBg,
-  leftWidth,
   leftLink,
   leftId,
   rightName,
@@ -57,7 +55,6 @@ export const Member: FC<Props> = ({
               name={leftName}
               comment={leftComment}
               imageUrl={leftImage}
-              width={leftWidth}
               link={leftLink}
               id={leftId}
             />

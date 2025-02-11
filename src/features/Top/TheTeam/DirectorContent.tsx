@@ -8,6 +8,7 @@ type Props = {
   name: string;
   comment: JSX.Element[];
   link: string;
+  imagePath: string;
 };
 
 export const DirectorContent: FC<Props> = ({
@@ -16,6 +17,7 @@ export const DirectorContent: FC<Props> = ({
   post,
   name,
   comment,
+  imagePath,
 }) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const boxRef = useRef<HTMLImageElement>(null);
@@ -105,7 +107,7 @@ export const DirectorContent: FC<Props> = ({
             >
               <Image
                 ref={imageRef}
-                src="/images/img-theTeam-01.webp"
+                src={imagePath}
                 alt="director"
                 transition="transform 0.3s ease"
               />
