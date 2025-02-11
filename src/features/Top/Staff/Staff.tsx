@@ -1,40 +1,14 @@
 import { LinkButton } from '@/components/Elements/LinkButton';
 import { MainLayout } from '@/components/Layouts/MainLayout';
+import { getTopTheStaffList } from '@/constants';
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
-interface StaffImages {
-  id: string;
-  src: string;
-  name: string;
-  jobType: string;
-  navigateLink?: string;
-}
-
-const staffImages: StaffImages[] = [
-  {
-    id: '1',
-    src: '/images/member/img-member-fukumitsu.webp',
-    name: '福光 悠介',
-    jobType: 'GM',
-    navigateLink: '/member-page',
-  },
-  {
-    id: '2',
-    src: '/images/member/img-member-shiozawa.webp',
-    name: '汐澤 芳治',
-    jobType: '広報',
-  },
-  {
-    id: '3',
-    src: '/images/member/img-member-deddy.png',
-    name: 'デディー クルニアワン',
-    jobType: 'スタッフ',
-  },
-];
-
 export const Staff = () => {
   const navigate = useNavigate();
+
+  const staffList = getTopTheStaffList();
+
   return (
     <Box mb="116px">
       <MainLayout>
@@ -44,9 +18,9 @@ export const Staff = () => {
           mb="16px"
           justifyItems="center"
         >
-          {staffImages.map(image => (
+          {staffList.map(staff => (
             <GridItem
-              key={image.id}
+              key={staff.id}
               w="full"
               h="auto"
               display="flex"
@@ -57,16 +31,16 @@ export const Staff = () => {
                 position="relative"
                 mb="16px"
                 h="100%"
-                cursor={image.navigateLink ? 'pointer' : 'default'}
+                cursor={staff.id === '1' ? 'pointer' : 'default'}
                 onClick={() => {
-                  if (image.navigateLink) {
-                    navigate(`${image.navigateLink}/${image.id}`);
+                  if (staff.id === '1') {
+                    navigate(`/member-page/${staff.id}`);
                   }
                 }}
               >
                 <Image
-                  src={image.src}
-                  alt="スタッフ画像"
+                  src={staff.gradationImagesPath}
+                  alt={staff.nameJa}
                   margin="auto"
                   w="full"
                   maxW={{ base: 'full', lg: '216px' }}
@@ -80,10 +54,10 @@ export const Staff = () => {
                   transform="translateY(-100%)"
                 >
                   <Text fontSize={{ base: '10px', lg: '16px' }}>
-                    {image.jobType}
+                    {staff.memberType}
                   </Text>
                   <Text fontSize={{ base: '10px', lg: '16px' }}>
-                    {image.name}
+                    {staff.nameJa}
                   </Text>
                 </Box>
               </Box>

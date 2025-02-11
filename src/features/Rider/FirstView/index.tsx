@@ -1,6 +1,7 @@
 import { SnsIcon } from '@/components/Elements/SnsIcon';
+import { getMemberById } from '@/constants';
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
-import { HStack, Box, Image, Text } from '@chakra-ui/react';
+import { useBreakpointValue, HStack, Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -8,46 +9,13 @@ interface Props {
   id: string;
 }
 
-const images = [
-  {
-    id: '0',
-    firstViewImages: '/images/menber/img-menber-top01.webp',
-    humanImage: '/images/menber/img-menber01.webp',
-  },
-  {
-    id: '1',
-    firstViewImages: '/images/menber/img-menber-top02.webp',
-    humanImage: '/images/menber/img-menber02.webp',
-  },
-  {
-    id: '2',
-    firstViewImages: '/images/menber/img-menber-top03.webp',
-    humanImage: '/images/menber/img-menber03.webp',
-  },
-  {
-    id: '3',
-    firstViewImages: '/images/menber/img-menber-top04.webp',
-    humanImage: '/images/menber/img-menber04.webp',
-  },
-  {
-    id: '4',
-    firstViewImages: '/images/menber/img-menber-top05.webp',
-    humanImage: '/images/menber/img-menber05.webp',
-  },
-  {
-    id: '5',
-    firstViewImages: '/images/menber/img-menber-top06.webp',
-    humanImage: '/images/menber/img-menber06.webp',
-  },
-];
-
 export const FirstView: FC<Props> = ({ id }) => {
   const { t } = useTranslation('teamMember');
 
-  // `id` に対応する画像を取得
-  const imageData = images.find(image => image.id === id);
+  // `id` に対応するメンバーを取得
+  const member = getMemberById(id);
 
-  if (!imageData) {
+  if (!member) {
     return <Text color="red">No data</Text>;
   }
 
@@ -69,7 +37,15 @@ export const FirstView: FC<Props> = ({ id }) => {
         objectFit="cover"
         position="relative"
       >
-        <Image src={imageData.firstViewImages} alt="Rider" w="100%" h="100%" />
+        <Image
+          src={useBreakpointValue({
+            base: member.memberPageFirstViewBackgroundImageSp,
+            lg: member.memberPageFirstViewBackgroundImagePc,
+          })}
+          alt={member.nameEn}
+          w="100%"
+          h="100%"
+        />
       </Box>
       <Box
         position="absolute"
@@ -87,10 +63,11 @@ export const FirstView: FC<Props> = ({ id }) => {
           w="100%"
           h="100%"
           objectFit="cover"
-          src={imageData.humanImage}
-          alt="Rider"
+          src={member.memberPageFirstViewMemberImagePath}
+          alt={member.nameEn}
         />
       </Box>
+
       <Box
         position="absolute"
         w={{ base: '66vw', lg: '40%' }}
@@ -105,6 +82,7 @@ export const FirstView: FC<Props> = ({ id }) => {
           {convertNewlineToBreak(t(`title.${id}`))}
         </Text>
       </Box>
+
       <Box
         position="absolute"
         bottom={{ base: '96px', lg: '0' }}
