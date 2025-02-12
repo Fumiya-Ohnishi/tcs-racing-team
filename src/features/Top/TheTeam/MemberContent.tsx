@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import './LinkStyles.css';
 
 interface Props {
-  backgroundUrl: string;
+  // TODO: 国旗の画像が追加されたらbackgroundUrlを必須にする
+  backgroundUrl?: string;
   name: string;
   comment: React.ReactNode;
   imageUrl: string;
   width?: string;
   link: string;
-  id: number;
+  id: string;
 }
 
 export const MemberContent: FC<Props> = ({
@@ -60,9 +61,7 @@ export const MemberContent: FC<Props> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => {
-        navigate(link, {
-          state: { id: id },
-        });
+        navigate(`${link}`);
       }}
     >
       <Box
@@ -89,16 +88,24 @@ export const MemberContent: FC<Props> = ({
         position="absolute"
         bottom="0"
         right="0"
-        w={{ base: '100%', lg: width ? width : '70%' }}
+        // TODO: 後でid8,9,10の条件分岐を削除する
+        w={{
+          base:
+            id === '8' || id === '9' || id === '10' ? '100%' : width || '100%',
+          lg: id === '8' || id === '9' || id === '10' ? '70%' : width || '70%',
+        }}
         maxW="316px"
         maxH="350px"
         overflow="hidden"
+        aspectRatio="1097 / 880"
       >
         <Image
           ref={imageRef}
           src={imageUrl}
           alt="director"
           transition="transform 0.3s ease"
+          h="100%"
+          mx="auto"
         />
       </Box>
       <Box

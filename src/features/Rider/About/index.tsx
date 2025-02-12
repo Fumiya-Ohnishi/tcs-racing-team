@@ -2,22 +2,18 @@ import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/conv
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { getMemberById } from '@/constants';
 
 interface Props {
-  id: number;
+  id: string;
 }
 
 export const About: FC<Props> = ({ id }) => {
   const { t } = useTranslation('teamMember');
 
-  const backGroundImage = [
-    '/images/menber/img-menberbg01.png',
-    '/images/menber/img-menberbg02.jpeg',
-    '/images/menber/img-menberbg03.png',
-    '/images/menber/img-menberbg04.jpeg',
-    '/images/menber/img-menberbg05.jpeg',
-    '/images/menber/img-menberbg06.jpeg',
-  ];
+  // `id` に対応するメンバーを取得
+  const member = getMemberById(id);
+
   return (
     <Box
       w={{ base: '100%', lg: '88%' }}
@@ -50,10 +46,11 @@ export const About: FC<Props> = ({ id }) => {
           w="100%"
           minH={{ customSm: '270px', custom: '350px', lg: '550px' }}
           maxH={{ customSm: 'none', custom: '450px', lg: 'auto' }}
-          src={backGroundImage[id]}
-          alt="Rider"
+          src={member.memberPageAboutSectionImagesPath}
+          alt={member.nameJa}
         />
       </Box>
+
       <Box
         position="absolute"
         top="0"

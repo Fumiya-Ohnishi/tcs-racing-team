@@ -1,39 +1,13 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
+import { getOurTeamPageTheRiderSectionList } from '@/constants';
 import { Box, Grid, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface TeamMemberRider {
-  id: number;
-  name: string;
-  image: string;
-}
-
-const riders: TeamMemberRider[] = [
-  {
-    id: 2,
-    name: 'リアッド ハキム',
-    image: '/images/img-theTeam-02.webp',
-  },
-  {
-    id: 3,
-    name: 'サユ ベラ',
-    image: '/images/img-theTeam-03.webp',
-  },
-  {
-    id: 4,
-    name: '松本 佑太',
-    image: '/images/img-theTeam-04.webp',
-  },
-  {
-    id: 5,
-    name: 'エセビア ニコル',
-    image: '/images/img-theTeam-05.webp',
-  },
-];
-
 export const TeamMemberRiders: FC = () => {
   const navigate = useNavigate();
+
+  const riders = getOurTeamPageTheRiderSectionList();
 
   return (
     <MainLayout>
@@ -45,15 +19,23 @@ export const TeamMemberRiders: FC = () => {
           {riders.map(rider => (
             <Box
               key={rider.id}
+              cursor="pointer"
               position="relative"
+              aspectRatio="1097 / 880"
               onClick={() => {
-                navigate('/member-page', {
-                  state: { id: rider.id },
-                });
+                // TODO: 後でid8,9,10の条件分岐を削除する
+                if (rider.id === '8' || rider.id === '9' || rider.id === '10') {
+                  navigate('/team-member');
+                  return;
+                }
+                navigate(`/member-page/${rider.id}`);
               }}
             >
-              {/* <Link to="/member-page"> */}
-              <Image src={rider.image} w="100%" h="100%" />
+              <Image
+                src={rider.ourTeamPageTheRiderSectionImagePath}
+                h="100%"
+                mx="auto"
+              />
               <Box
                 position="absolute"
                 bottom="0"
@@ -65,7 +47,7 @@ export const TeamMemberRiders: FC = () => {
                 w="100%"
               >
                 <Text fontSize="24px" mr="48px">
-                  {rider.name}
+                  {rider.nameJa}
                 </Text>
                 <Box>
                   <Image
@@ -75,7 +57,6 @@ export const TeamMemberRiders: FC = () => {
                   />
                 </Box>
               </Box>
-              {/* </Link> */}
             </Box>
           ))}
         </Grid>

@@ -5,51 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './Carousel.css';
 import { useNavigate } from 'react-router-dom';
 import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
-
-const images: images[] = [
-  {
-    id: 1,
-    imgPath: '/images/rider/img-member-01.webp',
-    alt: 'スライド1',
-    text: 'KOHEI YAMAMOTO',
-    linkId: 0,
-  },
-  {
-    id: 2,
-    imgPath: '/images/rider/img-member-02.webp',
-    alt: 'スライド2',
-    text: 'YUSUKE FUKUMITSU',
-    linkId: 1,
-  },
-  {
-    id: 3,
-    imgPath: '/images/rider/img-member-03.webp',
-    alt: 'スライド3',
-    text: 'RIYADH HAKIM',
-    linkId: 2,
-  },
-  {
-    id: 4,
-    imgPath: '/images/rider/img-member-04.webp',
-    alt: 'スライド4',
-    text: 'SAYU BELLA',
-    linkId: 3,
-  },
-  {
-    id: 5,
-    imgPath: '/images/rider/img-member-05.webp',
-    alt: 'スライド5',
-    text: 'YUTA MATSUMOTO',
-    linkId: 4,
-  },
-  {
-    id: 6,
-    imgPath: '/images/rider/img-member-06.webp',
-    alt: 'スライド6',
-    text: 'EUSEBIA NICOLE',
-    linkId: 5,
-  },
-];
+import { getOtherMembersList } from '@/constants';
 
 const settings = {
   dots: false,
@@ -62,29 +18,22 @@ const settings = {
   arrows: false,
 };
 
-interface images {
-  id: number;
-  imgPath: string;
-  linkId: number;
-  alt: string;
-  text: string;
-}
-
 export const MemberSlider = () => {
   const { isTablet } = useGetWindowWidth();
   const navigate = useNavigate();
 
+  const memberList = getOtherMembersList();
+
   const slider = isTablet ? (
     <SimpleGrid columns={2} spacing={10}>
-      {images.map(image => (
-        <Box key={image.id} w="100%" h="100%" pr="16px">
+      {memberList.map(member => (
+        <Box key={member.id} w="100%" h="100%" pr="16px">
           <Box
             w="100%"
             objectFit="cover"
+            cursor="pointer"
             onClick={() => {
-              navigate('/member-page', {
-                state: { id: image.linkId },
-              });
+              navigate(`/member-page/${member.id}`);
             }}
           >
             <Image
@@ -92,28 +41,26 @@ export const MemberSlider = () => {
               w="100%"
               h="100%"
               objectFit="cover"
-              src={image.imgPath}
-              alt={image.alt}
+              src={member.gradationImagesPath}
+              alt={member.nameJa}
             />
           </Box>
           <Text fontSize="16px" color="white" textAlign="center">
-            {image.text}
+            {member.nameEn.toUpperCase()}
           </Text>
         </Box>
       ))}
     </SimpleGrid>
   ) : (
     <Slider {...settings}>
-      {images.map(image => (
-        <Box key={image.id} w="23%" h="100%" pr="16px">
+      {memberList.map(member => (
+        <Box key={member.id} w="23%" h="100%" pr="16px">
           <Box
             w="100%"
             objectFit="cover"
             cursor="pointer"
             onClick={() => {
-              navigate('/member-page', {
-                state: { id: image.linkId },
-              });
+              navigate(`/member-page/${member.id}`);
             }}
           >
             <Image
@@ -121,12 +68,12 @@ export const MemberSlider = () => {
               w="100%"
               h="100%"
               objectFit="cover"
-              src={image.imgPath}
-              alt={image.alt}
+              src={member.gradationImagesPath}
+              alt={member.nameJa}
             />
           </Box>
           <Text fontSize="16px" color="white" textAlign="center">
-            {image.text}
+            {member.nameEn.toUpperCase()}
           </Text>
         </Box>
       ))}

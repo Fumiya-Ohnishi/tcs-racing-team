@@ -7,16 +7,15 @@ type Props = {
   leftComment: React.ReactNode;
   leftImage: string;
   leftBg: string;
-  leftWidth?: string;
   leftLink: string;
-  leftId: number;
+  leftId: string;
   rightName?: string;
   rightComment?: React.ReactNode;
   rightImage?: string;
   rightBg?: string;
   rightWidth?: string;
   rightLink?: string;
-  rightId?: number;
+  rightId?: string;
 };
 
 export const Member: FC<Props> = ({
@@ -24,7 +23,6 @@ export const Member: FC<Props> = ({
   leftComment,
   leftImage,
   leftBg,
-  leftWidth,
   leftLink,
   leftId,
   rightName,
@@ -57,7 +55,6 @@ export const Member: FC<Props> = ({
               name={leftName}
               comment={leftComment}
               imageUrl={leftImage}
-              width={leftWidth}
               link={leftLink}
               id={leftId}
             />
@@ -72,7 +69,8 @@ export const Member: FC<Props> = ({
               display={{ base: 'none', lg: 'block' }}
             />
 
-            {rightBg && rightName && rightImage && rightLink && rightId && (
+            {/* TODO: 後でrightBgを必須にする */}
+            {rightName && rightImage && rightLink && rightId && (
               <MemberContent
                 backgroundUrl={rightBg}
                 name={rightName}

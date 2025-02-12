@@ -7,9 +7,16 @@ type Props = {
   name: string;
   comment: JSX.Element[];
   link: string;
+  imagePath: string;
 };
 
-export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
+export const DirectorContent: FC<Props> = ({
+  link,
+  post,
+  name,
+  comment,
+  imagePath,
+}) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const boxRef = useRef<HTMLImageElement>(null);
 
@@ -42,9 +49,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => {
-        navigate('/member-page', {
-          state: { id: 0 },
-        });
+        navigate(`${link}`);
       }}
     >
       <Box
@@ -100,7 +105,7 @@ export const DirectorContent: FC<Props> = ({ post, name, comment }) => {
             >
               <Image
                 ref={imageRef}
-                src="/images/img-theTeam-01.webp"
+                src={imagePath}
                 alt="director"
                 transition="transform 0.3s ease"
               />

@@ -1,52 +1,25 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
+import {
+  getOurTeamTheStaffMainList,
+  getOurTeamTheStaffSubList,
+} from '@/constants';
 import { Box, Grid, Image, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { TeamMemberSmallTitle } from '../components/TeamMemberSmallTitle';
 import { useNavigate } from 'react-router-dom';
 
-interface TeamMemberStaff {
-  id: number;
-  name: string;
-  image: string;
-}
-
-const mainStaffs: TeamMemberStaff[] = [
-  {
-    id: 0,
-    name: '山本幸平',
-    image: '/images/team/img-team-staff01.webp',
-  },
-  {
-    id: 1,
-    name: '福光悠介',
-    image: '/images/team/img-team-staff02.webp',
-  },
-];
-const subStaffs: TeamMemberStaff[] = [
-  {
-    id: 0,
-    name: '佐藤寿美',
-    image: '/images/team/img-team-staff03.webp',
-  },
-  {
-    id: 1,
-    name: '汐澤芳治',
-    image: '/images/team/img-team-staff04.webp',
-  },
-  {
-    id: 2,
-    name: 'Dr. ドニー クスマ',
-    image: 'https://placehold.jp/000000/000000/327x218.png',
-  },
-];
-
 export const TeamMemberStaff: FC = () => {
   const navigate = useNavigate();
+
+  const mainStaffs = getOurTeamTheStaffMainList();
+  const subStaffs = getOurTeamTheStaffSubList();
+
   return (
     <MainLayout>
       <Box mb={{ base: '200px', lg: '280px' }}>
         <TeamMemberSmallTitle title="The Staff" />
         <VStack spacing={24}>
+          {/* メインスタッフ表示 */}
           <Grid
             templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
             gap={8}
@@ -54,12 +27,9 @@ export const TeamMemberStaff: FC = () => {
             {mainStaffs.map(staff => (
               <Box
                 key={staff.id}
+                cursor="pointer"
                 position="relative"
-                onClick={() => {
-                  navigate('/member-page', {
-                    state: { id: staff.id },
-                  });
-                }}
+                onClick={() => navigate(`/member-page/${staff.id}`)}
               >
                 <Box
                   w={{ base: '100%', lg: '72%' }}
@@ -67,7 +37,7 @@ export const TeamMemberStaff: FC = () => {
                   bg="black"
                   h="100%"
                 >
-                  <Image src={staff.image} />
+                  <Image src={staff.gradationImagesPath} />
                 </Box>
                 <Box
                   position="absolute"
@@ -80,7 +50,7 @@ export const TeamMemberStaff: FC = () => {
                   w="100%"
                 >
                   <Text fontSize="18px" mr="48px">
-                    {staff.name}
+                    {staff.nameJa}
                   </Text>
                   <Box>
                     <Image
@@ -94,14 +64,21 @@ export const TeamMemberStaff: FC = () => {
             ))}
           </Grid>
 
+          {/* サブスタッフ表示 */}
           <Grid
-            templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
-            gap={{ base: 8, lg: 16 }}
+            templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }}
+            gap={{ base: 8, lg: 8 }}
           >
             {subStaffs.map(staff => (
               <Box key={staff.id} position="relative">
-                <Box w="100%" m="0 auto" bg="black" h="100%" minH="126px">
-                  <Image src={staff.image} />
+                <Box
+                  w={{ base: '100%', lg: '72%' }}
+                  m="0 auto"
+                  bg="black"
+                  h="100%"
+                  minH="126px"
+                >
+                  <Image src={staff.gradationImagesPath} />
                 </Box>
                 <Box
                   position="absolute"
@@ -113,7 +90,14 @@ export const TeamMemberStaff: FC = () => {
                   justifyContent="center"
                   w="100%"
                 >
-                  <Text fontSize="18px">{staff.name}</Text>
+                  <Text
+                    fontSize={{
+                      base: staff.nameJa.length >= 7 ? '12px' : '18px',
+                      lg: '18px',
+                    }}
+                  >
+                    {staff.nameJa}
+                  </Text>
                 </Box>
               </Box>
             ))}
