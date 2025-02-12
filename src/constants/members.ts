@@ -27,7 +27,7 @@ export const MemberKey = {
   DeddyKurniawan: 'deddyKurniawan',
   FiliYudiono: 'filiYudiono',
   RinaZaki: 'rinaZaki',
-  HiyoshiAyaka: 'hiyoshiAyaka',
+  AyakaHiyoshi: 'ayakaHiyoshi',
 } as const;
 
 export type MemberKey = (typeof MemberKey)[keyof typeof MemberKey];
@@ -207,17 +207,17 @@ export const members: Record<MemberKey, Member> = {
     memberPageFirstViewBackgroundImagePc: '',
     memberPageFirstViewBackgroundImageSp: '',
   },
-  [MemberKey.HiyoshiAyaka]: {
+  [MemberKey.AyakaHiyoshi]: {
     id: '10',
     nameJa: '日吉 彩華',
-    nameEn: 'Hiyoshi Ayaka',
+    nameEn: 'Ayaka Hiyoshi',
     memberType: 'ライダー',
     gradationImagesPath: '',
     topTheTeamSectionBackgroundImagePath: '',
     topTheTeamSectionImagePath:
-      '/images/member/img-member-hiyoshi-ayaka-rider.png',
+      '/images/member/img-member-ayaka-hiyoshi-rider.png',
     ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-hiyoshi-ayaka-rider.png',
+      '/images/member/img-member-ayaka-hiyoshi-rider.png',
     memberPageAboutSectionImagesPath: undefined,
     memberPageFirstViewMemberImagePath: '',
     memberPageFirstViewBackgroundImagePc: '',
