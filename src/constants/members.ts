@@ -77,7 +77,8 @@ export const members: Record<MemberKey, Member> = {
     memberType: 'ライダー',
     gradationImagesPath:
       '/images/member/img-member-riyadh-hakim-gradation.webp',
-    topTheTeamSectionBackgroundImagePath: '/images/img-theTeam-bg-01.webp',
+    topTheTeamSectionBackgroundImagePath:
+      '/images/top/img-top-singapore-flag.webp',
     topTheTeamSectionImagePath:
       '/images/member/img-member-riyadh-hakim-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
@@ -97,7 +98,8 @@ export const members: Record<MemberKey, Member> = {
     nameEn: 'Sayu Bella',
     memberType: 'ライダー',
     gradationImagesPath: '/images/member/img-member-sayu-bella-gradation.webp',
-    topTheTeamSectionBackgroundImagePath: '/images/img-theTeam-bg-02.webp',
+    topTheTeamSectionBackgroundImagePath:
+      '/images/top/img-top-indonesia-flag.webp',
     topTheTeamSectionImagePath:
       '/images/member/img-member-sayu-bella-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
@@ -118,7 +120,7 @@ export const members: Record<MemberKey, Member> = {
     memberType: 'ライダー',
     gradationImagesPath:
       '/images/member/img-member-yuta-matsumoto-gradation.webp',
-    topTheTeamSectionBackgroundImagePath: '/images/img-theTeam-bg-03.webp',
+    topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp',
     topTheTeamSectionImagePath:
       '/images/member/img-member-yuta-matsumoto-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
@@ -139,7 +141,8 @@ export const members: Record<MemberKey, Member> = {
     memberType: 'ライダー',
     gradationImagesPath:
       '/images/member/img-member-eusebia-nicole-gradation.webp',
-    topTheTeamSectionBackgroundImagePath: '/images/img-theTeam-bg-04.webp',
+    topTheTeamSectionBackgroundImagePath:
+      '/images/top/img-top-philippines-flag.webp',
     topTheTeamSectionImagePath:
       '/images/member/img-member-eusebia-nicole-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
