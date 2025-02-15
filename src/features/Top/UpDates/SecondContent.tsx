@@ -83,7 +83,7 @@ export const SecondContent: FC<Props> = ({ updateArray }) => {
                 <Image
                   w="5px"
                   h="10px"
-                  src="/images/ico-arrow-white-brock.svg"
+                  src="/images/common/ico-arrow-white-brock.svg"
                 />
               </HStack>
             </Link>

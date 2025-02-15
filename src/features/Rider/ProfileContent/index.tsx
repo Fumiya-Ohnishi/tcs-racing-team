@@ -30,7 +30,7 @@ export const ProfileContent: FC<Props> = ({ id }) => {
       bottom: 0;
       width: 108%;
       height: 5px;
-      background-image: url('/images/img-text-bg.webp');
+      background-image: url('/images/common/img-text-bg-rainbow.webp');
       background-size: cover;
       background-repeat: no-repeat;
       transform: rotate(90deg);

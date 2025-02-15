@@ -14,7 +14,7 @@ export const Message: FC<Props> = ({ message }) => {
     <MainLayout>
       <Box position="relative" my="92px">
         <Box w="214px" h="214px" m="0 auto" opacity="0.5">
-          <Image src="/images/ico-team-logo.webp" objectFit="cover" />
+          <Image src="/images/common/ico-team-logo.webp" objectFit="cover" />
         </Box>
         <Box
           w="100%"

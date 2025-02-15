@@ -64,7 +64,7 @@ export const OurPartnerList: FC<Props> = ({ title, imagePath }) => {
             ml="8px"
             transition="transform 0.3s ease-in-out"
           >
-            <Image src="images/ico-arrow-brock.svg" alt="arrow" />
+            <Image src="images/common/ico-arrow-brock.svg" alt="arrow" />
           </Box>
         </Box>
       </Box>

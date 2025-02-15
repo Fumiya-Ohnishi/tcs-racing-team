@@ -121,7 +121,7 @@ export const MemberContent: FC<Props> = ({
         <Image
           display="block"
           w="100%"
-          src="/images/ico-arrow-white-brock.svg"
+          src="/images/common/ico-arrow-white-brock.svg"
         />
       </Box>
     </Box>

@@ -50,7 +50,7 @@ export const ScheduleItem = ({
               <Image
                 w="100%"
                 display="block"
-                src="/images/ico-hexagon-black.svg"
+                src="/images/schedule/ico-hexagon-black.svg"
               />
             </Box>
             <Flex
@@ -91,7 +91,7 @@ export const ScheduleItem = ({
                 </Text>
                 <Flex alignItems="center">
                   <Box mr="6px">
-                    <Image src="/images/ico-point-green.svg" />
+                    <Image src="/images/schedule/ico-pin-green.svg" />
                   </Box>
                   <Text fontSize={{ base: '10px', lg: '12px' }}>
                     {location || ''}
@@ -112,7 +112,7 @@ export const ScheduleItem = ({
               <Image
                 w="11px"
                 h="25px"
-                src="/images/ico-arrow-white-brock.svg"
+                src="/images/common/ico-arrow-white-brock.svg"
               />
             </Box>
           </Box>

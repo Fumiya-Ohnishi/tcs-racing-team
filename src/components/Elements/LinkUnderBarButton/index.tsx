@@ -15,7 +15,11 @@ export const LinkUnderBarButton = ({ text, url, isCenter }: Props) => {
           <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
             {text}
           </Text>
-          <Image w="5px" h="10px" src="/images/ico-arrow-white-brock.svg" />
+          <Image
+            w="5px"
+            h="10px"
+            src="/images/common/ico-arrow-white-brock.svg"
+          />
         </HStack>
       </Link>
     </HStack>

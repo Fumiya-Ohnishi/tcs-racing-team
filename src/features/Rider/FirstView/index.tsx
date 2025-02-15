@@ -1,5 +1,11 @@
 import { SnsIcon } from '@/components/Elements/SnsIcon';
-import { getMemberById } from '@/constants';
+import {
+  facebookUrl,
+  getMemberById,
+  instagramUrl,
+  tiktokUrl,
+  youtubeUrl,
+} from '@/constants';
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
 import { useBreakpointValue, HStack, Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
@@ -100,23 +106,23 @@ export const FirstView: FC<Props> = ({ id }) => {
         </Box>
         <HStack alignItems="center" justifyContent="space-between" w="20%">
           <SnsIcon
-            href="https://www.facebook.com/asiauniontcs"
-            icon="/images/ico-facebook.webp"
+            href={facebookUrl}
+            icon="/images/common/ico-facebook-bg-white.webp"
             label="Facebook"
           />
           <SnsIcon
-            href="https://www.instagram.com/asia.union.tcs/"
-            icon="/images/ico-Instagram.webp"
+            href={instagramUrl}
+            icon="/images/common/ico-instagram-bg-white.webp"
             label="Instagram"
           />
           <SnsIcon
-            href="https://www.youtube.com/@AsiaUnionTCSRacingTeam"
-            icon="/images/ico-YouTube.webp"
+            href={youtubeUrl}
+            icon="/images/common/ico-youtube-bg-white.webp"
             label="YouTube"
           />
           <SnsIcon
-            href="https://www.tiktok.com/@asiauniontcsracin"
-            icon="/images/ico-TikTok.webp"
+            href={tiktokUrl}
+            icon="/images/common/ico-tiktok-bg-white.webp"
             label="TikTok"
           />
         </HStack>

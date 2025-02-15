@@ -56,7 +56,7 @@ export const TeamMemberStaff: FC = () => {
                     <Image
                       w="11px"
                       h="25px"
-                      src="/images/ico-arrow-white-brock.svg"
+                      src="/images/common/ico-arrow-white-brock.svg"
                     />
                   </Box>
                 </Box>

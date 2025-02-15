@@ -53,7 +53,7 @@ export const Header = () => {
             objectFit={{ base: 'contain', lg: 'none' }}
           >
             <RouterLink to="/">
-              <Image src="/images/ico-team-logo-name.webp" alt="logo" />
+              <Image src="/images/common/ico-team-logo-name.webp" alt="logo" />
             </RouterLink>
           </Box>
           <Drawer isOpen={isOpen} placement="right" onClose={onClose}>

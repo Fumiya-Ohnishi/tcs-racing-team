@@ -52,7 +52,7 @@ export const LinkButton: FC<Props> = ({ link, text }) => {
               bottom: -3px;
               left: 0;
               height: 3px;
-              background-image: url(images/img-text-bg.webp);
+              background-image: url(images/common/img-text-bg-rainbow.webp);
               background-size: cover;
               background-repeat: no-repeat;
               width: 100%;
@@ -64,7 +64,7 @@ export const LinkButton: FC<Props> = ({ link, text }) => {
               bottom: -3px;
               left: 0;
               height: 3px;
-              background-image: url(images/img-text-bg.webp);
+              background-image: url(images/common/img-text-bg-rainbow.webp);
               background-size: cover;
               background-repeat: no-repeat;
               width: 0;
@@ -75,7 +75,7 @@ export const LinkButton: FC<Props> = ({ link, text }) => {
           <Text color="#fff" fontWeight="bold">
             {text}
           </Text>
-          <Image src="/images/ico-arrow-white-brock.svg" />
+          <Image src="/images/common/ico-arrow-white-brock.svg" />
         </HStack>
       </Link>
     </HStack>
