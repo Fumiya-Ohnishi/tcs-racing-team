@@ -58,7 +58,7 @@ export const Title: FC<Props> = ({
           w="10%"
           maxW="87px"
           height="3px"
-          bg={'url(images/img-text-bg.webp)'}
+          bg={'url(images/common/img-text-bg-rainbow.webp)'}
           bgSize="cover"
           bgRepeat="no-repeat"
         />

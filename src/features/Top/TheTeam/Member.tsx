@@ -36,7 +36,7 @@ export const Member: FC<Props> = ({
   return (
     <Box
       w="100%"
-      background={`linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.8),rgba(0, 0, 0, 0.3)), url(/images/img-lattice-background.webp)`}
+      background={`linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.8),rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`}
       backgroundSize="80%"
     >
       <Box

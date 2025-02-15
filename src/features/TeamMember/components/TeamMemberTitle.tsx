@@ -51,7 +51,7 @@ export const TeamMemberTitle: FC<Props> = ({
               w="100%"
               maxW="87px"
               height="3px"
-              bg={'url(images/img-text-bg.webp)'}
+              bg={'url(images/common/img-text-bg-rainbow.webp)'}
               bgSize="cover"
               bgRepeat="no-repeat"
             />

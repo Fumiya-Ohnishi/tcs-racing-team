@@ -9,6 +9,7 @@ import { useLanguage } from '@/state/languageState/useLanguage';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Link as LinkRouter } from 'react-router-dom';
+import { facebookUrl, instagramUrl, tiktokUrl, youtubeUrl } from '@/constants';
 
 export const Contact = () => {
   const { news } = useUpDateContents();
@@ -71,7 +72,7 @@ export const Contact = () => {
             w="100%"
             objectFit="contain"
             display="block"
-            src="/images/contact/img-contact-01.webp"
+            src="/images/contact/img-contact-top.webp"
             alt="contact"
           />
           <Box
@@ -158,10 +159,13 @@ export const Contact = () => {
                 rounded="50%"
                 mr="18px"
               >
-                <Image src="/images/contact/ico-youtube.svg" alt="contact" />
+                <Image
+                  src="/images/common/ico-youtube-white.svg"
+                  alt="contact"
+                />
               </Box>
               <LinkRouter
-                to="https://www.youtube.com/@AsiaUnionTCSRacingTeam"
+                to={youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -179,11 +183,14 @@ export const Contact = () => {
                 rounded="50%"
                 mr="18px"
               >
-                <Image src="/images/contact/ico-facebook.svg" alt="contact" />
+                <Image
+                  src="/images/common/ico-facebook-white.svg"
+                  alt="contact"
+                />
               </Box>
 
               <LinkRouter
-                to="https://www.facebook.com/asiauniontcs"
+                to={facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -201,10 +208,13 @@ export const Contact = () => {
                 rounded="50%"
                 mr="18px"
               >
-                <Image src="/images/contact/ico-Instagram.svg" alt="contact" />
+                <Image
+                  src="/images/common/ico-instagram-white.svg"
+                  alt="contact"
+                />
               </Box>
               <LinkRouter
-                to="https://www.instagram.com/asia.union.tcs/"
+                to={instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -222,10 +232,13 @@ export const Contact = () => {
                 rounded="50%"
                 mr="18px"
               >
-                <Image src="/images/contact/ico-TikTok.svg" alt="contact" />
+                <Image
+                  src="/images/common/ico-tiktok-white.svg"
+                  alt="contact"
+                />
               </Box>
               <LinkRouter
-                to="https://www.tiktok.com/@asiauniontcsracin"
+                to={tiktokUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >

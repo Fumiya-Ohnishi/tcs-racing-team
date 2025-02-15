@@ -8,11 +8,8 @@ import { TeamMemberStaff } from './TeamMemberStaff';
 import { TeamMemberCoreValue } from './TeamMemberCoreValue';
 import { TeamMemberRiders } from './TeamMemberRiders';
 import { useTranslation } from 'react-i18next';
-import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 export const TeamMemberContent = () => {
-  const { isTablet } = useGetWindowWidth();
-
   const { t } = useTranslation('ourTeam');
   const message = {
     title: t('ourTeamMissionTitle'),
@@ -22,19 +19,13 @@ export const TeamMemberContent = () => {
   return (
     <Box>
       <PageLayout>
+        {/* sp時 */}
         <Box
           position="relative"
           display={{ base: 'block', lg: 'none' }}
           h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
         >
-          <Image
-            src={
-              isTablet
-                ? '/images/team/img-team-top-sp.webp'
-                : '/images/team/img-team-top.webp'
-            }
-            mt="108px"
-          />
+          <Image src="/images/team/img-team-top-sp.webp" mt="108px" />
           <Box
             position="absolute"
             top="0"
@@ -63,7 +54,7 @@ export const TeamMemberContent = () => {
             </Box>
           </Text>
         </Box>
-
+        {/* pc時 */}
         <Box
           position="relative"
           display={{ base: 'none', lg: 'block' }}
@@ -71,7 +62,7 @@ export const TeamMemberContent = () => {
           mt="52px"
         >
           <Image
-            src="/images/team/img-team-top.webp"
+            src="/images/team/img-team-top-pc.webp"
             w="100%"
             h="100%"
             objectFit="cover"
@@ -102,6 +93,7 @@ export const TeamMemberContent = () => {
             </Box>
           </Text>
         </Box>
+
         <Message message={message} />
         <TeamMemberCoreValue />
         <Title title="The Riders" subTitle="The Riders" />

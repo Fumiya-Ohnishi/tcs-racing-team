@@ -6,7 +6,6 @@ import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { WinCounter } from './WinCounter';
-import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 
 const winCounterData = [
   {
@@ -31,9 +30,9 @@ const winCounterData = [
 ];
 
 export const ScheduleComponent = () => {
-  const { isTablet } = useGetWindowWidth();
   return (
     <PageLayout>
+      {/* sp時 */}
       <Box
         position="relative"
         display={{ base: 'block', lg: 'none' }}
@@ -41,11 +40,7 @@ export const ScheduleComponent = () => {
         mb="64px"
       >
         <Image
-          src={
-            isTablet
-              ? '/images/schedule/img-schedule-top-sp.webp'
-              : '/images/schedule/img-schedule-top.webp'
-          }
+          src="/images/schedule/img-schedule-top-sp.webp"
           mt="108px"
           objectFit="contain"
         />
@@ -60,6 +55,7 @@ export const ScheduleComponent = () => {
           zIndex="1"
         />
       </Box>
+      {/* pc時 */}
       <Box
         position="relative"
         display={{ base: 'none', lg: 'block' }}
@@ -68,7 +64,7 @@ export const ScheduleComponent = () => {
         mt="52px"
       >
         <Image
-          src="/images/schedule/img-schedule-top.webp"
+          src="/images/schedule/img-schedule-top-pc.webp"
           w="100%"
           h="100%"
           objectFit="cover"

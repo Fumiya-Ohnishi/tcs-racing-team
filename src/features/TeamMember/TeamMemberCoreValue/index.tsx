@@ -5,12 +5,12 @@ import { useTranslation } from 'react-i18next';
 
 export const TeamMemberCoreValue: FC = () => {
   const { t } = useTranslation('ourTeam');
-  
+
   return (
     <Box mb="192px" color="white">
       <Divider orientation="horizontal" mx="auto" w="76%" />
       <Box
-        background={`linear-gradient(rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/img-lattice-background.webp)`}
+        background={`linear-gradient(rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`}
         backgroundSize="80%"
         pt="74px"
         pb={{ base: '92px', lg: '118px' }}
@@ -36,7 +36,7 @@ export const TeamMemberCoreValue: FC = () => {
       </Box>
       <Divider orientation="horizontal" mx="auto" w="76%" />
       <Box
-        background={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/img-lattice-background.webp)`}
+        background={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`}
         backgroundSize="80%"
         pt="74px"
         pb={{ base: '92px', lg: '118px' }}
@@ -74,7 +74,7 @@ export const TeamMemberCoreValue: FC = () => {
       </Box>
       <Divider orientation="horizontal" mx="auto" w="76%" />
       <Box
-        background={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1)), url(/images/img-lattice-background.webp)`}
+        background={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1)), url(/images/common/img-bg-lattice.webp)`}
         backgroundSize="80%"
         pt="74px"
         pb={{ base: '92px', lg: '118px' }}

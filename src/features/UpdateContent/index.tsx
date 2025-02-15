@@ -10,6 +10,8 @@ import { RelatedUpdates } from './RelatedUpdates';
 import './style.css';
 import { useLanguage } from '@/state/languageState/useLanguage';
 import { useSingleNewsContent } from './hooks/useSingleNewsContent';
+import { Link as LinkRouter } from 'react-router-dom';
+import { facebookUrl, instagramUrl, tiktokUrl, youtubeUrl } from '@/constants';
 
 export const UpdateContent = () => {
   const { id } = useParams();
@@ -29,7 +31,7 @@ export const UpdateContent = () => {
         <Image
           w="100%"
           display="block"
-          src="/images/UpdateContent/img-UpdateContent-01.jpeg"
+          src="/images/updateContent/img-updateContent-top.jpeg"
           alt="UpdateContent"
         />
         <Box
@@ -105,54 +107,76 @@ export const UpdateContent = () => {
           w={{ base: '90%', lg: '27%' }}
           mx="auto"
         >
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            bg="#000"
-            w="27px"
-            h="27px"
-            rounded="50%"
-            mr="18px"
+          <LinkRouter to={youtubeUrl} target="_blank" rel="noopener noreferrer">
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              bg="#000"
+              w="27px"
+              h="27px"
+              rounded="50%"
+              mr="18px"
+            >
+              <Image src="/images/common/ico-youtube-white.svg" alt="contact" />
+            </Box>
+          </LinkRouter>
+          <LinkRouter
+            to={facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Image src="/images/contact/ico-youtube.svg" alt="contact" />
-          </Box>
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            bg="#000"
-            w="27px"
-            h="27px"
-            rounded="50%"
-            mr="18px"
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              bg="#000"
+              w="27px"
+              h="27px"
+              rounded="50%"
+              mr="18px"
+            >
+              <Image
+                src="/images/common/ico-facebook-white.svg"
+                alt="contact"
+              />
+            </Box>
+          </LinkRouter>
+          <LinkRouter
+            to={instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Image src="/images/contact/ico-facebook.svg" alt="contact" />
-          </Box>
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            bg="#000"
-            w="27px"
-            h="27px"
-            rounded="50%"
-            mr="18px"
-          >
-            <Image src="/images/contact/ico-Instagram.svg" alt="contact" />
-          </Box>
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            bg="#000"
-            w="27px"
-            h="27px"
-            rounded="50%"
-            mr="18px"
-          >
-            <Image src="/images/contact/ico-TikTok.svg" alt="contact" />
-          </Box>
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              bg="#000"
+              w="27px"
+              h="27px"
+              rounded="50%"
+              mr="18px"
+            >
+              <Image
+                src="/images/common/ico-instagram-white.svg"
+                alt="contact"
+              />
+            </Box>
+          </LinkRouter>
+          <LinkRouter to={tiktokUrl} target="_blank" rel="noopener noreferrer">
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              bg="#000"
+              w="27px"
+              h="27px"
+              rounded="50%"
+              mr="18px"
+            >
+              <Image src="/images/common/ico-tiktok-white.svg" alt="contact" />
+            </Box>
+          </LinkRouter>
         </Box>
       </Box>
 
