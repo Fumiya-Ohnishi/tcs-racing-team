@@ -1,9 +1,8 @@
+import { WinCounterData } from '@/constants';
 import { Box, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
-interface Props {
-  count: number;
-  text: string;
+interface Props extends WinCounterData {
   isLastContent?: boolean;
 }
 

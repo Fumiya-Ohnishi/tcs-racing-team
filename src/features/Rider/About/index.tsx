@@ -2,10 +2,10 @@ import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/conv
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getMemberById } from '@/constants';
+import { getMemberById, MemberId } from '@/constants';
 
 interface Props {
-  id: string;
+  id: MemberId;
 }
 
 export const About: FC<Props> = ({ id }) => {

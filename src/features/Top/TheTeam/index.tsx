@@ -3,54 +3,54 @@ import { DirectorContent } from './DirectorContent';
 import { Member } from './Member';
 import { useTranslation } from 'react-i18next';
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
-import { getMemberById, noImageUrl } from '@/constants';
+import { getMemberByMemberKey, MemberKey, noImageUrl } from '@/constants';
 
 export const TheTeam = () => {
   const { t } = useTranslation('topTheTeam');
 
   // `id` を指定してメンバー情報を取得
-  const director = getMemberById('0'); // 監督（山本幸平）
-  const rider1 = getMemberById('2'); // リアッド ハキム
-  const rider2 = getMemberById('3'); // サユ ベラ
-  const rider3 = getMemberById('4'); // 松本 佑太
-  const rider4 = getMemberById('5'); // エセビア ニコル
-  const rider5 = getMemberById('8'); // フェリ ユドヨノ
-  const rider6 = getMemberById('9'); // リナ ザキ
-  const rider7 = getMemberById('10'); // 日吉 彩華
+  const director = getMemberByMemberKey(MemberKey.KoheiYamamoto); // 監督（山本幸平）
+  const rider1 = getMemberByMemberKey(MemberKey.RiyadhHakim); // リアッド ハキム
+  const rider2 = getMemberByMemberKey(MemberKey.SayuBella); // サユ ベラ
+  const rider3 = getMemberByMemberKey(MemberKey.YutaMatsumoto); // 松本 佑太
+  const rider4 = getMemberByMemberKey(MemberKey.EusebiaNicole); // エセビア ニコル
+  const rider5 = getMemberByMemberKey(MemberKey.FiliYudiono); // フェリ ユドヨノ
+  const rider6 = getMemberByMemberKey(MemberKey.RinaZaki); // リナ ザキ
+  const rider7 = getMemberByMemberKey(MemberKey.AyakaHiyoshi); // 日吉 彩華
 
   const rider1Content = (
     <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
-      {convertNewlineToBreak(t('description.1'))}
+      {convertNewlineToBreak(t(`description.${rider1.id}`))}
     </Text>
   );
   const rider2Content = (
     <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
-      {convertNewlineToBreak(t('description.2'))}
+      {convertNewlineToBreak(t(`description.${rider2.id}`))}
     </Text>
   );
   const rider3Content = (
     <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
-      {convertNewlineToBreak(t('description.3'))}
+      {convertNewlineToBreak(t(`description.${rider3.id}`))}
     </Text>
   );
   const rider4Content = (
     <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
-      {convertNewlineToBreak(t('description.4'))}
+      {convertNewlineToBreak(t(`description.${rider4.id}`))}
     </Text>
   );
   const rider5Content = (
     <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
-      {convertNewlineToBreak(t('description.5'))}
+      {convertNewlineToBreak(t(`description.${rider5.id}`))}
     </Text>
   );
   const rider6Content = (
     <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
-      {convertNewlineToBreak(t('description.6'))}
+      {convertNewlineToBreak(t(`description.${rider6.id}`))}
     </Text>
   );
   const rider7Content = (
     <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
-      {convertNewlineToBreak(t('description.7'))}
+      {convertNewlineToBreak(t(`description.${rider7.id}`))}
     </Text>
   );
 
@@ -59,7 +59,7 @@ export const TheTeam = () => {
       <DirectorContent
         post={'株式会社 A-Union TCS 代表取締兼監督'}
         name={director.nameJa}
-        comment={convertNewlineToBreak(t('description.0'))}
+        comment={convertNewlineToBreak(t(`description.${director.id}`))}
         link={`/member-page/${director.id}`}
         imagePath={director.topTheTeamSectionImagePath || noImageUrl}
       />

@@ -7,6 +7,7 @@ type Props = {
   subTitle: string;
   isCenter?: boolean;
   isHiddenUnderLine?: boolean;
+  // idはhtmlのid属性
   id?: string;
 };
 

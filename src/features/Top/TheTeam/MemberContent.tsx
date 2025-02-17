@@ -2,6 +2,7 @@ import { Box, Text, Image } from '@chakra-ui/react';
 import { FC, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LinkStyles.css';
+import { MemberId } from '@/constants';
 
 interface Props {
   // TODO: 国旗の画像が追加されたらbackgroundUrlを必須にする
@@ -11,7 +12,7 @@ interface Props {
   imageUrl: string;
   width?: string;
   link: string;
-  id: string;
+  id: MemberId;
 }
 
 export const MemberContent: FC<Props> = ({
@@ -88,11 +89,20 @@ export const MemberContent: FC<Props> = ({
         position="absolute"
         bottom="0"
         right="0"
-        // TODO: 後でid8,9,10の条件分岐を削除する
+        // TODO: 後でidFiliYudiono,RinaZaki,AyakaHiyoshiの条件分岐を削除する
         w={{
           base:
-            id === '8' || id === '9' || id === '10' ? '100%' : width || '100%',
-          lg: id === '8' || id === '9' || id === '10' ? '70%' : width || '70%',
+            id === MemberId.FiliYudiono ||
+            id === MemberId.RinaZaki ||
+            id === MemberId.AyakaHiyoshi
+              ? '100%'
+              : width || '100%',
+          lg:
+            id === MemberId.FiliYudiono ||
+            id === MemberId.RinaZaki ||
+            id === MemberId.AyakaHiyoshi
+              ? '70%'
+              : width || '70%',
         }}
         maxW="316px"
         maxH="350px"

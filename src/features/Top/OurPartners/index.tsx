@@ -48,7 +48,7 @@ export const OurPartners = () => {
           {partnersImages.platinum.map((partnerImage, index) => (
             <Box
               key={index}
-              maxW={partnerImage.partnersPageLogoImageWidth} // ✅ 定数を適用
+              maxW={partnerImage.partnersPageLogoImageWidth}
               display="flex"
               alignItems="center"
               justifyContent="center"
@@ -73,7 +73,7 @@ export const OurPartners = () => {
           {partnersImages.gold.map((partnerImage, index) => (
             <Box
               key={index}
-              maxW={partnerImage.partnersPageLogoImageWidth} // ✅ 定数を適用
+              maxW={partnerImage.partnersPageLogoImageWidth}
               display="flex"
               alignItems="center"
               justifyContent="center"

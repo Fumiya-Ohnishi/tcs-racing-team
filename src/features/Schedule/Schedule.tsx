@@ -4,17 +4,15 @@ import { ScheduleItem } from '@/components/Elements/ScheduleItem';
 import { ScheduleTitle } from './components/ScheduleTitle';
 import { useGetSchedule } from '@/shared/hooks/useGetSchedule';
 import { useLanguage } from '@/state/languageState/useLanguage';
+import { limit } from '@/constants';
 
 export interface ScheduleItem {
-  id: number;
   title: string;
   startDate: string;
   endDate?: string;
   location: string;
   url?: string;
 }
-
-const limit = 12;
 
 export const Schedule = () => {
   const { raceScheduleList, eventScheduleList } = useGetSchedule({ limit });

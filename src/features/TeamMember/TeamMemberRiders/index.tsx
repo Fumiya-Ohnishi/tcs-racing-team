@@ -1,5 +1,5 @@
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import { getOurTeamPageTheRiderSectionList } from '@/constants';
+import { getOurTeamPageTheRiderSectionList, MemberId } from '@/constants';
 import { Box, Grid, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -23,8 +23,12 @@ export const TeamMemberRiders: FC = () => {
               position="relative"
               aspectRatio="1097 / 880"
               onClick={() => {
-                // TODO: 後でid8,9,10の条件分岐を削除する
-                if (rider.id === '8' || rider.id === '9' || rider.id === '10') {
+                // TODO: 後でidがFiliYudiono,RinaZaki,AyakaHiyoshiの条件分岐を削除する
+                if (
+                  rider.id === MemberId.FiliYudiono ||
+                  rider.id === MemberId.RinaZaki ||
+                  rider.id === MemberId.AyakaHiyoshi
+                ) {
                   navigate('/team-member');
                   return;
                 }

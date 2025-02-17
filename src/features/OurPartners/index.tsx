@@ -5,7 +5,7 @@ import { Box, Divider, Image, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { OurPartnerList } from './OurPartnerList';
 import { OfficialMedia } from '../Top/OfficialMedia';
-import { partnersImages, partners } from '@/constants'; // ✅ 追加
+import { partnersImages, partners } from '@/constants';
 
 export const OurPartners = () => {
   return (

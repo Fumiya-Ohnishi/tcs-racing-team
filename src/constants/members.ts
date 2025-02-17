@@ -1,5 +1,5 @@
 export type Member = {
-  id: string;
+  id: MemberId;
   nameJa: string;
   nameEn: string;
   memberType: string;
@@ -16,25 +16,70 @@ export type Member = {
   isOurTeamTheStaffSub?: boolean;
 };
 
+export const MemberId = {
+  KoheiYamamoto: 'kohei-yamamoto',
+  YusukeFukumitsu: 'yusuke-fukumitsu',
+  RiyadhHakim: 'riyadh-hakim',
+  SayuBella: 'sayu-bella',
+  YutaMatsumoto: 'yuta-matsumoto',
+  EusebiaNicole: 'eusebia-nicole',
+  YoshiharuShiozawa: 'yoshiharu-shiozawa',
+  DeddyKurniawan: 'deddy-kurniawan',
+  FiliYudiono: 'fili-yudiono',
+  RinaZaki: 'rina-zaki',
+  AyakaHiyoshi: 'ayaka-hiyoshi',
+} as const;
+
+export type MemberId = (typeof MemberId)[keyof typeof MemberId];
+
+export const parseMemberId = (id: string): MemberId | undefined => {
+  switch (id) {
+    case MemberId.KoheiYamamoto:
+      return MemberId.KoheiYamamoto;
+    case MemberId.YusukeFukumitsu:
+      return MemberId.YusukeFukumitsu;
+    case MemberId.RiyadhHakim:
+      return MemberId.RiyadhHakim;
+    case MemberId.SayuBella:
+      return MemberId.SayuBella;
+    case MemberId.YutaMatsumoto:
+      return MemberId.YutaMatsumoto;
+    case MemberId.EusebiaNicole:
+      return MemberId.EusebiaNicole;
+    case MemberId.YoshiharuShiozawa:
+      return MemberId.YoshiharuShiozawa;
+    case MemberId.DeddyKurniawan:
+      return MemberId.DeddyKurniawan;
+    case MemberId.FiliYudiono:
+      return MemberId.FiliYudiono;
+    case MemberId.RinaZaki:
+      return MemberId.RinaZaki;
+    case MemberId.AyakaHiyoshi:
+      return MemberId.AyakaHiyoshi;
+    default:
+      return undefined;
+  }
+};
+
 export const MemberKey = {
-  KoheiYamamoto: 'koheiYamamoto',
-  YusukeFukumitsu: 'yusukeFukumitsu',
-  RiyadhHakim: 'riyadhHakim',
-  SayuBella: 'sayuBella',
-  YutaMatsumoto: 'yutaMatsumoto',
-  EusebiaNicole: 'eusebiaNicole',
-  YoshiharuShiozawa: 'yoshiharuShiozawa',
-  DeddyKurniawan: 'deddyKurniawan',
-  FiliYudiono: 'filiYudiono',
-  RinaZaki: 'rinaZaki',
-  AyakaHiyoshi: 'ayakaHiyoshi',
+  KoheiYamamoto: 'KoheiYamamoto',
+  YusukeFukumitsu: 'YusukeFukumitsu',
+  RiyadhHakim: 'RiyadhHakim',
+  SayuBella: 'SayuBella',
+  YutaMatsumoto: 'YutaMatsumoto',
+  EusebiaNicole: 'EusebiaNicole',
+  YoshiharuShiozawa: 'YoshiharuShiozawa',
+  DeddyKurniawan: 'DeddyKurniawan',
+  FiliYudiono: 'FiliYudiono',
+  RinaZaki: 'RinaZaki',
+  AyakaHiyoshi: 'AyakaHiyoshi',
 } as const;
 
 export type MemberKey = (typeof MemberKey)[keyof typeof MemberKey];
 
 export const members: Record<MemberKey, Member> = {
   [MemberKey.KoheiYamamoto]: {
-    id: '0',
+    id: MemberId.KoheiYamamoto,
     nameJa: '山本 幸平',
     nameEn: 'Kohei Yamamoto',
     memberType: 'ライダー',
@@ -53,7 +98,7 @@ export const members: Record<MemberKey, Member> = {
     isOurTeamTheStaffMain: true,
   },
   [MemberKey.YusukeFukumitsu]: {
-    id: '1',
+    id: MemberId.YusukeFukumitsu,
     nameJa: '福光 悠介',
     nameEn: 'Yusuke Fukumitsu',
     memberType: 'GM',
@@ -71,7 +116,7 @@ export const members: Record<MemberKey, Member> = {
     isOurTeamTheStaffMain: true,
   },
   [MemberKey.RiyadhHakim]: {
-    id: '2',
+    id: MemberId.RiyadhHakim,
     nameJa: 'リアッド ハキム',
     nameEn: 'Riyadh Hakim',
     memberType: 'ライダー',
@@ -93,7 +138,7 @@ export const members: Record<MemberKey, Member> = {
       '/images/memberPage/img-memberPage-top-riyadh-hakim-sp.webp',
   },
   [MemberKey.SayuBella]: {
-    id: '3',
+    id: MemberId.SayuBella,
     nameJa: 'サユ ベラ',
     nameEn: 'Sayu Bella',
     memberType: 'ライダー',
@@ -114,7 +159,7 @@ export const members: Record<MemberKey, Member> = {
       '/images/memberPage/img-memberPage-top-sayu-bella-sp.webp',
   },
   [MemberKey.YutaMatsumoto]: {
-    id: '4',
+    id: MemberId.YutaMatsumoto,
     nameJa: '松本 佑太',
     nameEn: 'Yuta Matsumoto',
     memberType: 'ライダー',
@@ -135,7 +180,7 @@ export const members: Record<MemberKey, Member> = {
       '/images/memberPage/img-memberPage-top-yuta-matsumoto-sp.webp',
   },
   [MemberKey.EusebiaNicole]: {
-    id: '5',
+    id: MemberId.EusebiaNicole,
     nameJa: 'エセビア ニコル',
     nameEn: 'Eusebia Nicole',
     memberType: 'ライダー',
@@ -157,7 +202,7 @@ export const members: Record<MemberKey, Member> = {
       '/images/memberPage/img-memberPage-top-eusebia-nicole-sp.webp',
   },
   [MemberKey.YoshiharuShiozawa]: {
-    id: '6',
+    id: MemberId.YoshiharuShiozawa,
     nameJa: '汐澤 芳治',
     memberType: '広報',
     nameEn: 'Yoshiharu Shiozawa',
@@ -167,7 +212,7 @@ export const members: Record<MemberKey, Member> = {
     isOurTeamTheStaffSub: true,
   },
   [MemberKey.DeddyKurniawan]: {
-    id: '7',
+    id: MemberId.DeddyKurniawan,
     nameJa: 'デディー クルニアワン',
     nameEn: 'Deddy Kurniawan',
     memberType: 'スタッフ',
@@ -177,7 +222,7 @@ export const members: Record<MemberKey, Member> = {
     isOurTeamTheStaffSub: true,
   },
   [MemberKey.FiliYudiono]: {
-    id: '8',
+    id: MemberId.FiliYudiono,
     nameJa: 'フェリ ユドヨノ',
     nameEn: 'Fili Yudiono',
     memberType: 'ライダー',
@@ -193,7 +238,7 @@ export const members: Record<MemberKey, Member> = {
     memberPageFirstViewBackgroundImageSp: '',
   },
   [MemberKey.RinaZaki]: {
-    id: '9',
+    id: MemberId.RinaZaki,
     nameJa: 'リナ ザキ',
     nameEn: 'Rina Zaki',
     memberType: 'ライダー',
@@ -208,7 +253,7 @@ export const members: Record<MemberKey, Member> = {
     memberPageFirstViewBackgroundImageSp: '',
   },
   [MemberKey.AyakaHiyoshi]: {
-    id: '10',
+    id: MemberId.AyakaHiyoshi,
     nameJa: '日吉 彩華',
     nameEn: 'Ayaka Hiyoshi',
     memberType: 'ライダー',
@@ -260,6 +305,17 @@ export const getMemberById = (id: string): Member => {
 
   if (!member) {
     throw new Error(`Member with ID "${id}" not found.`);
+  }
+
+  return member;
+};
+
+// 指定された MemberKey に対応するメンバーを取得する
+export const getMemberByMemberKey = (key: MemberKey): Member => {
+  const member = members[key];
+
+  if (!member) {
+    throw new Error(`Member with key "${key}" not found.`);
   }
 
   return member;

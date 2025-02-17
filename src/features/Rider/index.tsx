@@ -8,17 +8,20 @@ import { FirstView } from './FirstView';
 import { ProfileContent } from './ProfileContent';
 import { About } from './About';
 import { useParams } from 'react-router-dom';
+import { parseMemberId } from '@/constants';
 
 export const RiderComponent = () => {
   const { id } = useParams();
   if (!id) return;
+  const parsedId = parseMemberId(id);
+  if (!parsedId) return;
   return (
     <PageLayout>
-      <FirstView id={id} />
+      <FirstView id={parsedId} />
       <MainLayout>
-        <ProfileContent id={id} />
+        <ProfileContent id={parsedId} />
       </MainLayout>
-      <About id={id} />
+      <About id={parsedId} />
       <MainLayout>
         <MemberSlider />
       </MainLayout>
