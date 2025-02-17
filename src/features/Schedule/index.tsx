@@ -6,28 +6,7 @@ import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { MainLayout } from '@/components/Layouts/MainLayout';
 import { WinCounter } from './WinCounter';
-
-const winCounterData = [
-  {
-    id: 1,
-    name: 'first',
-    count: 0,
-    text: 'Wins by World Tour team in 2024',
-  },
-  {
-    id: 2,
-    name: 'second',
-    count: 0,
-    text: 'Lease a Bike Development Team in 2024',
-  },
-  {
-    id: 3,
-    name: 'third',
-    count: 0,
-    text: 'Wins by World Tour team in 2024',
-    isLastContent: true,
-  },
-];
+import { winCounterData } from '@/constants';
 
 export const ScheduleComponent = () => {
   return (
@@ -90,12 +69,12 @@ export const ScheduleComponent = () => {
             color="#FFF"
             fontWeight="bold"
           >
-            {winCounterData.map(item => (
+            {winCounterData.map((item, index) => (
               <WinCounter
-                key={item.id}
+                key={index}
                 count={item.count}
                 text={item.text}
-                isLastContent={item.isLastContent}
+                isLastContent={index === winCounterData.length - 1}
               />
             ))}
           </Grid>

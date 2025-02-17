@@ -1,6 +1,6 @@
 import { LinkButton } from '@/components/Elements/LinkButton';
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import { getTopTheStaffList } from '@/constants';
+import { getTopTheStaffList, MemberId } from '@/constants';
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,9 +31,11 @@ export const Staff = () => {
                 position="relative"
                 mb="16px"
                 h="100%"
-                cursor={staff.id === '1' ? 'pointer' : 'default'}
+                cursor={
+                  staff.id === MemberId.YusukeFukumitsu ? 'pointer' : 'default'
+                }
                 onClick={() => {
-                  if (staff.id === '1') {
+                  if (staff.id === MemberId.YusukeFukumitsu) {
                     navigate(`/member-page/${staff.id}`);
                   }
                 }}

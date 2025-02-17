@@ -1,3 +1,4 @@
+import { MemberId } from '@/constants';
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
 import { Box, Text, HStack } from '@chakra-ui/react';
 import { css } from '@emotion/react';
@@ -5,7 +6,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface Props {
-  id: string;
+  id: MemberId;
 }
 
 export const ProfileContent: FC<Props> = ({ id }) => {

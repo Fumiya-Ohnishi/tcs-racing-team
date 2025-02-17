@@ -3,6 +3,7 @@ import {
   facebookUrl,
   getMemberById,
   instagramUrl,
+  MemberId,
   tiktokUrl,
   youtubeUrl,
 } from '@/constants';
@@ -12,7 +13,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface Props {
-  id: string;
+  id: MemberId;
 }
 
 export const FirstView: FC<Props> = ({ id }) => {
@@ -22,10 +23,12 @@ export const FirstView: FC<Props> = ({ id }) => {
   const member = getMemberById(id);
 
   if (!member) {
-    return <Text color="red">No data</Text>;
+    return <Text>No data</Text>;
   }
-
-  const firstViewBaseTopValue = id === '3' || id === '4' ? '36%' : '24%';
+  const firstViewBaseTopValue =
+    member.id === MemberId.SayuBella || member.id === MemberId.YutaMatsumoto
+      ? '36%'
+      : '24%';
 
   return (
     <Box
