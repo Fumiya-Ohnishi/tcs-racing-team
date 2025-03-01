@@ -1,12 +1,10 @@
 import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Title } from '@/components/Elements/Title';
-import { Box, Grid, Image } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
 import { Schedule } from './Schedule';
 import { OurPartners } from '../Top/OurPartners';
 import { OfficialMedia } from '../Top/OfficialMedia';
 import { MainLayout } from '@/components/Layouts/MainLayout';
-import { WinCounter } from './WinCounter';
-import { winCounterData } from '@/constants';
 
 export const ScheduleComponent = () => {
   return (
@@ -63,7 +61,7 @@ export const ScheduleComponent = () => {
       <Schedule />
       <MainLayout>
         <Box mb={{ base: '144px', lg: '192px' }}>
-          <Grid
+          {/* <Grid
             templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
             gap={0}
             color="#FFF"
@@ -77,7 +75,7 @@ export const ScheduleComponent = () => {
                 isLastContent={index === winCounterData.length - 1}
               />
             ))}
-          </Grid>
+          </Grid> */}
         </Box>
       </MainLayout>
       <Title title="Our partners" subTitle="Our partners" />
