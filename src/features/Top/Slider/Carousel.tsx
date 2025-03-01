@@ -13,10 +13,6 @@ interface images {
     bg?: string;
   };
   alt: string;
-  text: {
-    main: string;
-    sub: string;
-  };
   isMovie?: boolean;
 }
 
@@ -37,10 +33,7 @@ const images: images[] = [
       pc: '/movie/movie-top-pc.mp4',
     },
     alt: 'スライド0',
-    text: {
-      main: 'TCS',
-      sub: 'Racing Team',
-    },
+
     isMovie: true,
   },
   {
@@ -51,10 +44,6 @@ const images: images[] = [
       bg: '/images/top/img-slider-sp-bg01.png',
     },
     alt: 'スライド1',
-    text: {
-      main: 'TCS',
-      sub: 'Racing Team',
-    },
   },
   {
     id: 2,
@@ -64,10 +53,6 @@ const images: images[] = [
       bg: '/images/top/img-slider-sp-bg02.png',
     },
     alt: 'スライド2',
-    text: {
-      main: 'TCS',
-      sub: 'Racing Team',
-    },
   },
   {
     id: 3,
@@ -77,10 +62,6 @@ const images: images[] = [
       bg: '/images/top/img-slider-sp-bg03.png',
     },
     alt: 'スライド3',
-    text: {
-      main: 'TCS',
-      sub: 'Racing Team',
-    },
   },
 ];
 
@@ -215,11 +196,11 @@ export const Carousel = () => {
               )}
             </Box>
             <Box
+              display={{ base: 'none', lg: 'flex' }}
               position="absolute"
               top="50%"
               left={{ base: '50%', lg: '256px' }}
               transform="translate(-50%, -50%)"
-              display="flex"
               alignItems="center"
               justifyContent="center"
             >
@@ -228,14 +209,14 @@ export const Carousel = () => {
                 color="white"
                 fontWeight="bold"
               >
-                {image.text.main}
+                TCS
                 <Box as="span" fontSize="xl" ml="16px">
-                  {image.text.sub}
+                  Racing Team
                 </Box>
               </Text>
             </Box>
             <Box
-              display="flex"
+              display={{ base: 'none', lg: 'flex' }}
               flexDirection={{ base: 'column', lg: 'row' }}
               justifyContent={{ base: 'none', lg: 'center' }}
               position="absolute"
