@@ -20,4 +20,4 @@ export const winCounterData = [
 ];
 
 // スケジュールの表示数
-export const limit: number = 12;
+export const limit: number = 100;
