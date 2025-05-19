@@ -93,6 +93,7 @@ export const UpdateContent = () => {
 
         {singleNews?.[`content${selectedLanguage}`] && (
           <Box
+            className="news-content"
             mb="37px"
             dangerouslySetInnerHTML={{
               __html: singleNews?.[`content${selectedLanguage}`],
